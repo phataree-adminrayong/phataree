@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useMemo, useState } from 'react'
@@ -18,6 +19,8 @@ const navItems: NavItem[] = [
   { href: '/#faq', label: 'คำถามที่พบบ่อย', hash: '#faq' },
   { href: '/#contact', label: 'ติดต่อเรา', hash: '#contact' },
 ]
+
+const logoSrc = '/PATAREE_LOGO.svg'
 
 export default function Nav() {
   const pathname = usePathname()
@@ -77,6 +80,7 @@ export default function Nav() {
     }
 
     window.addEventListener('keydown', handleKeyDown)
+
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
@@ -94,20 +98,24 @@ export default function Nav() {
             closeDrawer()
           }}
         >
-          <span className={styles.brandMark} aria-hidden="true">
-            P
-          </span>
-
-          <span className={styles.brandText}>
-            <span className={styles.brandName}>PHATAREE</span>
-            <span className={styles.brandSub}>Consumable Products</span>
+          <span className={styles.logoWrap} aria-hidden="true">
+            <Image
+              src={logoSrc}
+              alt=""
+              width={160}
+              height={52}
+              priority
+              className={styles.logo}
+            />
           </span>
         </Link>
 
         <nav className={styles.desktopNav} aria-label="เมนูหลัก">
           <Link
             href={homeHref}
-            className={`${styles.navLink} ${isHomeActive ? styles.navLinkActive : ''}`}
+            className={`${styles.navLink} ${
+              isHomeActive ? styles.navLinkActive : ''
+            }`}
             onClick={() => setActiveHash('')}
           >
             หน้าแรก
@@ -120,7 +128,9 @@ export default function Nav() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`${styles.navLink} ${isActive ? styles.navLinkActive : ''}`}
+                className={`${styles.navLink} ${
+                  isActive ? styles.navLinkActive : ''
+                }`}
                 onClick={() => setActiveHash(item.hash)}
               >
                 {item.label}
@@ -154,7 +164,9 @@ export default function Nav() {
       </div>
 
       <div
-        className={`${styles.backdrop} ${isDrawerOpen ? styles.backdropOpen : ''}`}
+        className={`${styles.backdrop} ${
+          isDrawerOpen ? styles.backdropOpen : ''
+        }`}
         onClick={closeDrawer}
         aria-hidden="true"
       />
@@ -166,16 +178,25 @@ export default function Nav() {
         aria-hidden={!isDrawerOpen}
       >
         <div className={styles.drawerHeader}>
-          <div className={styles.drawerBrand}>
-            <span className={styles.brandMark} aria-hidden="true">
-              P
+          <Link
+            href={homeHref}
+            className={styles.drawerBrand}
+            aria-label="PHATAREE หน้าแรก"
+            onClick={() => {
+              setActiveHash('')
+              closeDrawer()
+            }}
+          >
+            <span className={styles.drawerLogoWrap} aria-hidden="true">
+              <Image
+                src={logoSrc}
+                alt=""
+                width={160}
+                height={52}
+                className={styles.logo}
+              />
             </span>
-
-            <span className={styles.drawerBrandText}>
-              <span className={styles.brandName}>PHATAREE</span>
-              <span className={styles.brandSub}>Consumable Products</span>
-            </span>
-          </div>
+          </Link>
 
           <button
             type="button"
@@ -192,7 +213,9 @@ export default function Nav() {
         <nav className={styles.drawerNav} aria-label="เมนูหลักบนมือถือ">
           <Link
             href={homeHref}
-            className={`${styles.drawerLink} ${isHomeActive ? styles.drawerLinkActive : ''}`}
+            className={`${styles.drawerLink} ${
+              isHomeActive ? styles.drawerLinkActive : ''
+            }`}
             onClick={() => {
               setActiveHash('')
               closeDrawer()
@@ -208,7 +231,9 @@ export default function Nav() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`${styles.drawerLink} ${isActive ? styles.drawerLinkActive : ''}`}
+                className={`${styles.drawerLink} ${
+                  isActive ? styles.drawerLinkActive : ''
+                }`}
                 onClick={() => {
                   setActiveHash(item.hash)
                   closeDrawer()

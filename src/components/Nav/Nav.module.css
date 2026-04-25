@@ -20,46 +20,22 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.72rem;
   flex: 0 0 auto;
   min-width: 0;
 }
 
-.brandMark {
+.logoWrap {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-strong) 100%);
-  color: #fffdf7;
-  font-family: var(--font-display);
-  font-size: 1.08rem;
-  font-weight: 700;
-  box-shadow: var(--shadow-sm);
+  width: clamp(7.5rem, 12vw, 10rem);
+  height: 3.25rem;
 }
 
-.brandText {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
-.brandName {
-  color: var(--text);
-  font-size: 0.92rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  line-height: 1;
-}
-
-.brandSub {
-  margin-top: 0.18rem;
-  color: var(--muted);
-  font-size: 0.68rem;
-  font-weight: 600;
-  line-height: 1.1;
+.logo {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
 }
 
 .desktopNav {
@@ -153,6 +129,7 @@
   border: 1px solid var(--border);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.88);
+  cursor: pointer;
   transition:
     border-color var(--t-fast),
     background-color var(--t-fast);
@@ -160,6 +137,11 @@
 
 .menuButton:hover {
   border-color: rgba(86, 104, 82, 0.24);
+}
+
+.menuButton:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
 }
 
 .menuLine {
@@ -218,26 +200,30 @@
 .drawerBrand {
   display: inline-flex;
   align-items: center;
-  gap: 0.72rem;
+  flex: 0 1 auto;
   min-width: 0;
 }
 
-.drawerBrandText {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
+.drawerLogoWrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 8.5rem;
+  height: 3rem;
 }
 
 .closeButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
   width: 2.35rem;
   height: 2.35rem;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--surface-strong);
   color: var(--text);
+  cursor: pointer;
   transition:
     border-color var(--t-fast),
     background-color var(--t-fast);
@@ -245,6 +231,11 @@
 
 .closeButton:hover {
   border-color: rgba(86, 104, 82, 0.24);
+}
+
+.closeButton:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
 }
 
 .closeIcon {
@@ -305,6 +296,19 @@
   box-shadow: var(--shadow-sm);
 }
 
+.drawerQuoteButton:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.drawerQuoteButton:focus-visible,
+.drawerLink:focus-visible,
+.navLink:focus-visible,
+.quoteButton:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
 @media (max-width: 1120px) {
   .desktopNav {
     gap: 0.82rem;
@@ -312,6 +316,10 @@
 
   .navLink {
     font-size: 0.78rem;
+  }
+
+  .logoWrap {
+    width: 8rem;
   }
 }
 
@@ -328,20 +336,37 @@
   .inner {
     min-height: 4.5rem;
   }
-}
 
-@media (max-width: 640px) {
-  .brandSub {
-    display: none;
+  .logoWrap {
+    width: 8.5rem;
+    height: 3rem;
   }
 }
 
 @media (max-width: 420px) {
-  .brandName {
-    font-size: 0.84rem;
+  .logoWrap {
+    width: 7rem;
+  }
+
+  .drawerLogoWrap {
+    width: 7.5rem;
   }
 
   .drawer {
     width: min(92vw, 20rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navLink,
+  .navLink::after,
+  .quoteButton,
+  .menuButton,
+  .backdrop,
+  .drawer,
+  .closeButton,
+  .drawerLink,
+  .drawerQuoteButton {
+    transition: none;
   }
 }

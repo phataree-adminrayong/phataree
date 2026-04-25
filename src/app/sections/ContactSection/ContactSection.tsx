@@ -18,11 +18,13 @@ export default function ContactSection() {
             <div className={styles.infoList}>
               <div className={styles.infoItem}>
                 <span className={styles.label}>โทรศัพท์</span>
-                <strong>08X-XXX-XXXX</strong>
+                <strong>086-4565165 ,092-6394754</strong>
               </div>
               <div className={styles.infoItem}>
                 <span className={styles.label}>อีเมล</span>
-                <strong>contact@phataree.com</strong>
+                <strong>
+                  phataree.thailand@gmail.com , phataree.acc@gmail.com
+                </strong>
               </div>
               <div className={styles.infoItem}>
                 <span className={styles.label}>LINE</span>
