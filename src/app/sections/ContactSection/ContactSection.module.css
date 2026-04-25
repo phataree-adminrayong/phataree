@@ -1,0 +1,93 @@
+.section {
+  padding: var(--section-y) 0 6rem;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(20rem, 1.05fr);
+  gap: 1.2rem;
+}
+
+.left {
+  padding: 1.2rem 0.2rem 0 0;
+}
+
+.kicker {
+  margin-bottom: 0.45rem;
+  color: var(--accent-strong);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.title {
+  margin-bottom: 0.8rem;
+}
+
+.desc {
+  max-width: 32rem;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1.2rem;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-md);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.label {
+  color: var(--green-strong);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.right {
+  display: flex;
+}
+
+.formCard {
+  width: 100%;
+  padding: 1.2rem;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-lg);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: var(--shadow-md);
+}
+
+.formTitle {
+  margin-bottom: 0.9rem;
+  color: var(--green-strong);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.quickLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    padding-top: 0;
+  }
+}

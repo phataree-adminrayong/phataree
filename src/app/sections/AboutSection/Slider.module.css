@@ -1,0 +1,134 @@
+.slider {
+  width: 100%;
+  max-width: 72rem;
+  margin-top: 0.5rem;
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--bg-2);
+  box-shadow: var(--shadow-md);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.025);
+  transition:
+    opacity 750ms ease,
+    transform 1400ms ease;
+  pointer-events: none;
+}
+
+.slideActive {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 0.9rem;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--text);
+  font: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition:
+    background var(--t-fast),
+    border-color var(--t-fast),
+    transform var(--t-fast);
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
+  transform: translateY(-1px);
+}
+
+.arrow:focus-visible,
+.dot:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--muted) 36%, transparent);
+  cursor: pointer;
+  transition:
+    width var(--t-fast),
+    background var(--t-fast);
+}
+
+.dotActive {
+  width: 1.35rem;
+  background: var(--accent-strong);
+}
+
+@media (max-width: 768px) {
+  .slider {
+    margin-top: 0.25rem;
+  }
+
+  .frame {
+    border-radius: var(--r-md);
+  }
+
+  .controls {
+    margin-top: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .arrow {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide,
+  .arrow,
+  .dot {
+    transition: none;
+  }
+}

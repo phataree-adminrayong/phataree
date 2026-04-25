@@ -1,0 +1,162 @@
+[
+  {
+    "id": "toilet-tissue-roll-14m",
+    "name": "กระดาษทิชชูม้วนเล็ก ขนาด 14 เมตร",
+    "slug": "toilet-tissue-roll-14m",
+    "category": "กระดาษทิชชูสำหรับชำระ",
+    "shortDescription": "กระดาษทิชชูม้วนเล็กสำหรับใช้งานทั่วไป เหมาะกับบ้าน ร้านค้า และสำนักงาน",
+    "status": "active"
+  },
+  {
+    "id": "toilet-tissue-roll-17m",
+    "name": "กระดาษทิชชูม้วนเล็ก ขนาด 17 เมตร",
+    "slug": "toilet-tissue-roll-17m",
+    "category": "กระดาษทิชชูสำหรับชำระ",
+    "shortDescription": "กระดาษทิชชูม้วนเล็ก ขนาดยาวขึ้น เหมาะสำหรับการใช้งานต่อเนื่อง",
+    "status": "active"
+  },
+  {
+    "id": "toilet-tissue-jumbo-roll-280m",
+    "name": "กระดาษทิชชูจัมโบ้โรล ขนาด 280 เมตร",
+    "slug": "toilet-tissue-jumbo-roll-280m",
+    "category": "กระดาษทิชชูสำหรับชำระ",
+    "shortDescription": "จัมโบ้โรลสำหรับพื้นที่ใช้งานสูง เช่น อาคาร สำนักงาน และหน่วยงาน",
+    "status": "active"
+  },
+  {
+    "id": "napkin-tissue",
+    "name": "กระดาษทิชชูเช็ดปาก",
+    "slug": "napkin-tissue",
+    "category": "กระดาษทิชชูสำหรับเช็ดปาก",
+    "shortDescription": "กระดาษเช็ดปากสำหรับร้านอาหาร คาเฟ่ และการใช้งานทั่วไป",
+    "status": "active"
+  },
+  {
+    "id": "hand-towel-tissue",
+    "name": "กระดาษทิชชูเช็ดมือ",
+    "slug": "hand-towel-tissue",
+    "category": "กระดาษทิชชูสำหรับเช็ดมือ",
+    "shortDescription": "กระดาษเช็ดมือสำหรับห้องน้ำ จุดล้างมือ และพื้นที่ส่วนกลาง",
+    "status": "active"
+  },
+  {
+    "id": "facial-tissue",
+    "name": "กระดาษทิชชูเช็ดหน้า",
+    "slug": "facial-tissue",
+    "category": "กระดาษทิชชูสำหรับเช็ดหน้า",
+    "shortDescription": "กระดาษทิชชูเนื้อนุ่มสำหรับใช้งานในชีวิตประจำวัน",
+    "status": "active"
+  },
+  {
+    "id": "multipurpose-tissue",
+    "name": "กระดาษทิชชูเอนกประสงค์",
+    "slug": "multipurpose-tissue",
+    "category": "กระดาษทิชชูเอนกประสงค์",
+    "shortDescription": "กระดาษทิชชูสำหรับงานใช้งานทั่วไปหลากหลายประเภท",
+    "status": "active"
+  },
+  {
+    "id": "dishwashing-liquid",
+    "name": "น้ำยาล้างจาน",
+    "slug": "dishwashing-liquid",
+    "category": "น้ำยาทำความสะอาด",
+    "shortDescription": "น้ำยาล้างจานสำหรับครัวเรือน ร้านอาหาร และงานทำความสะอาดทั่วไป",
+    "status": "active"
+  },
+  {
+    "id": "garbage-bag-18x20",
+    "name": "ถุงขยะ ขนาด 18 × 20",
+    "slug": "garbage-bag-18x20",
+    "category": "ถุงขยะ",
+    "shortDescription": "ถุงขยะสำหรับการใช้งานทั่วไป ขนาดกะทัดรัด",
+    "status": "active"
+  },
+  {
+    "id": "garbage-bag-22x30",
+    "name": "ถุงขยะ ขนาด 22 × 30",
+    "slug": "garbage-bag-22x30",
+    "category": "ถุงขยะ",
+    "shortDescription": "ถุงขยะสำหรับบ้าน ร้านค้า และสำนักงาน",
+    "status": "active"
+  },
+  {
+    "id": "garbage-bag-24x28",
+    "name": "ถุงขยะ ขนาด 24 × 28",
+    "slug": "garbage-bag-24x28",
+    "category": "ถุงขยะ",
+    "shortDescription": "ถุงขยะสำหรับการจัดเก็บขยะประจำวัน",
+    "status": "active"
+  },
+  {
+    "id": "garbage-bag-28x36",
+    "name": "ถุงขยะ ขนาด 28 × 36",
+    "slug": "garbage-bag-28x36",
+    "category": "ถุงขยะ",
+    "shortDescription": "ถุงขยะขนาดกลาง เหมาะกับการใช้งานหลากหลาย",
+    "status": "active"
+  },
+  {
+    "id": "garbage-bag-30x40",
+    "name": "ถุงขยะ ขนาด 30 × 40",
+    "slug": "garbage-bag-30x40",
+    "category": "ถุงขยะ",
+    "shortDescription": "ถุงขยะขนาดใหญ่สำหรับพื้นที่ใช้งานมากขึ้น",
+    "status": "active"
+  },
+  {
+    "id": "garbage-bag-36x45",
+    "name": "ถุงขยะ ขนาด 36 × 45",
+    "slug": "garbage-bag-36x45",
+    "category": "ถุงขยะ",
+    "shortDescription": "ถุงขยะขนาดใหญ่สำหรับองค์กร โรงงาน และพื้นที่ใช้งานหนัก",
+    "status": "active"
+  },
+  {
+    "id": "3m-liquid-hand-soap",
+    "name": "สบู่เหลวล้างมือ",
+    "slug": "3m-liquid-hand-soap",
+    "category": "ผลิตภัณฑ์ 3M ทำความสะอาดและดูแลพื้น",
+    "shortDescription": "สบู่เหลวล้างมือสำหรับการใช้งานในบ้าน ร้านค้า และองค์กร",
+    "status": "active"
+  },
+  {
+    "id": "3m-dishwashing-liquid",
+    "name": "น้ำยาล้างจาน",
+    "slug": "3m-dishwashing-liquid",
+    "category": "ผลิตภัณฑ์ 3M ทำความสะอาดและดูแลพื้น",
+    "shortDescription": "น้ำยาล้างจานในกลุ่มผลิตภัณฑ์ 3M สำหรับงานทำความสะอาด",
+    "status": "active"
+  },
+  {
+    "id": "3m-bathroom-cleaner",
+    "name": "น้ำยาล้างห้องน้ำ",
+    "slug": "3m-bathroom-cleaner",
+    "category": "ผลิตภัณฑ์ 3M ทำความสะอาดและดูแลพื้น",
+    "shortDescription": "น้ำยาทำความสะอาดห้องน้ำสำหรับการใช้งานในอาคารและสถานประกอบการ",
+    "status": "active"
+  },
+  {
+    "id": "3m-detergent",
+    "name": "ผงซักฟอก",
+    "slug": "3m-detergent",
+    "category": "ผลิตภัณฑ์ 3M ทำความสะอาดและดูแลพื้น",
+    "shortDescription": "ผงซักฟอกสำหรับงานซักทำความสะอาดทั่วไป",
+    "status": "active"
+  },
+  {
+    "id": "3m-green-label-products",
+    "name": "ผลิตภัณฑ์ 3M ฉลากเขียว",
+    "slug": "3m-green-label-products",
+    "category": "ผลิตภัณฑ์ 3M ทำความสะอาดและดูแลพื้น",
+    "shortDescription": "ผลิตภัณฑ์ 3M กลุ่มฉลากเขียวสำหรับงานทำความสะอาดและดูแลพื้นที่",
+    "status": "active"
+  },
+  {
+    "id": "salt",
+    "name": "เกลือ",
+    "slug": "salt",
+    "category": "เกลือ",
+    "shortDescription": "เกลือสำหรับการใช้งานตามประเภทสินค้าที่ลูกค้าต้องการ",
+    "status": "active"
+  }
+]

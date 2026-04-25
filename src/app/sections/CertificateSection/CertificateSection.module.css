@@ -1,0 +1,67 @@
+.section {
+  padding: var(--section-y) 0;
+  background:
+    linear-gradient(180deg, rgba(238, 245, 232, 0.7) 0%, rgba(248, 251, 245, 0.2) 100%);
+}
+
+.heading {
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.kicker {
+  margin-bottom: 0.45rem;
+  color: var(--accent-strong);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.title {
+  margin-bottom: 0.8rem;
+}
+
+.desc {
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.2rem;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-md);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: var(--shadow-sm);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-bottom: 0.9rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-weight: 800;
+}
+
+.cardTitle {
+  margin-bottom: 0.55rem;
+  font-size: 1rem;
+  color: var(--green-strong);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

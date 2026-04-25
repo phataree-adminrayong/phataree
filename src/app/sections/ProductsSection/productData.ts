@@ -1,0 +1,197 @@
+export type ProductItem = {
+  id: string
+  name: string
+  shortDescription: string
+}
+
+export type ProductGroup = {
+  id: string
+  title: string
+  eyebrow: string
+  description: string
+  items: ProductItem[]
+}
+
+export const productGroups: ProductGroup[] = [
+  {
+    id: 'toilet-tissue',
+    title: 'กระดาษทิชชู่สำหรับชำระ',
+    eyebrow: 'Toilet Tissue',
+    description:
+      'กลุ่มสินค้าสำหรับห้องน้ำ บ้าน ร้านค้า สำนักงาน และพื้นที่ใช้งานประจำ',
+    items: [
+      {
+        id: 'toilet-tissue-roll-14m',
+        name: 'กระดาษทิชชู่ม้วนเล็ก ขนาด 14 เมตร',
+        shortDescription:
+          'เหมาะสำหรับการใช้งานทั่วไปในบ้าน ร้านค้า และสำนักงาน',
+      },
+      {
+        id: 'toilet-tissue-roll-17m',
+        name: 'กระดาษทิชชู่ม้วนเล็ก ขนาด 17 เมตร',
+        shortDescription:
+          'ขนาดยาวขึ้น เหมาะสำหรับการใช้งานต่อเนื่องและช่วยเพิ่มความคุ้มค่า',
+      },
+      {
+        id: 'toilet-tissue-jumbo-roll-280m',
+        name: 'กระดาษทิชชู่จัมโบ้โรล ขนาด 28 เมตร',
+        shortDescription:
+          'เหมาะกับอาคาร สำนักงาน หน่วยงาน และพื้นที่ที่มีการใช้งานสูง',
+      },
+    ],
+  },
+  {
+    id: 'napkin-tissue',
+    title: 'กระดาษทิชชู่สำหรับเช็ดปาก',
+    eyebrow: 'Napkin Tissue',
+    description: 'เหมาะสำหรับร้านอาหาร คาเฟ่ งานบริการ และการใช้งานบนโต๊ะอาหาร',
+    items: [
+      {
+        id: 'napkin-tissue',
+        name: 'กระดาษทิชชู่เช็ดปาก',
+        shortDescription: 'เหมาะสำหรับร้านอาหาร คาเฟ่ และการใช้งานทั่วไป',
+      },
+    ],
+  },
+  {
+    id: 'hand-towel-tissue',
+    title: 'กระดาษทิชชู่สำหรับเช็ดมือ',
+    eyebrow: 'Hand Towel',
+    description:
+      'สินค้าสำหรับห้องน้ำ จุดล้างมือ และพื้นที่ส่วนกลางที่ต้องการความสะอาด',
+    items: [
+      {
+        id: 'hand-towel-tissue',
+        name: 'กระดาษทิชชู่เช็ดมือ',
+        shortDescription: 'เหมาะสำหรับห้องน้ำ จุดล้างมือ และพื้นที่ส่วนกลาง',
+      },
+    ],
+  },
+  {
+    id: 'facial-tissue',
+    title: 'กระดาษทิชชู่สำหรับเช็ดหน้า',
+    eyebrow: 'Facial Tissue',
+    description:
+      'กระดาษเนื้อนุ่ม ใช้งานง่าย เหมาะกับบ้าน สำนักงาน และพื้นที่รับรองลูกค้า',
+    items: [
+      {
+        id: 'facial-tissue',
+        name: 'กระดาษทิชชู่เช็ดหน้า',
+        shortDescription: 'เนื้อนุ่ม ใช้งานสะดวก เหมาะกับการใช้งานประจำวัน',
+      },
+    ],
+  },
+  {
+    id: 'multipurpose-tissue',
+    title: 'กระดาษทิชชู่เอนกประสงค์',
+    eyebrow: 'Multipurpose',
+    description: 'รองรับงานเช็ด ทำความสะอาด และการใช้งานหลากหลายประเภท',
+    items: [
+      {
+        id: 'multipurpose-tissue',
+        name: 'กระดาษทิชชู่เอนกประสงค์',
+        shortDescription: 'รองรับการใช้งานหลากหลายประเภทในชีวิตประจำวัน',
+      },
+    ],
+  },
+  {
+    id: 'cleaning-liquid',
+    title: 'น้ำยาทำความสะอาด',
+    eyebrow: 'Cleaning Liquid',
+    description:
+      'สินค้าในกลุ่มทำความสะอาดสำหรับครัวเรือน ร้านค้า และสถานประกอบการ',
+    items: [
+      {
+        id: 'dishwashing-liquid',
+        name: 'น้ำยาล้างจาน',
+        shortDescription:
+          'เหมาะสำหรับงานล้างทำความสะอาดในครัวเรือนและสถานประกอบการ',
+      },
+    ],
+  },
+  {
+    id: 'garbage-bag',
+    title: 'ถุงขยะ',
+    eyebrow: 'Garbage Bag',
+    description:
+      'ถุงขยะหลายขนาด รองรับการใช้งานตั้งแต่บ้าน ร้านค้า ไปจนถึงองค์กร',
+    items: [
+      {
+        id: 'garbage-bag-18x20',
+        name: 'ถุงขยะ ขนาด 18 × 20',
+        shortDescription: 'ขนาดกะทัดรัด เหมาะกับการใช้งานทั่วไป',
+      },
+      {
+        id: 'garbage-bag-22x30',
+        name: 'ถุงขยะ ขนาด 22 × 30',
+        shortDescription: 'เหมาะสำหรับบ้าน ร้านค้า และสำนักงาน',
+      },
+      {
+        id: 'garbage-bag-24x28',
+        name: 'ถุงขยะ ขนาด 24 × 28',
+        shortDescription: 'เหมาะสำหรับการจัดเก็บขยะประจำวัน',
+      },
+      {
+        id: 'garbage-bag-28x36',
+        name: 'ถุงขยะ ขนาด 28 × 36',
+        shortDescription: 'ขนาดกลาง รองรับการใช้งานได้หลากหลาย',
+      },
+      {
+        id: 'garbage-bag-30x40',
+        name: 'ถุงขยะ ขนาด 30 × 40',
+        shortDescription: 'ขนาดใหญ่ เหมาะกับพื้นที่ใช้งานมากขึ้น',
+      },
+      {
+        id: 'garbage-bag-36x45',
+        name: 'ถุงขยะ ขนาด 36 × 45',
+        shortDescription: 'เหมาะสำหรับองค์กร โรงงาน และพื้นที่ใช้งานหนัก',
+      },
+    ],
+  },
+  {
+    id: '3m-floor-care',
+    title: 'ผลิตภัณฑ์ 3M ทำความสะอาดและดูแลพื้น',
+    eyebrow: '3M Floor Care',
+    description: 'กลุ่มผลิตภัณฑ์สำหรับงานทำความสะอาด ดูแลพื้น และดูแลอาคาร',
+    items: [
+      {
+        id: '3m-liquid-hand-soap',
+        name: 'สบู่เหลวล้างมือ',
+        shortDescription: 'เหมาะสำหรับการใช้งานในบ้าน ร้านค้า และองค์กร',
+      },
+      {
+        id: '3m-dishwashing-liquid',
+        name: 'น้ำยาล้างจาน',
+        shortDescription: 'ผลิตภัณฑ์ในกลุ่ม 3M สำหรับงานทำความสะอาดทั่วไป',
+      },
+      {
+        id: '3m-bathroom-cleaner',
+        name: 'น้ำยาล้างห้องน้ำ',
+        shortDescription: 'เหมาะสำหรับการดูแลความสะอาดในห้องน้ำและอาคาร',
+      },
+      {
+        id: '3m-detergent',
+        name: 'ผงซักฟอก',
+        shortDescription: 'สำหรับงานซักและทำความสะอาดทั่วไป',
+      },
+      {
+        id: '3m-green-label-products',
+        name: 'ผลิตภัณฑ์ 3M ฉลากเขียว',
+        shortDescription: 'รองรับงานทำความสะอาดและดูแลพื้นที่ในองค์กร',
+      },
+    ],
+  },
+  {
+    id: 'salt',
+    title: 'เกลือ',
+    eyebrow: 'Salt',
+    description: 'สินค้าเกลือสำหรับการใช้งานตามความต้องการของลูกค้า',
+    items: [
+      {
+        id: 'salt',
+        name: 'เกลือ',
+        shortDescription: 'รองรับการใช้งานตามประเภทสินค้าที่ลูกค้าต้องการ',
+      },
+    ],
+  },
+]

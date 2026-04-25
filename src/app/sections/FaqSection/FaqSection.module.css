@@ -1,0 +1,60 @@
+.section {
+  padding: var(--section-y) 0;
+}
+
+.heading {
+  margin-bottom: 1.4rem;
+  text-align: center;
+}
+
+.kicker {
+  margin-bottom: 0.45rem;
+  color: var(--accent-strong);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.title {
+  margin-bottom: 0.2rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.item {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-md);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 1.1rem;
+  text-align: left;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.symbol {
+  color: var(--accent-strong);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.answer {
+  padding: 0 1.1rem 1rem;
+  color: var(--muted);
+  line-height: 1.7;
+}

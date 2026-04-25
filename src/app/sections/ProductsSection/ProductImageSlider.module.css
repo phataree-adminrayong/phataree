@@ -1,0 +1,157 @@
+.slider {
+  position: relative;
+  width: 100%;
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: calc(var(--r-lg) - 0.35rem);
+  background: var(--bg-2);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--border) 80%, transparent);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.025);
+  transition:
+    opacity 650ms ease,
+    transform 1200ms ease;
+  pointer-events: none;
+}
+
+.slideActive {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.badge {
+  position: absolute;
+  left: clamp(0.8rem, 2vw, 1.15rem);
+  right: clamp(0.8rem, 2vw, 1.15rem);
+  bottom: clamp(0.8rem, 2vw, 1.15rem);
+  z-index: 2;
+  display: grid;
+  gap: 0.18rem;
+  width: fit-content;
+  max-width: calc(100% - 1.6rem);
+  padding: 0.65rem 0.8rem;
+  border: 1px solid color-mix(in srgb, white 58%, transparent);
+  border-radius: var(--r-sm);
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 0.8rem 2rem rgba(34, 46, 31, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.badge span {
+  color: var(--accent-strong);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.badge strong {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 0.85rem;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--text);
+  font: inherit;
+  font-size: 1.45rem;
+  line-height: 1;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition:
+    background var(--t-fast),
+    border-color var(--t-fast),
+    transform var(--t-fast);
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
+  transform: translateY(-1px);
+}
+
+.arrow:focus-visible,
+.dot:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--muted) 36%, transparent);
+  cursor: pointer;
+  transition:
+    width var(--t-fast),
+    background var(--t-fast);
+}
+
+.dotActive {
+  width: 1.35rem;
+  background: var(--accent-strong);
+}
+
+@media (max-width: 768px) {
+  .frame {
+    border-radius: var(--r-md);
+  }
+
+  .badge {
+    max-width: calc(100% - 1.2rem);
+  }
+
+  .controls {
+    margin-top: 0.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide,
+  .arrow,
+  .dot {
+    transition: none;
+  }
+}
