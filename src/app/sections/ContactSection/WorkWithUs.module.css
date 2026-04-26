@@ -100,9 +100,6 @@
 
 .jobCard {
   position: relative;
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: clamp(0.85rem, 2vw, 1.25rem);
   padding: clamp(1rem, 2.3vw, 1.45rem);
   border: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
   border-radius: var(--r-md);
@@ -122,22 +119,6 @@
   transform: translateY(-2px);
 }
 
-.jobNumber {
-  display: grid;
-  place-items: center;
-  width: clamp(2.6rem, 5vw, 3.25rem);
-  height: clamp(2.6rem, 5vw, 3.25rem);
-  border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--border));
-  border-radius: 999px;
-  background:
-    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.92), transparent 34%),
-    color-mix(in srgb, var(--accent-soft) 78%, white 22%);
-  color: var(--accent-strong);
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 900;
-  box-shadow: 0 0.7rem 1.5rem rgba(77, 99, 61, 0.1);
-}
 
 .jobContent {
   min-width: 0;
@@ -304,14 +285,6 @@
     border-radius: var(--r-md);
   }
 
-  .jobCard {
-    grid-template-columns: 1fr;
-  }
-
-  .jobNumber {
-    width: 2.55rem;
-    height: 2.55rem;
-  }
 
   .actions {
     display: grid;

@@ -15,22 +15,22 @@ export type ProductGroup = {
 export const productGroups: ProductGroup[] = [
   {
     id: 'toilet-tissue',
-    title: 'กระดาษทิชชู่สำหรับชำระ',
+    title: 'กระดาษทิชชู่ - ชำระ',
     eyebrow: 'Toilet Tissue',
     description:
-      'กลุ่มสินค้าสำหรับห้องน้ำ บ้าน ร้านค้า สำนักงาน และพื้นที่ใช้งานประจำ',
+      'กลุ่มสินค้า - ห้องน้ำ บ้าน ร้านค้า สำนักงาน และพื้นที่ใช้งานประจำ',
     items: [
       {
         id: 'toilet-tissue-roll-14m',
         name: 'กระดาษทิชชู่ม้วนเล็ก ขนาด 14 เมตร',
         shortDescription:
-          'เหมาะสำหรับการใช้งานทั่วไปในบ้าน ร้านค้า และสำนักงาน',
+          'เหมาะ - การใช้งานทั่วไปในบ้าน ร้านค้า และสำนักงาน',
       },
       {
         id: 'toilet-tissue-roll-17m',
         name: 'กระดาษทิชชู่ม้วนเล็ก ขนาด 17 เมตร',
         shortDescription:
-          'ขนาดยาวขึ้น เหมาะสำหรับการใช้งานต่อเนื่องและช่วยเพิ่มความคุ้มค่า',
+          'ขนาดยาวขึ้น เหมาะ - การใช้งานต่อเนื่องและช่วยเพิ่มความคุ้มค่า',
       },
       {
         id: 'toilet-tissue-jumbo-roll-280m',
@@ -42,34 +42,34 @@ export const productGroups: ProductGroup[] = [
   },
   {
     id: 'napkin-tissue',
-    title: 'กระดาษทิชชู่สำหรับเช็ดปาก',
+    title: 'กระดาษทิชชู่ - เช็ดปาก',
     eyebrow: 'Napkin Tissue',
-    description: 'เหมาะสำหรับร้านอาหาร คาเฟ่ งานบริการ และการใช้งานบนโต๊ะอาหาร',
+    description: 'เหมาะ - ร้านอาหาร คาเฟ่ งานบริการ และการใช้งานบนโต๊ะอาหาร',
     items: [
       {
         id: 'napkin-tissue',
         name: 'กระดาษทิชชู่เช็ดปาก',
-        shortDescription: 'เหมาะสำหรับร้านอาหาร คาเฟ่ และการใช้งานทั่วไป',
+        shortDescription: 'เหมาะ - ร้านอาหาร คาเฟ่ และการใช้งานทั่วไป',
       },
     ],
   },
   {
     id: 'hand-towel-tissue',
-    title: 'กระดาษทิชชู่สำหรับเช็ดมือ',
+    title: 'กระดาษทิชชู่ - เช็ดมือ',
     eyebrow: 'Hand Towel',
     description:
-      'สินค้าสำหรับห้องน้ำ จุดล้างมือ และพื้นที่ส่วนกลางที่ต้องการความสะอาด',
+      'สินค้า - ห้องน้ำ จุดล้างมือ และพื้นที่ส่วนกลางที่ต้องการความสะอาด',
     items: [
       {
         id: 'hand-towel-tissue',
         name: 'กระดาษทิชชู่เช็ดมือ',
-        shortDescription: 'เหมาะสำหรับห้องน้ำ จุดล้างมือ และพื้นที่ส่วนกลาง',
+        shortDescription: 'เหมาะ - ห้องน้ำ จุดล้างมือ และพื้นที่ส่วนกลาง',
       },
     ],
   },
   {
     id: 'facial-tissue',
-    title: 'กระดาษทิชชู่สำหรับเช็ดหน้า',
+    title: 'กระดาษทิชชู่ - เช็ดหน้า',
     eyebrow: 'Facial Tissue',
     description:
       'กระดาษเนื้อนุ่ม ใช้งานง่าย เหมาะกับบ้าน สำนักงาน และพื้นที่รับรองลูกค้า',
@@ -99,13 +99,13 @@ export const productGroups: ProductGroup[] = [
     title: 'น้ำยาทำความสะอาด',
     eyebrow: 'Cleaning Liquid',
     description:
-      'สินค้าในกลุ่มทำความสะอาดสำหรับครัวเรือน ร้านค้า และสถานประกอบการ',
+      'สินค้าในกลุ่มทำความสะอาด - ครัวเรือน ร้านค้า และสถานประกอบการ',
     items: [
       {
         id: 'dishwashing-liquid',
         name: 'น้ำยาล้างจาน',
         shortDescription:
-          'เหมาะสำหรับงานล้างทำความสะอาดในครัวเรือนและสถานประกอบการ',
+          'เหมาะ - งานล้างทำความสะอาดในครัวเรือนและสถานประกอบการ',
       },
     ],
   },
@@ -124,12 +124,12 @@ export const productGroups: ProductGroup[] = [
       {
         id: 'garbage-bag-22x30',
         name: 'ถุงขยะ ขนาด 22 × 30',
-        shortDescription: 'เหมาะสำหรับบ้าน ร้านค้า และสำนักงาน',
+        shortDescription: 'เหมาะ - บ้าน ร้านค้า และสำนักงาน',
       },
       {
         id: 'garbage-bag-24x28',
         name: 'ถุงขยะ ขนาด 24 × 28',
-        shortDescription: 'เหมาะสำหรับการจัดเก็บขยะประจำวัน',
+        shortDescription: 'เหมาะ - การจัดเก็บขยะประจำวัน',
       },
       {
         id: 'garbage-bag-28x36',
@@ -144,7 +144,7 @@ export const productGroups: ProductGroup[] = [
       {
         id: 'garbage-bag-36x45',
         name: 'ถุงขยะ ขนาด 36 × 45',
-        shortDescription: 'เหมาะสำหรับองค์กร โรงงาน และพื้นที่ใช้งานหนัก',
+        shortDescription: 'เหมาะ - องค์กร โรงงาน และพื้นที่ใช้งานหนัก',
       },
     ],
   },
@@ -152,27 +152,27 @@ export const productGroups: ProductGroup[] = [
     id: '3m-floor-care',
     title: 'ผลิตภัณฑ์ 3M ทำความสะอาดและดูแลพื้น',
     eyebrow: '3M Floor Care',
-    description: 'กลุ่มผลิตภัณฑ์สำหรับงานทำความสะอาด ดูแลพื้น และดูแลอาคาร',
+    description: 'กลุ่มผลิตภัณฑ์ - งานทำความสะอาด ดูแลพื้น และดูแลอาคาร',
     items: [
       {
         id: '3m-liquid-hand-soap',
         name: 'สบู่เหลวล้างมือ',
-        shortDescription: 'เหมาะสำหรับการใช้งานในบ้าน ร้านค้า และองค์กร',
+        shortDescription: 'เหมาะ - การใช้งานในบ้าน ร้านค้า และองค์กร',
       },
       {
         id: '3m-dishwashing-liquid',
         name: 'น้ำยาล้างจาน',
-        shortDescription: 'ผลิตภัณฑ์ในกลุ่ม 3M สำหรับงานทำความสะอาดทั่วไป',
+        shortDescription: 'ผลิตภัณฑ์ในกลุ่ม 3M  - งานทำความสะอาดทั่วไป',
       },
       {
         id: '3m-bathroom-cleaner',
         name: 'น้ำยาล้างห้องน้ำ',
-        shortDescription: 'เหมาะสำหรับการดูแลความสะอาดในห้องน้ำและอาคาร',
+        shortDescription: 'เหมาะ - การดูแลความสะอาดในห้องน้ำและอาคาร',
       },
       {
         id: '3m-detergent',
         name: 'ผงซักฟอก',
-        shortDescription: 'สำหรับงานซักและทำความสะอาดทั่วไป',
+        shortDescription: ' - งานซักและทำความสะอาดทั่วไป',
       },
       {
         id: '3m-green-label-products',
@@ -185,7 +185,7 @@ export const productGroups: ProductGroup[] = [
     id: 'salt',
     title: 'เกลือ',
     eyebrow: 'Salt',
-    description: 'สินค้าเกลือสำหรับการใช้งานตามความต้องการของลูกค้า',
+    description: 'สินค้าเกลือ - การใช้งานตามความต้องการของลูกค้า',
     items: [
       {
         id: 'salt',

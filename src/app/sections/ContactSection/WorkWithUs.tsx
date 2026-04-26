@@ -83,23 +83,19 @@ export default function WorkWithUs() {
         <p className={styles.kicker}>WORK WITH US</p>
 
         <h3 id="work-with-us-title" className={styles.title}>
-          Join Us
+          ร่วมเป็นส่วนหนึ่งกับ ภัทรอารีย์
         </h3>
-
-        <p className={styles.subtitle}>ร่วมเป็นส่วนหนึ่งกับ PHATAREE</p>
 
         <div className={styles.intro}>
           <p>
             เราเปิดรับสมัครพนักงานหลายตำแหน่ง
             สำหรับผู้ที่อยากเติบโตไปกับธุรกิจสินค้าอุปโภคบริโภค งานขายองค์กร
             งานการตลาด และงานจัดส่งสินค้า
+            หากคุณเป็นคนรับผิดชอบ ตรงต่อเวลา
+            ทำงานเป็นทีม และพร้อมเรียนรู้งานจริง
+            สามารถติดต่อสมัครงานผ่านอีเมล หรือโทรหาเราได้โดยตรง
           </p>
 
-          <p>
-            หากคุณเป็นคนรับผิดชอบ ตรงต่อเวลา ทำงานเป็นทีม
-            และพร้อมเรียนรู้งานจริง
-            สามารถติดต่อสมัครงานผ่านอีเมลหรือโทรหาเราได้โดยตรง
-          </p>
         </div>
       </div>
 
@@ -108,10 +104,6 @@ export default function WorkWithUs() {
       <div className={styles.jobs}>
         {jobs.map((job, index) => (
           <article key={job.id} className={styles.jobCard}>
-            <div className={styles.jobNumber} aria-hidden="true">
-              {String(index + 1).padStart(2, '0')}
-            </div>
-
             <div className={styles.jobContent}>
               <span className={styles.tag}>{job.tag}</span>
 
