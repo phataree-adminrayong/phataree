@@ -4,13 +4,30 @@ export type ProductItem = {
   shortDescription: string
 }
 
+export type ProductImage = {
+  src: string
+  alt: string
+}
+
 export type ProductGroup = {
   id: string
   title: string
   eyebrow: string
   description: string
+  images: ProductImage[]
   items: ProductItem[]
 }
+
+const fallbackImages: ProductImage[] = [
+  {
+    src: '/images/hero/hero-1.png',
+    alt: 'สินค้าอุปโภคบริโภค PHATAREE สำหรับบ้าน ร้านค้า สำนักงาน และองค์กร',
+  },
+  {
+    src: '/images/hero/hero-1.png',
+    alt: 'สินค้าใช้ประจำสำหรับธุรกิจและองค์กร PHATAREE',
+  },
+]
 
 export const productGroups: ProductGroup[] = [
   {
@@ -19,12 +36,25 @@ export const productGroups: ProductGroup[] = [
     eyebrow: 'Toilet Tissue',
     description:
       'กลุ่มสินค้า - ห้องน้ำ บ้าน ร้านค้า สำนักงาน และพื้นที่ใช้งานประจำ',
+    images: [
+      {
+        src: '/images/product/toilet-tissue/toilet-tissue-1.jpg',
+        alt: 'กระดาษทิชชู่ม้วนเล็ก PHATAREE',
+      },
+      {
+        src: '/images/product/toilet-tissue/toilet-tissue-2.jpg',
+        alt: 'กระดาษทิชชู่สำหรับชำระ PHATAREE',
+      },
+      {
+        src: '/images/product/toilet-tissue/toilet-tissue-3.jpg',
+        alt: 'กระดาษทิชชู่จัมโบ้โรล PHATAREE',
+      },
+    ],
     items: [
       {
         id: 'toilet-tissue-roll-14m',
         name: 'กระดาษทิชชู่ม้วนเล็ก ขนาด 14 เมตร',
-        shortDescription:
-          'เหมาะ - การใช้งานทั่วไปในบ้าน ร้านค้า และสำนักงาน',
+        shortDescription: 'เหมาะ - การใช้งานทั่วไปในบ้าน ร้านค้า และสำนักงาน',
       },
       {
         id: 'toilet-tissue-roll-17m',
@@ -34,7 +64,7 @@ export const productGroups: ProductGroup[] = [
       },
       {
         id: 'toilet-tissue-jumbo-roll-280m',
-        name: 'กระดาษทิชชู่จัมโบ้โรล ขนาด 28 เมตร',
+        name: 'กระดาษทิชชู่จัมโบ้โรล ขนาด 280 เมตร',
         shortDescription:
           'เหมาะกับอาคาร สำนักงาน หน่วยงาน และพื้นที่ที่มีการใช้งานสูง',
       },
@@ -45,6 +75,12 @@ export const productGroups: ProductGroup[] = [
     title: 'กระดาษทิชชู่ - เช็ดปาก',
     eyebrow: 'Napkin Tissue',
     description: 'เหมาะ - ร้านอาหาร คาเฟ่ งานบริการ และการใช้งานบนโต๊ะอาหาร',
+    images: [
+      {
+        src: '/images/product/napkin/napkin-1.jpg',
+        alt: 'กระดาษทิชชู่เช็ดปาก',
+      },
+    ],
     items: [
       {
         id: 'napkin-tissue',
@@ -59,6 +95,16 @@ export const productGroups: ProductGroup[] = [
     eyebrow: 'Hand Towel',
     description:
       'สินค้า - ห้องน้ำ จุดล้างมือ และพื้นที่ส่วนกลางที่ต้องการความสะอาด',
+    images: [
+      {
+        src: '/images/product/hand-tissue/hand-tissue-1.jpg',
+        alt: 'กระดาษทิชชู่เช็ดมือ PHATAREE',
+      },
+      {
+        src: '/images/hero/hero-1.png',
+        alt: 'กระดาษทิชชู่เช็ดมือสำหรับองค์กร PHATAREE',
+      },
+    ],
     items: [
       {
         id: 'hand-towel-tissue',
@@ -73,6 +119,12 @@ export const productGroups: ProductGroup[] = [
     eyebrow: 'Facial Tissue',
     description:
       'กระดาษเนื้อนุ่ม ใช้งานง่าย เหมาะกับบ้าน สำนักงาน และพื้นที่รับรองลูกค้า',
+    images: [
+      {
+        src: '/images/product/facial-tissue/facial-tissue-1.png',
+        alt: 'กระดาษทิชชู่เช็ดหน้า',
+      },
+    ],
     items: [
       {
         id: 'facial-tissue',
@@ -86,6 +138,16 @@ export const productGroups: ProductGroup[] = [
     title: 'กระดาษทิชชู่เอนกประสงค์',
     eyebrow: 'Multipurpose',
     description: 'รองรับงานเช็ด ทำความสะอาด และการใช้งานหลากหลายประเภท',
+    images: [
+      {
+        src: '/images/product/multipurpose-tissue/multipurpose-tissue-1.jpg',
+        alt: 'กระดาษทิชชู่เอนกประสงค์ PHATAREE',
+      },
+      {
+        src: '/images/hero/hero-1.png',
+        alt: 'กระดาษทิชชู่เอนกประสงค์สำหรับบ้าน ร้านค้า และองค์กร',
+      },
+    ],
     items: [
       {
         id: 'multipurpose-tissue',
@@ -100,6 +162,12 @@ export const productGroups: ProductGroup[] = [
     eyebrow: 'Cleaning Liquid',
     description:
       'สินค้าในกลุ่มทำความสะอาด - ครัวเรือน ร้านค้า และสถานประกอบการ',
+    images: [
+      {
+        src: '/images/product/cleaning-solution/cleaning-solution-1.png',
+        alt: 'น้ำยาทำความสะอาด',
+      },
+    ],
     items: [
       {
         id: 'dishwashing-liquid',
@@ -115,6 +183,12 @@ export const productGroups: ProductGroup[] = [
     eyebrow: 'Garbage Bag',
     description:
       'ถุงขยะหลายขนาด รองรับการใช้งานตั้งแต่บ้าน ร้านค้า ไปจนถึงองค์กร',
+    images: [
+      {
+        src: '/images/product/garbage-bags/garbage-bags-1.png',
+        alt: 'ถุงขยะ',
+      },
+    ],
     items: [
       {
         id: 'garbage-bag-18x20',
@@ -153,6 +227,12 @@ export const productGroups: ProductGroup[] = [
     title: 'ผลิตภัณฑ์ 3M ทำความสะอาดและดูแลพื้น',
     eyebrow: '3M Floor Care',
     description: 'กลุ่มผลิตภัณฑ์ - งานทำความสะอาด ดูแลพื้น และดูแลอาคาร',
+    images: [
+      {
+        src: '/images/product/3M-products/3M-products-1.png',
+        alt: 'ผลิตภัณฑ์ 3M ทำความสะอาดและดูแลพื้น',
+      },
+    ],
     items: [
       {
         id: '3m-liquid-hand-soap',
@@ -186,6 +266,12 @@ export const productGroups: ProductGroup[] = [
     title: 'เกลือ',
     eyebrow: 'Salt',
     description: 'สินค้าเกลือ - การใช้งานตามความต้องการของลูกค้า',
+    images: [
+      {
+        src: '/images/product/salt/salt-1.png',
+        alt: 'เกลือ',
+      },
+    ],
     items: [
       {
         id: 'salt',

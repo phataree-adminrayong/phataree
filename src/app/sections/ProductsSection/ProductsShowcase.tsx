@@ -39,18 +39,7 @@ export default function ProductsShowcase() {
 
       <div className={styles.panel}>
         <div className={styles.media}>
-          <ProductImageSlider
-            images={[
-              {
-                src: '/images/hero/hero-1.png',
-                alt: `${activeGroup.title} ภัทรอารีย์`,
-              },
-              {
-                src: '/images/hero/hero-1.png',
-                alt: `${activeGroup.title} สำหรับบ้าน ร้านค้า สำนักงาน และองค์กร`,
-              },
-            ]}
-          />
+          <ProductImageSlider images={activeGroup.images} />
         </div>
 
         <article className={styles.content}>

@@ -73,11 +73,11 @@ export default function ProductImageSlider({
           </div>
         ))}
 
-        <div className={styles.badge}>
+{/*         <div className={styles.badge}>
           <span>PHATAREE</span>
           <strong>สินค้าใช้ประจำสำหรับองค์กร</strong>
         </div>
-      </div>
+ */}      </div>
 
       {hasMultipleImages ? (
         <div className={styles.controls}>
