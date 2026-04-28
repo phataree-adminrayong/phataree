@@ -1,0 +1,80 @@
+/* src/app/sections/ContactSection/Map.module.css */
+
+.mapSection {
+  position: relative;
+  margin-top: clamp(1rem, 2.5vw, 1.6rem);
+}
+
+.mapSection::before {
+  content: '';
+  position: absolute;
+  inset: 12% auto auto -10rem;
+  width: min(30rem, 70vw);
+  height: min(30rem, 70vw);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--green-soft) 68%, transparent);
+  filter: blur(70px);
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.content {
+  z-index: 1;
+}
+
+.mapCard {
+  position: relative;
+  min-height: 22rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.58)),
+    var(--surface);
+  box-shadow: var(--shadow-md);
+}
+
+.mapCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.52);
+  pointer-events: none;
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  border: 0;
+  filter: saturate(0.92) contrast(0.96);
+}
+
+@media (max-width: 980px) {
+
+  .mapCard {
+    min-height: 20rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .mapSection {
+    margin-top: 1rem;
+  }
+
+  .mapCard {
+    border-radius: var(--r-md);
+  }
+
+  .mapCard {
+    min-height: 18rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iframe {
+    filter: none;
+  }
+}

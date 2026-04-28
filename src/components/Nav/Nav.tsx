@@ -41,8 +41,6 @@ export default function Nav() {
   }
 
   useEffect(() => {
-    if (typeof window === 'undefined') return
-
     const syncHash = () => {
       setActiveHash(window.location.hash || '')
     }
@@ -87,81 +85,83 @@ export default function Nav() {
   }, [])
 
   return (
-    <header className={styles.header}>
-      <div className={`container ${styles.inner}`}>
-        <Link
-          href={homeHref}
-          className={styles.brand}
-          aria-label="PHATAREE หน้าแรก"
-          onClick={() => {
-            setActiveHash('')
-            closeDrawer()
-          }}
-        >
-          <span className={styles.logoWrap} aria-hidden="true">
-            <Image
-              src={logoSrc}
-              alt=""
-              width={160}
-              height={52}
-              priority
-              className={styles.logo}
-            />
-          </span>
-        </Link>
-
-        <nav className={styles.desktopNav} aria-label="เมนูหลัก">
+    <>
+      <header className={styles.header}>
+        <div className={`container ${styles.inner}`}>
           <Link
             href={homeHref}
-            className={`${styles.navLink} ${
-              isHomeActive ? styles.navLinkActive : ''
-            }`}
-            onClick={() => setActiveHash('')}
+            className={styles.brand}
+            aria-label="PHATAREE หน้าแรก"
+            onClick={() => {
+              setActiveHash('')
+              closeDrawer()
+            }}
           >
-            หน้าแรก
+            <span className={styles.logoWrap} aria-hidden="true">
+              <Image
+                src={logoSrc}
+                alt=""
+                width={160}
+                height={52}
+                priority
+                className={styles.logo}
+              />
+            </span>
           </Link>
 
-          {navItems.map((item) => {
-            const isActive = pathname === '/' && activeHash === item.hash
+          <nav className={styles.desktopNav} aria-label="เมนูหลัก">
+            <Link
+              href={homeHref}
+              className={`${styles.navLink} ${
+                isHomeActive ? styles.navLinkActive : ''
+              }`}
+              onClick={() => setActiveHash('')}
+            >
+              หน้าแรก
+            </Link>
 
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`${styles.navLink} ${
-                  isActive ? styles.navLinkActive : ''
-                }`}
-                onClick={() => setActiveHash(item.hash)}
-              >
-                {item.label}
-              </Link>
-            )
-          })}
-        </nav>
+            {navItems.map((item) => {
+              const isActive = pathname === '/' && activeHash === item.hash
 
-        <div className={styles.actions}>
-          <Link
-            href={quoteHref}
-            className={styles.quoteButton}
-            onClick={() => setActiveHash('#contact')}
-          >
-            ขอใบเสนอราคา
-          </Link>
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`${styles.navLink} ${
+                    isActive ? styles.navLinkActive : ''
+                  }`}
+                  onClick={() => setActiveHash(item.hash)}
+                >
+                  {item.label}
+                </Link>
+              )
+            })}
+          </nav>
 
-          <button
-            type="button"
-            className={styles.menuButton}
-            onClick={toggleDrawer}
-            aria-label={isDrawerOpen ? 'ปิดเมนู' : 'เปิดเมนู'}
-            aria-expanded={isDrawerOpen}
-            aria-controls="mobile-drawer"
-          >
-            <span className={styles.menuLine} />
-            <span className={styles.menuLine} />
-            <span className={styles.menuLine} />
-          </button>
+          <div className={styles.actions}>
+            <Link
+              href={quoteHref}
+              className={styles.quoteButton}
+              onClick={() => setActiveHash('#contact')}
+            >
+              ขอใบเสนอราคา
+            </Link>
+
+            <button
+              type="button"
+              className={styles.menuButton}
+              onClick={toggleDrawer}
+              aria-label={isDrawerOpen ? 'ปิดเมนู' : 'เปิดเมนู'}
+              aria-expanded={isDrawerOpen}
+              aria-controls="mobile-drawer"
+            >
+              <span className={styles.menuLine} />
+              <span className={styles.menuLine} />
+              <span className={styles.menuLine} />
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
       <div
         className={`${styles.backdrop} ${
@@ -258,6 +258,6 @@ export default function Nav() {
           </Link>
         </div>
       </aside>
-    </header>
+    </>
   )
 }

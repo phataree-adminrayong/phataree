@@ -1,7 +1,9 @@
+// src/app/sections/ContactSection/ContactSection.tsx
 'use client'
 
 import Link from 'next/link'
 import { useState } from 'react'
+import Map from './Map'
 import WorkWithUs from './WorkWithUs'
 import styles from './ContactSection.module.css'
 
@@ -134,6 +136,8 @@ export default function ContactSection() {
             ))}
           </div>
         </div>
+
+        <Map />
 
         <WorkWithUs />
       </div>
