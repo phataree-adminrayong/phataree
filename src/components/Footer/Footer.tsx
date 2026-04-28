@@ -21,8 +21,7 @@ export default function Footer() {
           </Link>
 
           <p className={styles.desc}>
-            ผู้จัดจำหน่ายสินค้าอุปโภคบริโภคสำหรับบ้าน ร้านค้า สำนักงาน โรงงาน
-            และองค์กร
+            ผู้จัดจำหน่ายสินค้าอุปโภคบริโภคสำหรับร้านอาหาร ร้านค้า สำนักงาน โรงงาน และองค์กร
           </p>
 
           <div className={styles.contactInfo}>
@@ -40,6 +39,7 @@ export default function Footer() {
             lineUrl="https://line.me/R/ti/p/@197ckvjq"
             facebookUrl=""
             phone="0864565165"
+            phone2="0926394754"
             className={styles.contactsBox}
           />
         </div>

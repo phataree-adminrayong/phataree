@@ -10,6 +10,7 @@ type ContactsBoxProps = {
   tiktokUrl?: string
   instagramUrl?: string
   phone?: string
+  phone2?: string
   className?: string
 }
 
@@ -20,6 +21,7 @@ export default function ContactsBox({
   tiktokUrl = '',
   instagramUrl = '',
   phone = '0936661370',
+  phone2 = '0936661370',
   className = '',
 }: ContactsBoxProps) {
   return (
@@ -41,45 +43,22 @@ export default function ContactsBox({
 
       <a
         className={styles.contactIcon}
-        href={facebookUrl}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Facebook"
-        title="Facebook"
+        href={`tel:${phone}`}
+        aria-label="Phone"
+        title="Call"
       >
         <Image
-          src="/icons/Facebook.png"
-          alt="Facebook"
+          src="/icons/Phone.png"
+          alt="Phone"
           width={96}
           height={96}
+          className={styles.iconPhone}
         />
       </a>
 
       <a
         className={styles.contactIcon}
-        href={instagramUrl}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Instagram"
-        title="Instagram"
-      >
-        <Image src="/icons/IG.svg" alt="Instagram" width={96} height={96} />
-      </a>
-
-      <a
-        className={styles.contactIcon}
-        href={tiktokUrl}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="TikTok"
-        title="TikTok"
-      >
-        <Image src="/icons/TikTok.png" alt="TikTok" width={96} height={96} />
-      </a>
-
-      <a
-        className={styles.contactIcon}
-        href={`tel:${phone}`}
+        href={`tel:${phone2}`}
         aria-label="Phone"
         title="Call"
       >

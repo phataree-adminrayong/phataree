@@ -25,7 +25,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: min(12rem, 52vw);
+  width: 6rem;
 }
 
 .logo {
@@ -38,7 +38,6 @@
   max-width: 42rem;
   margin: 0.85rem auto 0;
   color: var(--muted);
-  font-size: 0.9rem;
   line-height: 1.75;
 }
 
@@ -113,13 +112,6 @@
 }
 
 @media (max-width: 480px) {
-  .brand {
-    width: min(9.5rem, 58vw);
-  }
-
-  .desc {
-    font-size: 0.86rem;
-  }
 
   .contactInfo {
     flex-direction: column;
