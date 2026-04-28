@@ -7,7 +7,7 @@ type CustomerItem = {
   name: string
 }
 
-const customers: CustomerItem[] = Array.from({ length: 13 }, (_, index) => {
+const customers: CustomerItem[] = Array.from({ length: 14 }, (_, index) => {
   const number = index + 1
 
   return {
