@@ -18,12 +18,12 @@ export default function AboutSection() {
       <div className={`container ${styles.container}`}>
         <div className={styles.left}>
           <p className={styles.kicker}>ABOUT US</p>
-          <h2 className={styles.title}>เกี่ยวกับ PHATAREE</h2>
+          <h2 className={styles.title}>เกี่ยวกับ ภัทรอารีย์</h2>
         </div>
 
         <div className={styles.right}>
           <p>
-            PHATAREE
+            ภัทรอารีย์
             มุ่งเน้นการจัดจำหน่ายสินค้าอุปโภคบริโภคที่ตอบโจทย์การใช้งานจริง
             ทั้งในบ้าน ร้านค้า สำนักงาน โรงงาน และองค์กร
             โดยคัดเลือกสินค้าที่มีคุณภาพ ใช้งานสะดวก
@@ -33,7 +33,8 @@ export default function AboutSection() {
           <p>
             เราให้ความสำคัญกับความน่าเชื่อถือ ความคุ้มค่า
             และการให้ข้อมูลสินค้าที่ชัดเจน เพื่อช่วยให้ลูกค้าตัดสินใจได้ง่ายขึ้น
-            พร้อมรองรับการขอใบเสนอราคา และการติดต่อเพื่อสั่งซื้อในรูปแบบที่เหมาะกับแต่ละธุรกิจ
+            พร้อมรองรับการขอใบเสนอราคา
+            และการติดต่อเพื่อสั่งซื้อในรูปแบบที่เหมาะกับแต่ละธุรกิจ
           </p>
         </div>
 
