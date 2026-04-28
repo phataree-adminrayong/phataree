@@ -42,7 +42,6 @@
 .kicker {
   margin: 0 0 0.45rem;
   color: var(--accent-strong);
-  font-size: 0.78rem;
   font-weight: 900;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -61,7 +60,7 @@
 .subtitle {
   margin: 0.8rem 0 0;
   color: var(--text);
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-size: 5rem;
   font-weight: 900;
   line-height: 1.5;
 }
