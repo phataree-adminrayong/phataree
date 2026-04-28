@@ -6,7 +6,6 @@
   border-bottom: 1px solid var(--border-soft);
   background: rgba(248, 251, 245, 0.82);
   backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
 }
 
 .inner {

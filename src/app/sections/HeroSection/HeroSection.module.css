@@ -50,7 +50,6 @@
   max-width: 720px;
   margin: 1.1rem 0 0;
   color: var(--muted);
-  font-size: clamp(1rem, 1.25vw, 1.12rem);
   line-height: 1.85;
 }
 

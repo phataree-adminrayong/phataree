@@ -76,7 +76,6 @@ export default function Slider({ images }: SliderProps) {
           </div>
         ))}
 
-        <div className={styles.overlay} />
       </div>
 
       {hasMultipleImages ? (

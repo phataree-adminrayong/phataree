@@ -182,7 +182,7 @@ export const productGroups: ProductGroup[] = [
     title: 'ถุงขยะ',
     eyebrow: 'Garbage Bag',
     description:
-      'ถุงขยะหลายขนาด รองรับการใช้งานตั้งแต่บ้าน ร้านค้า ไปจนถึงองค์กร',
+      'ถุงขยะหลายขนาด รองรับการใช้งานตั้งแต่บ้าน ร้านค้า ไปจนถึงระดับองค์กร',
     images: [
       {
         src: '/images/product/garbage-bags/garbage-bags-1.png',

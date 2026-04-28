@@ -37,8 +37,8 @@ export default function Footer() {
 
           <ContactsBox
             title="PHATAREE contact"
-            lineUrl="https://lin.ee/hgKZAHm"
-            facebookUrl="https://www.facebook.com/profile.php?id=61580630981781"
+            lineUrl="https://line.me/R/ti/p/@197ckvjq"
+            facebookUrl=""
             phone="0864565165"
             className={styles.contactsBox}
           />
