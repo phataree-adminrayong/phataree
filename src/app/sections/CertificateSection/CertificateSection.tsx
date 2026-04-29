@@ -1,41 +1,103 @@
+// src/app/sections/CertificateSection/CertificateSection.tsx
+import Image from 'next/image'
 import styles from './CertificateSection.module.css'
 
-const certificates = [
+type CertificateItem = {
+  id: string
+  title: string
+  subtitle: string
+  description: string
+  image: string
+  imageAlt: string
+}
+
+const certificates: CertificateItem[] = [
   {
-    title: 'คุณภาพสินค้า',
-    text: 'แสดงข้อมูลด้านมาตรฐานสินค้า และความเหมาะสมต่อการใช้งานในแต่ละประเภท',
+    id: 'green-label',
+    title: 'ฉลากเขียว',
+    subtitle: 'Green Label Thailand',
+    description:
+      'สัญลักษณ์รับรองผลิตภัณฑ์ที่คำนึงถึงผลกระทบต่อสิ่งแวดล้อม ช่วยเพิ่มความมั่นใจในการเลือกใช้สินค้า',
+    image: '/images/certificate/certificate-1.jpg',
+    imageAlt: 'โลโก้ฉลากเขียว Green Label Thailand',
   },
   {
-    title: 'ความน่าเชื่อถือของธุรกิจ',
-    text: 'ช่วยเสริมความมั่นใจให้ลูกค้าเมื่อต้องการสั่งซื้อในปริมาณมากหรือใช้งานในองค์กร',
+    id: 'iso-14001',
+    title: 'อ้างอิงระบบ ISO',
+    subtitle: 'ISO 14001 Certified',
+    description:
+      'อ้างอิงแนวทางระบบการจัดการสิ่งแวดล้อม เพื่อสนับสนุนมาตรฐานการดำเนินงานและความรับผิดชอบต่อสิ่งแวดล้อม',
+    image: '/images/certificate/certificate-2.jpg',
+    imageAlt: 'โลโก้ ISO 14001 Certified',
   },
   {
-    title: 'พร้อมรองรับการแสดงเอกสาร',
-    text: 'สามารถเพิ่มรูปใบรับรอง มาตรฐานสินค้า หรือเอกสารสำคัญของบริษัทในภายหลังได้',
+    id: 'green-industry',
+    title: 'อุตสาหกรรมสีเขียวระดับที่ 3',
+    subtitle: 'Green Industry Level 3',
+    description:
+      'สะท้อนแนวทางการดำเนินธุรกิจที่ให้ความสำคัญกับสิ่งแวดล้อม กระบวนการทำงาน และความยั่งยืน',
+    image: '/images/certificate/certificate-3.png',
+    imageAlt: 'โลโก้อุตสาหกรรมสีเขียว กระทรวงอุตสาหกรรม',
+  },
+  {
+    id: 'made-in-thailand',
+    title: 'Made in Thailand',
+    subtitle: 'สินค้าผลิตในประเทศไทย',
+    description:
+      'สนับสนุนสินค้าและผู้ผลิตในประเทศไทย พร้อมสร้างความมั่นใจด้านแหล่งที่มาและมาตรฐานการผลิต',
+    image: '/images/certificate/certificate-4.png',
+    imageAlt: 'โลโก้ Made in Thailand',
   },
 ]
 
 export default function CertificateSection() {
   return (
     <section id="certificate" className={styles.section}>
-      <div className="container">
+      <div className={`container ${styles.container}`}>
         <div className={styles.heading}>
           <p className={styles.kicker}>CERTIFICATE</p>
-          <h2 className={styles.title}>ใบรับรองและความน่าเชื่อถือ</h2>
+
+          <h2 className={styles.title}>ใบรับรองและมาตรฐานสินค้า</h2>
+
           <p className={styles.desc}>
-            ส่วนนี้ออกแบบไว้เพื่อรองรับการแสดงใบรับรอง มาตรฐานสินค้า
-            หรือเอกสารสำคัญที่ช่วยเสริมความมั่นใจให้ลูกค้า
+            PHATAREE คัดสรรสินค้าอุปโภคบริโภคสำหรับบ้าน ร้านค้า สำนักงาน โรงงาน
+            และองค์กร โดยให้ความสำคัญกับคุณภาพ ความน่าเชื่อถือ
+            และมาตรฐานที่ลูกค้าสามารถตรวจสอบได้
           </p>
         </div>
 
-        <div className={styles.grid}>
+        <div className={styles.grid} aria-label="รายการใบรับรองและมาตรฐาน">
           {certificates.map((item) => (
-            <article key={item.title} className={styles.card}>
-              <div className={styles.icon}>✓</div>
-              <h3 className={styles.cardTitle}>{item.title}</h3>
-              <p>{item.text}</p>
+            <article key={item.id} className={styles.card}>
+              <div className={styles.imageBox}>
+                <Image
+                  src={item.image}
+                  alt={item.imageAlt}
+                  width={520}
+                  height={360}
+                  className={styles.image}
+                  sizes="(max-width: 680px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+              </div>
+
+              <div className={styles.cardContent}>
+                <span className={styles.subtitle}>{item.subtitle}</span>
+
+                <h3 className={styles.cardTitle}>{item.title}</h3>
+
+                <p className={styles.cardText}>{item.description}</p>
+              </div>
             </article>
           ))}
+        </div>
+
+        <div className={styles.noteBox}>
+          <span className={styles.noteIcon}>✓</span>
+
+          <p>
+            รายการใบรับรองและมาตรฐานอาจแตกต่างกันตามประเภทสินค้า
+            ลูกค้าสามารถสอบถามเอกสารประกอบเพิ่มเติมก่อนสั่งซื้อได้
+          </p>
         </div>
       </div>
     </section>

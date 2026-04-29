@@ -1,9 +1,10 @@
-// src/app/contact/ContactsBox/ContactsBox.tsx
+// src/components/ContactsBox/ContactsBox.tsx
 import Image from 'next/image'
 import styles from './ContactsBox.module.css'
 
 type ContactsBoxProps = {
   title?: string
+  locationUrl?: string
   lineUrl?: string
   facebookUrl?: string
   fastworkUrl?: string
@@ -16,12 +17,13 @@ type ContactsBoxProps = {
 
 export default function ContactsBox({
   title = 'Quick contact',
+  locationUrl = 'https://maps.app.goo.gl/FsChG1XwbQFoPeMr6',
   lineUrl = 'https://lin.ee/hgKZAHm',
   facebookUrl = 'https://www.facebook.com/profile.php?id=61580630981781',
   tiktokUrl = '',
   instagramUrl = '',
-  phone = '0936661370',
-  phone2 = '0936661370',
+  phone = '0864565165',
+  phone2 = '0926394754',
   className = '',
 }: ContactsBoxProps) {
   return (
@@ -30,6 +32,26 @@ export default function ContactsBox({
       aria-label={title}
       title={title}
     >
+      <a
+        className={styles.contactIcon}
+        href={locationUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Location"
+        title="Location"
+      >
+        <Image
+          src="/icons/Location.png"
+          alt="Location"
+          width={96}
+          height={96}
+          style={{
+            background: 'white',
+            padding: '0.3rem',
+          }}
+        />
+      </a>
+
       <a
         className={styles.contactIcon}
         href={lineUrl}
@@ -59,7 +81,7 @@ export default function ContactsBox({
       <a
         className={styles.contactIcon}
         href={`tel:${phone2}`}
-        aria-label="Phone"
+        aria-label="Phone 2"
         title="Call"
       >
         <Image

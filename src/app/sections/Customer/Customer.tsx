@@ -24,7 +24,7 @@ export default function Customer() {
         <div className={styles.heading}>
           <p className={styles.kicker}>OUR CUSTOMERS</p>
 
-          <h2 className={styles.title}>ลูกค้าของเรา</h2>
+          <h2 className={styles.title}>คู่ค้าของเรา</h2>
 
           <p className={styles.desc}>
             PHATAREE ได้รับความไว้วางใจจากลูกค้าหลากหลายกลุ่ม ทั้งร้านอาหาร โรงแรม
