@@ -80,6 +80,14 @@ export const productGroups: ProductGroup[] = [
         src: '/images/product/napkin/napkin-1.jpg',
         alt: 'กระดาษทิชชู่เช็ดปาก',
       },
+      {
+        src: '/images/product/napkin/napkin-2.jpg',
+        alt: 'กระดาษทิชชู่เช็ดปาก',
+      },
+      {
+        src: '/images/product/napkin/napkin-3.jpg',
+        alt: 'กระดาษทิชชู่เช็ดปาก',
+      },
     ],
     items: [
       {
@@ -101,8 +109,12 @@ export const productGroups: ProductGroup[] = [
         alt: 'กระดาษทิชชู่เช็ดมือ PHATAREE',
       },
       {
-        src: '/images/hero/hero-1.png',
-        alt: 'กระดาษทิชชู่เช็ดมือสำหรับองค์กร PHATAREE',
+        src: '/images/product/hand-tissue/hand-tissue-2.jpg',
+        alt: 'กระดาษทิชชู่เช็ดมือ PHATAREE',
+      },
+      {
+        src: '/images/product/hand-tissue/hand-tissue-3.jpg',
+        alt: 'กระดาษทิชชู่เช็ดมือ PHATAREE',
       },
     ],
     items: [
@@ -268,7 +280,19 @@ export const productGroups: ProductGroup[] = [
     description: 'สินค้าเกลือ - การใช้งานตามความต้องการของลูกค้า',
     images: [
       {
-        src: '/images/product/salt/salt-1.png',
+        src: '/images/product/salt/salt-1.jpg',
+        alt: 'เกลือ',
+      },
+      {
+        src: '/images/product/salt/salt-2.jpg',
+        alt: 'เกลือ',
+      },
+      {
+        src: '/images/product/salt/salt-3.png',
+        alt: 'เกลือ',
+      },
+      {
+        src: '/images/product/salt/salt-4.jpg',
         alt: 'เกลือ',
       },
     ],

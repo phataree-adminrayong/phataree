@@ -1,3 +1,4 @@
+// src/components/Footer/Footer.tsx
 import Image from 'next/image'
 import Link from 'next/link'
 import ContactsBox from '@/components/ContactsBox/ContactsBox'
@@ -21,7 +22,8 @@ export default function Footer() {
           </Link>
 
           <p className={styles.desc}>
-            ผู้จัดจำหน่ายสินค้าอุปโภคบริโภคสำหรับร้านอาหาร ร้านค้า สำนักงาน โรงงาน และองค์กร
+            ผู้จัดจำหน่ายสินค้าอุปโภคบริโภคสำหรับร้านอาหาร ร้านค้า สำนักงาน
+            โรงงาน และองค์กร
           </p>
 
           <div className={styles.contactInfo}>
@@ -33,6 +35,30 @@ export default function Footer() {
               phataree.thailand@gmail.com
             </a>
           </div>
+
+          <a
+            href="https://line.me/R/ti/p/@197ckvjq"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.qrCard}
+            aria-label="เพิ่มเพื่อน PHATAREE ผ่าน LINE"
+          >
+            <div className={styles.qrImageBox}>
+              <Image
+                src="/images/QR/QR-Line.png"
+                alt="QR Code LINE PHATAREE"
+                width={360}
+                height={360}
+                className={styles.qrImage}
+              />
+            </div>
+
+            <div className={styles.qrText}>
+              <span>LINE OA</span>
+              <strong>@phataree</strong>
+              <small>สแกนเพื่อสอบถามสินค้าและขอใบเสนอราคา</small>
+            </div>
+          </a>
 
           <ContactsBox
             title="PHATAREE contact"
