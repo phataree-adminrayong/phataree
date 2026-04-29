@@ -1,3 +1,5 @@
+/* src/app/sections/ProductsSection/ProductsShowcase.module.css */
+
 .showcase {
   position: relative;
   z-index: 1;
@@ -33,11 +35,14 @@
     transform var(--t-fast);
 }
 
-.pill:hover {
-  color: var(--text);
-  border-color: color-mix(in srgb, var(--accent) 38%, var(--border));
-  background: rgba(255, 255, 255, 0.88);
-  transform: translateY(-1px);
+/* Hover only for real mouse / trackpad devices */
+@media (hover: hover) and (pointer: fine) {
+  .pill:hover {
+    color: var(--text);
+    border-color: color-mix(in srgb, var(--accent) 38%, var(--border));
+    background: rgba(255, 255, 255, 0.88);
+    transform: translateY(-1px);
+  }
 }
 
 .pill:focus-visible {
@@ -67,9 +72,10 @@
   border-radius: var(--r-lg);
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.46)),
-    var(--con-bg);
+    var(--surface);
   box-shadow: var(--shadow-md);
   backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .media {
@@ -188,7 +194,6 @@
 }
 
 @media (max-width: 768px) {
-
   .pill {
     flex: 0 0 auto;
     scroll-snap-align: start;
@@ -212,5 +217,11 @@
 
   .item {
     padding: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pill {
+    transition: none;
   }
 }

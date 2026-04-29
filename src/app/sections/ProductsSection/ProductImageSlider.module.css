@@ -1,3 +1,5 @@
+/* src/app/sections/ProductsSection/ProductImageSlider.module.css */
+
 .slider {
   position: relative;
   width: 100%;
@@ -51,6 +53,7 @@
   background: rgba(255, 255, 255, 0.76);
   box-shadow: 0 0.8rem 2rem rgba(34, 46, 31, 0.12);
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .badge span {
@@ -92,13 +95,18 @@
   transition:
     background var(--t-fast),
     border-color var(--t-fast),
+    box-shadow var(--t-fast),
     transform var(--t-fast);
 }
 
-.arrow:hover {
-  background: rgba(255, 255, 255, 0.96);
-  border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
-  transform: translateY(-1px);
+/* Hover only for real mouse / trackpad devices */
+@media (hover: hover) and (pointer: fine) {
+  .arrow:hover {
+    background: rgba(255, 255, 255, 0.96);
+    border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+  }
 }
 
 .arrow:focus-visible,
@@ -153,5 +161,9 @@
   .arrow,
   .dot {
     transition: none;
+  }
+
+  .arrow:hover {
+    transform: none;
   }
 }

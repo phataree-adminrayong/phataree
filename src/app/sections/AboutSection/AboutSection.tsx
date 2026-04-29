@@ -38,7 +38,7 @@ export default function AboutSection() {
           </p>
         </div>
 
-        <Slider images={aboutImages} />
+        {/* <Slider images={aboutImages} /> */}
       </div>
     </section>
   )
