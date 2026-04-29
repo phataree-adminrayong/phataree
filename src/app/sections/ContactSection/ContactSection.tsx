@@ -47,7 +47,7 @@ const contactItems: ContactItem[] = [
   {
     id: 'line',
     label: 'LINE OA',
-    value: '@197ckvjq',
+    value: '@phataree',
     note: 'ช่องทางติดต่อที่สะดวกและรวดเร็ว',
   },
 ]

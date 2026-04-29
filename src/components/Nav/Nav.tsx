@@ -1,3 +1,4 @@
+// src/components/Nav/Nav.tsx
 'use client'
 
 import Image from 'next/image'
@@ -91,7 +92,7 @@ export default function Nav() {
           <Link
             href={homeHref}
             className={styles.brand}
-            aria-label="PHATAREE หน้าแรก"
+            aria-label="ภัทรอารีย์ PHATAREE หน้าแรก"
             onClick={() => {
               setActiveHash('')
               closeDrawer()
@@ -107,6 +108,8 @@ export default function Nav() {
                 className={styles.logo}
               />
             </span>
+
+            <span className={styles.brandText}>ภัทรอารีย์</span>
           </Link>
 
           <nav className={styles.desktopNav} aria-label="เมนูหลัก">
@@ -181,7 +184,7 @@ export default function Nav() {
           <Link
             href={homeHref}
             className={styles.drawerBrand}
-            aria-label="PHATAREE หน้าแรก"
+            aria-label="ภัทรอารีย์ PHATAREE หน้าแรก"
             onClick={() => {
               setActiveHash('')
               closeDrawer()
@@ -196,6 +199,8 @@ export default function Nav() {
                 className={styles.logo}
               />
             </span>
+
+            <span className={styles.drawerBrandText}>ภัทรอารีย์</span>
           </Link>
 
           <button

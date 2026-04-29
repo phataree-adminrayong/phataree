@@ -1,3 +1,5 @@
+/* src/components/Nav/Nav.module.css */
+
 .header {
   position: sticky;
   top: 0;
@@ -38,6 +40,7 @@
   position: relative;
   display: inline-flex;
   align-items: center;
+  flex: 0 0 auto;
   width: clamp(7.5rem, 12vw, 10rem);
   height: 3.25rem;
 }
@@ -46,6 +49,18 @@
   width: auto;
   height: 100%;
   object-fit: contain;
+}
+
+.brandText {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.4vw, 1.35rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .desktopNav {
@@ -83,17 +98,12 @@
   transition: transform var(--t-fast);
 }
 
-.navLink:hover {
-  color: var(--text);
-}
-
-.navLink:hover::after,
-.navLinkActive::after {
-  transform: scaleX(1);
-}
-
 .navLinkActive {
   color: var(--text);
+}
+
+.navLinkActive::after {
+  transform: scaleX(1);
 }
 
 .actions {
@@ -123,11 +133,6 @@
     opacity var(--t-fast);
 }
 
-.quoteButton:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
-}
-
 .menuButton {
   display: none;
   align-items: center;
@@ -143,10 +148,6 @@
   transition:
     border-color var(--t-fast),
     background-color var(--t-fast);
-}
-
-.menuButton:hover {
-  border-color: rgba(86, 104, 82, 0.24);
 }
 
 .menuButton:focus-visible {
@@ -213,14 +214,26 @@
   align-items: center;
   flex: 0 1 auto;
   min-width: 0;
+  gap: 0.65rem;
 }
 
 .drawerLogoWrap {
   position: relative;
   display: inline-flex;
   align-items: center;
+  flex: 0 0 auto;
   width: 8.5rem;
   height: 3rem;
+}
+
+.drawerBrandText {
+  display: inline-flex;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .closeButton {
@@ -238,10 +251,6 @@
   transition:
     border-color var(--t-fast),
     background-color var(--t-fast);
-}
-
-.closeButton:hover {
-  border-color: rgba(86, 104, 82, 0.24);
 }
 
 .closeButton:focus-visible {
@@ -277,12 +286,6 @@
     transform var(--t-fast);
 }
 
-.drawerLink:hover {
-  border-color: rgba(126, 159, 122, 0.26);
-  background: var(--green-soft);
-  transform: translateX(2px);
-}
-
 .drawerLinkActive {
   border-color: rgba(168, 132, 34, 0.22);
   background: rgba(243, 231, 188, 0.45);
@@ -305,11 +308,9 @@
   color: #fffdf7;
   font-weight: 700;
   box-shadow: var(--shadow-sm);
-}
-
-.drawerQuoteButton:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  transition:
+    transform var(--t-fast),
+    box-shadow var(--t-fast);
 }
 
 .drawerQuoteButton:focus-visible,
@@ -318,6 +319,41 @@
 .quoteButton:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
+}
+
+/* Hover only for mouse / trackpad devices */
+@media (hover: hover) and (pointer: fine) {
+  .navLink:hover {
+    color: var(--text);
+  }
+
+  .navLink:hover::after {
+    transform: scaleX(1);
+  }
+
+  .quoteButton:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .menuButton:hover {
+    border-color: rgba(86, 104, 82, 0.24);
+  }
+
+  .closeButton:hover {
+    border-color: rgba(86, 104, 82, 0.24);
+  }
+
+  .drawerLink:hover {
+    border-color: rgba(126, 159, 122, 0.26);
+    background: var(--green-soft);
+    transform: translateX(2px);
+  }
+
+  .drawerQuoteButton:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
 }
 
 @media (max-width: 1120px) {
@@ -331,6 +367,10 @@
 
   .logoWrap {
     width: 8rem;
+  }
+
+  .brandText {
+    font-size: 1.05rem;
   }
 }
 
@@ -352,11 +392,34 @@
     width: 8.5rem;
     height: 3rem;
   }
+
+  .brandText {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 520px) {
+
+  .brandText {
+    font-size: 1rem;
+  }
+
+  .drawerBrand {
+    gap: 0.5rem;
+  }
+
+  .drawerBrandText {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 420px) {
   .logoWrap {
     width: 7rem;
+  }
+
+  .brandText {
+    font-size: 0.95rem;
   }
 
   .drawerLogoWrap {
@@ -365,6 +428,13 @@
 
   .drawer {
     width: min(92vw, 20rem);
+  }
+}
+
+@media (max-width: 360px) {
+  .brandText,
+  .drawerBrandText {
+    display: none;
   }
 }
 

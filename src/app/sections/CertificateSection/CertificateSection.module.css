@@ -129,6 +129,7 @@
 .subtitle {
   display: inline-flex;
   width: fit-content;
+  text-align: center;
   margin-bottom: 0.5rem;
   padding: 0.28rem 0.58rem;
   border: 1px solid color-mix(in srgb, var(--green) 24%, transparent);
