@@ -11,9 +11,10 @@
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
-  min-height: 420px;
+  top: 0;
+/*   min-height: 420px;
   max-height: 760px;
-  overflow: hidden;
+ */  overflow: hidden;
   cursor: grab;
   touch-action: pan-y;
   user-select: none;
