@@ -3,6 +3,7 @@
 
 import Image from 'next/image'
 import {
+  type CSSProperties,
   type PointerEvent,
   useCallback,
   useEffect,
@@ -22,6 +23,9 @@ type SliderProps = {
 }
 
 const AUTO_PLAY_MS = 5200
+const DRAG_THRESHOLD_RATIO = 0.18
+const DRAG_THRESHOLD_MAX = 110
+const DRAG_LIMIT_RATIO = 0.9
 
 export default function Slider({ images }: SliderProps) {
   const viewportRef = useRef<HTMLDivElement | null>(null)
@@ -36,6 +40,10 @@ export default function Slider({ images }: SliderProps) {
   const safeImages = useMemo(() => {
     return images.filter((image) => image.src.trim().length > 0)
   }, [images])
+
+  const safeImageKey = useMemo(() => {
+    return safeImages.map((image) => image.src).join('|')
+  }, [safeImages])
 
   const hasMultipleImages = safeImages.length > 1
 
@@ -55,12 +63,30 @@ export default function Slider({ images }: SliderProps) {
   const [isPaused, setIsPaused] = useState(false)
   const [transitionEnabled, setTransitionEnabled] = useState(true)
 
+  const visibleIndex =
+    safeImages.length > 0 ? Math.min(activeIndex, safeImages.length - 1) : 0
+
+  const maxTrackIndex = Math.max(sliderImages.length - 1, 0)
+
+  const safeTrackIndex = hasMultipleImages
+    ? Math.min(Math.max(trackIndex, 0), maxTrackIndex)
+    : 0
+
   useEffect(() => {
     setActiveIndex(0)
     setTrackIndex(hasMultipleImages ? 1 : 0)
     setDragOffset(0)
+    setIsDragging(false)
+    setIsPaused(false)
     setTransitionEnabled(true)
-  }, [hasMultipleImages, safeImages.length])
+
+    dragRef.current = {
+      isActive: false,
+      startX: 0,
+      lastOffset: 0,
+      pointerId: -1,
+    }
+  }, [hasMultipleImages, safeImageKey])
 
   const goToPrevious = useCallback(() => {
     if (!hasMultipleImages) return
@@ -139,8 +165,12 @@ export default function Slider({ images }: SliderProps) {
 
   const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
     if (!dragRef.current.isActive) return
+    if (dragRef.current.pointerId !== event.pointerId) return
 
-    const offset = event.clientX - dragRef.current.startX
+    const viewportWidth = viewportRef.current?.clientWidth ?? 1
+    const rawOffset = event.clientX - dragRef.current.startX
+    const maxOffset = viewportWidth * DRAG_LIMIT_RATIO
+    const offset = Math.max(-maxOffset, Math.min(rawOffset, maxOffset))
 
     dragRef.current.lastOffset = offset
     setDragOffset(offset)
@@ -148,18 +178,28 @@ export default function Slider({ images }: SliderProps) {
 
   const endDrag = (event: PointerEvent<HTMLDivElement>) => {
     if (!dragRef.current.isActive) return
+    if (dragRef.current.pointerId !== event.pointerId) return
 
+    const pointerId = dragRef.current.pointerId
     const offset = dragRef.current.lastOffset
     const viewportWidth = viewportRef.current?.clientWidth ?? 0
-    const threshold = Math.min(110, viewportWidth * 0.18)
+    const threshold = Math.min(
+      DRAG_THRESHOLD_MAX,
+      viewportWidth * DRAG_THRESHOLD_RATIO,
+    )
 
-    dragRef.current.isActive = false
+    dragRef.current = {
+      isActive: false,
+      startX: 0,
+      lastOffset: 0,
+      pointerId: -1,
+    }
 
     setIsDragging(false)
     setIsPaused(false)
 
     try {
-      event.currentTarget.releasePointerCapture(dragRef.current.pointerId)
+      event.currentTarget.releasePointerCapture(pointerId)
     } catch {
       // Browser may release pointer capture automatically.
     }
@@ -178,6 +218,30 @@ export default function Slider({ images }: SliderProps) {
     setDragOffset(0)
   }
 
+  const cancelDrag = (event: PointerEvent<HTMLDivElement>) => {
+    if (!dragRef.current.isActive) return
+
+    const pointerId = dragRef.current.pointerId
+
+    dragRef.current = {
+      isActive: false,
+      startX: 0,
+      lastOffset: 0,
+      pointerId: -1,
+    }
+
+    setIsDragging(false)
+    setIsPaused(false)
+    setTransitionEnabled(true)
+    setDragOffset(0)
+
+    try {
+      event.currentTarget.releasePointerCapture(pointerId)
+    } catch {
+      // Browser may release pointer capture automatically.
+    }
+  }
+
   const handleTransitionEnd = () => {
     if (!hasMultipleImages) return
 
@@ -192,8 +256,8 @@ export default function Slider({ images }: SliderProps) {
   }
 
   const trackStyle = {
-    transform: `translate3d(calc(${-trackIndex * 100}% + ${dragOffset}px), 0, 0)`,
-  }
+    transform: `translate3d(calc(${-safeTrackIndex * 100}% + ${dragOffset}px), 0, 0)`,
+  } as CSSProperties
 
   return (
     <div
@@ -212,7 +276,12 @@ export default function Slider({ images }: SliderProps) {
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={endDrag}
-        onPointerCancel={endDrag}
+        onPointerCancel={cancelDrag}
+        onPointerLeave={(event) => {
+          if (isDragging && event.pointerType === 'mouse') {
+            endDrag(event)
+          }
+        }}
       >
         <div
           className={`${styles.track} ${
@@ -234,13 +303,13 @@ export default function Slider({ images }: SliderProps) {
               <div
                 key={`${image.src}-${index}`}
                 className={styles.slide}
-                aria-hidden={realIndex !== activeIndex}
+                aria-hidden={realIndex !== visibleIndex}
               >
                 <Image
                   src={image.src}
                   alt={image.alt}
                   fill
-                  priority={realIndex === 0}
+                  priority={hasMultipleImages ? index === 1 : index === 0}
                   sizes="100vw"
                   className={styles.image}
                   draggable={false}
@@ -278,11 +347,11 @@ export default function Slider({ images }: SliderProps) {
                 key={`${image.src}-dot-${index}`}
                 type="button"
                 className={`${styles.dot} ${
-                  index === activeIndex ? styles.dotActive : ''
+                  index === visibleIndex ? styles.dotActive : ''
                 }`}
                 onClick={() => goToSlide(index)}
                 aria-label={`ดูภาพที่ ${index + 1}`}
-                aria-current={index === activeIndex}
+                aria-current={index === visibleIndex}
               />
             ))}
           </div>

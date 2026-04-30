@@ -18,8 +18,8 @@ type ContactsBoxProps = {
 export default function ContactsBox({
   title = 'Quick contact',
   locationUrl = 'https://maps.app.goo.gl/FsChG1XwbQFoPeMr6',
-  lineUrl = 'https://lin.ee/hgKZAHm',
-  facebookUrl = 'https://www.facebook.com/profile.php?id=61580630981781',
+  lineUrl = 'https://line.me/R/ti/p/@197ckvjq',
+  facebookUrl = 'https://www.facebook.com/share/1EWyyJqqkH/?mibextid=wwXIfr',
   tiktokUrl = '',
   instagramUrl = '',
   phone = '0864565165',
@@ -36,7 +36,7 @@ export default function ContactsBox({
         className={styles.contactIcon}
         href={locationUrl}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         aria-label="Location"
         title="Location"
       >
@@ -45,10 +45,23 @@ export default function ContactsBox({
           alt="Location"
           width={96}
           height={96}
-          style={{
-            background: 'white',
-            padding: '0.3rem',
-          }}
+          className={styles.iconLocation}
+        />
+      </a>
+
+      <a
+        className={styles.contactIcon}
+        href={facebookUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+        title="Facebook"
+      >
+        <Image
+          src="/icons/Facebook.png"
+          alt="Facebook"
+          width={96}
+          height={96}
         />
       </a>
 
@@ -56,7 +69,7 @@ export default function ContactsBox({
         className={styles.contactIcon}
         href={lineUrl}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         aria-label="LINE"
         title="LINE"
       >

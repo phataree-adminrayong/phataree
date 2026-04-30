@@ -275,9 +275,9 @@ export const productGroups: ProductGroup[] = [
   },
   {
     id: 'salt',
-    title: 'เกลือ',
-    eyebrow: 'Salt',
-    description: 'สินค้าเกลือ - การใช้งานตามความต้องการของลูกค้า',
+    title: 'เกลือ TRS',
+    eyebrow: 'TRS Salt',
+    description: 'เกลือ TRS - มีให้เลือกตามการใช้งาน',
     images: [
       {
         src: '/images/product/salt/salt-1.jpg',
@@ -299,8 +299,23 @@ export const productGroups: ProductGroup[] = [
     items: [
       {
         id: 'salt',
-        name: 'เกลือ',
-        shortDescription: 'รองรับการใช้งานตามประเภทสินค้าที่ลูกค้าต้องการ',
+        name: 'TRS REFINED SALT แบบแห้ง',
+        shortDescription: 'เกลือบริสิทธิ์ ชั้นคุณภาพพิเศษแบบแห้ง',
+      },
+      {
+        id: 'salt',
+        name: 'TRS REFINED SALT แบบชื้น',
+        shortDescription: 'เกลือบริสิทธิ์ ชั้นคุณภาพพิเศษแบบชื้น',
+      },
+      {
+        id: 'salt',
+        name: 'TRS REFINED SALT เสริมไอโอดีน',
+        shortDescription: 'เกลือบริโภค เสริมไอโอดีน',
+      },
+      {
+        id: 'salt',
+        name: 'TRS POOL SALT',
+        shortDescription: 'เกลือสำหรับสระว่ายน้ำ',
       },
     ],
   },

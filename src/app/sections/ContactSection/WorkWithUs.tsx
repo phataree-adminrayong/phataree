@@ -123,7 +123,7 @@ export default function WorkWithUs() {
               <div className={styles.actions}>
                 <Link
                   href={buildMailHref(`${job.title} (${job.englishTitle})`)}
-                  className={styles.primaryAction}
+                  className={'btn btnPrimary'}
                 >
                   ส่งอีเมลสมัครงาน
                   <span aria-hidden="true">→</span>

@@ -3,6 +3,7 @@
 
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import type { CSSProperties } from 'react'
 import styles from './FAB.module.css'
 
 type FabItem = {
@@ -33,11 +34,13 @@ const fabItems: FabItem[] = [
     label: 'Facebook',
     href: 'https://www.facebook.com/share/1EWyyJqqkH/?mibextid=wwXIfr',
     icon: '/icons/Facebook.png',
+    external: true,
   },
   {
     label: 'แผนที่ / ที่ตั้ง',
     href: 'https://maps.app.goo.gl/FsChG1XwbQFoPeMr6',
     icon: '/icons/Location.png',
+    external: true,
   },
 ]
 
@@ -69,10 +72,11 @@ export default function FAB() {
             key={`${item.label}-${index}`}
             href={item.href}
             target={item.external ? '_blank' : undefined}
-            rel={item.external ? 'noreferrer' : undefined}
+            rel={item.external ? 'noopener noreferrer' : undefined}
             className={styles.item}
-            style={{ '--item-index': index } as React.CSSProperties}
+            style={{ '--item-index': index } as CSSProperties}
             aria-label={item.label}
+            tabIndex={isOpen ? 0 : -1}
             onClick={() => setIsOpen(false)}
           >
             <span className={styles.itemText}>{item.label}</span>
@@ -81,8 +85,8 @@ export default function FAB() {
               <Image
                 src={item.icon}
                 alt=""
-                width={46}
-                height={46}
+                width={56}
+                height={56}
                 className={styles.iconImage}
               />
             </span>
@@ -92,7 +96,9 @@ export default function FAB() {
 
       <button
         type="button"
-        className={`${styles.mainButton} ${isOpen ? styles.mainButtonOpen : ''}`}
+        className={`${styles.mainButton} ${
+          isOpen ? styles.mainButtonOpen : ''
+        }`}
         aria-label={isOpen ? 'ปิดเมนูติดต่อ' : 'เปิดเมนูติดต่อ'}
         aria-expanded={isOpen}
         onClick={() => setIsOpen((prev) => !prev)}
@@ -100,9 +106,8 @@ export default function FAB() {
         <Image
           src={isOpen ? '/icons/Call-end.png' : '/icons/Call-start.png'}
           alt=""
-          width={72}
-          height={72}
-          priority={false}
+          width={88}
+          height={88}
           className={styles.mainIcon}
         />
       </button>

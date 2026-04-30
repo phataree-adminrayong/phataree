@@ -13,6 +13,8 @@ type ContactItem = {
   value: string
   href?: string
   note?: string
+  external?: boolean
+  copyValue?: string
 }
 
 const contactItems: ContactItem[] = [
@@ -35,7 +37,7 @@ const contactItems: ContactItem[] = [
     label: 'อีเมล',
     value: 'phataree.thailand@gmail.com',
     href: 'mailto:phataree.thailand@gmail.com',
-    note: 'สำหรับงานเอกสาร และบัญชี',
+    note: 'สำหรับสอบถามสินค้า และติดต่อทั่วไป',
   },
   {
     id: 'email-account',
@@ -48,7 +50,19 @@ const contactItems: ContactItem[] = [
     id: 'line',
     label: 'LINE OA',
     value: '@phataree',
+    href: 'https://line.me/R/ti/p/@197ckvjq',
+    external: true,
+    copyValue: '@197ckvjq',
     note: 'ช่องทางติดต่อที่สะดวกและรวดเร็ว',
+  },
+  {
+    id: 'facebook',
+    label: 'Facebook',
+    value: 'บริษัทภัทรอารีย์ ไทยแลนด์ จำกัด',
+    href: 'https://www.facebook.com/share/1EWyyJqqkH/?mibextid=wwXIfr',
+    external: true,
+    copyValue: 'https://www.facebook.com/share/1EWyyJqqkH/?mibextid=wwXIfr',
+    note: 'ติดตามข่าวสาร สินค้า และช่องทางติดต่อเพิ่มเติม',
   },
 ]
 
@@ -116,7 +130,9 @@ export default function ContactSection() {
                   <button
                     type="button"
                     className={styles.copyButton}
-                    onClick={() => copyText(item.id, item.value)}
+                    onClick={() =>
+                      copyText(item.id, item.copyValue ?? item.value)
+                    }
                     aria-label={`คัดลอก ${item.value}`}
                   >
                     {copiedId === item.id ? 'Copied' : 'Copy'}
@@ -124,7 +140,12 @@ export default function ContactSection() {
                 </div>
 
                 {item.href ? (
-                  <Link href={item.href} className={styles.value}>
+                  <Link
+                    href={item.href}
+                    className={styles.value}
+                    target={item.external ? '_blank' : undefined}
+                    rel={item.external ? 'noopener noreferrer' : undefined}
+                  >
                     {item.value}
                   </Link>
                 ) : (

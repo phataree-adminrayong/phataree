@@ -48,3 +48,8 @@
   padding: 10%;
   filter: invert(1) !important;
 }
+
+.iconLocation {
+  background: white;
+  padding: 0.3rem;
+}

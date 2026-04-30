@@ -1,3 +1,4 @@
+// src/app/sections/ProductsSection/ProductsShowcase.tsx
 'use client'
 
 import { useMemo, useState } from 'react'
@@ -39,7 +40,10 @@ export default function ProductsShowcase() {
 
       <div className={styles.panel}>
         <div className={styles.media}>
-          <ProductImageSlider images={activeGroup.images} />
+          <ProductImageSlider
+            key={activeGroup.id}
+            images={activeGroup.images}
+          />
         </div>
 
         <article className={styles.content}>

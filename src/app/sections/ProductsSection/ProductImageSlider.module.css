@@ -13,61 +13,36 @@
   border-radius: calc(var(--r-lg) - 0.35rem);
   background: var(--bg-2);
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--border) 80%, transparent);
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.frameDragging {
+  cursor: grabbing;
+}
+
+.track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transform: scale(1.025);
-  transition:
-    opacity 650ms ease,
-    transform 1200ms ease;
-  pointer-events: none;
-}
-
-.slideActive {
-  opacity: 1;
-  transform: scale(1);
-  pointer-events: auto;
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .image {
   object-fit: cover;
   object-position: center;
-}
-
-.badge {
-  position: absolute;
-  left: clamp(0.8rem, 2vw, 1.15rem);
-  right: clamp(0.8rem, 2vw, 1.15rem);
-  bottom: clamp(0.8rem, 2vw, 1.15rem);
-  z-index: 2;
-  display: grid;
-  gap: 0.18rem;
-  width: fit-content;
-  max-width: calc(100% - 1.6rem);
-  padding: 0.65rem 0.8rem;
-  border: 1px solid color-mix(in srgb, white 58%, transparent);
-  border-radius: var(--r-sm);
-  background: rgba(255, 255, 255, 0.76);
-  box-shadow: 0 0.8rem 2rem rgba(34, 46, 31, 0.12);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-}
-
-.badge span {
-  color: var(--accent-strong);
-  font-size: 0.68rem;
-  font-weight: 900;
-  letter-spacing: 0.14em;
-}
-
-.badge strong {
-  color: var(--text);
-  font-size: 0.9rem;
-  font-weight: 900;
-  line-height: 1.35;
+  pointer-events: none;
+  user-select: none;
 }
 
 .controls {
@@ -99,22 +74,6 @@
     transform var(--t-fast);
 }
 
-/* Hover only for real mouse / trackpad devices */
-@media (hover: hover) and (pointer: fine) {
-  .arrow:hover {
-    background: rgba(255, 255, 255, 0.96);
-    border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
-    box-shadow: var(--shadow-md);
-    transform: translateY(-1px);
-  }
-}
-
-.arrow:focus-visible,
-.dot:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 3px;
-}
-
 .dots {
   display: flex;
   align-items: center;
@@ -142,13 +101,24 @@
   background: var(--accent-strong);
 }
 
+.arrow:focus-visible,
+.dot:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .arrow:hover {
+    background: rgba(255, 255, 255, 0.96);
+    border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+  }
+}
+
 @media (max-width: 768px) {
   .frame {
     border-radius: var(--r-md);
-  }
-
-  .badge {
-    max-width: calc(100% - 1.2rem);
   }
 
   .controls {
@@ -157,7 +127,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .slide,
+  .track,
   .arrow,
   .dot {
     transition: none;
