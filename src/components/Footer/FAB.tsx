@@ -31,12 +31,12 @@ const fabItems: FabItem[] = [
   },
   {
     label: 'Facebook',
-    href: '#contact',
+    href: 'https://www.facebook.com/share/1EWyyJqqkH/?mibextid=wwXIfr',
     icon: '/icons/Facebook.png',
   },
   {
     label: 'แผนที่ / ที่ตั้ง',
-    href: '#contact',
+    href: 'https://maps.app.goo.gl/FsChG1XwbQFoPeMr6',
     icon: '/icons/Location.png',
   },
 ]
