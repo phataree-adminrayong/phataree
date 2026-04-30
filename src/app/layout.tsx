@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.phataree.com'),
   title: {
     default:
-      'PHATAREE | ภัทรอารีย์ ร้านขายสินค้าอุปโภคบริโภค และสินค้าใช้ในองค์กร',
+      'PHATAREE | ภัทรอารีย์ ร้านขายสินค้าอุปโภคบริโภค จังหวัดระยอง',
     template: '%s | PHATAREE',
   },
   description:

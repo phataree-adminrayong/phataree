@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="0 0 520 520" fill="none">
+  <defs>
+    <pattern id="sparkles" width="130" height="130" patternUnits="userSpaceOnUse">
+      <path d="M28 18L31.6 27.4L41 31L31.6 34.6L28 44L24.4 34.6L15 31L24.4 27.4L28 18Z" fill="#FFFFFF" fill-opacity="0.55"/>
+      <path d="M28 18L31.6 27.4L41 31L31.6 34.6L28 44L24.4 34.6L15 31L24.4 27.4L28 18Z" stroke="#3F7F71" stroke-opacity="0.12" stroke-width="1"/>
+      <circle cx="89" cy="28" r="5" fill="#79B99F" fill-opacity="0.12"/>
+      <circle cx="106" cy="92" r="8" fill="#FFFFFF" fill-opacity="0.5" stroke="#3F7F71" stroke-opacity="0.1"/>
+      <path d="M61 103L63 108L68 110L63 112L61 117L59 112L54 110L59 108L61 103Z" fill="#79B99F" fill-opacity="0.2"/>
+    </pattern>
+  </defs>
+  <rect width="520" height="520" fill="url(#sparkles)"/>
+</svg>

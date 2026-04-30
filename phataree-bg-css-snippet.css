@@ -1,0 +1,54 @@
+/* Put SVG files in: public/bg */
+
+/* Recommended body background for PHATAREE fresh green style */
+body {
+  background-color: var(--bg);
+  background-image:
+    url("/bg/phataree-glass-waves-top.svg"),
+    url("/bg/phataree-glass-waves-bottom.svg"),
+    url("/bg/phataree-hero-aurora.svg"),
+    url("/bg/phataree-soft-grid.svg"),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.88) 0%,
+      rgba(239, 249, 245, 0.96) 42%,
+      rgba(226, 240, 234, 0.98) 100%
+    );
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    repeat,
+    no-repeat;
+  background-size:
+    100% auto,
+    100% auto,
+    100% auto,
+    640px 640px,
+    cover;
+  background-position:
+    center top,
+    center bottom,
+    center top,
+    center top,
+    center center;
+  background-attachment:
+    scroll,
+    scroll,
+    fixed,
+    fixed,
+    fixed;
+}
+
+/* Optional: use this on cards/sections for subtle premium texture */
+.card,
+.glass {
+  background-image:
+    url("/bg/phataree-card-noise.svg"),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.86),
+      rgba(232, 247, 241, 0.58)
+    );
+  background-size: 320px 320px, cover;
+}

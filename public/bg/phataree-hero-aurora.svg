@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="980" viewBox="0 0 1800 980" fill="none">
+  <defs>
+    <radialGradient id="g1" cx="50%" cy="50%" r="50%">
+      <stop stop-color="#A8D8CA" stop-opacity="0.72"/>
+      <stop offset="0.7" stop-color="#A8D8CA" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#A8D8CA" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="50%" cy="50%" r="50%">
+      <stop stop-color="#FFFFFF" stop-opacity="0.86"/>
+      <stop offset="0.62" stop-color="#FFFFFF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g3" cx="50%" cy="50%" r="50%">
+      <stop stop-color="#79B99F" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="#79B99F" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="whiteLine" x1="0" y1="0" x2="1800" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur" x="-20%" y="-30%" width="140%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <rect width="1800" height="980" fill="transparent"/>
+  <ellipse cx="292" cy="124" rx="330" ry="230" fill="url(#g1)" filter="url(#blur)"/>
+  <ellipse cx="1280" cy="170" rx="410" ry="260" fill="url(#g2)" filter="url(#blur)"/>
+  <ellipse cx="1040" cy="706" rx="490" ry="280" fill="url(#g3)" filter="url(#blur)"/>
+  <ellipse cx="290" cy="766" rx="360" ry="260" fill="url(#g2)" filter="url(#blur)"/>
+  <path d="M-20 236C204 91 413 296 636 227C848 162 931 24 1166 68C1393 111 1486 256 1820 173" stroke="url(#whiteLine)" stroke-width="2"/>
+  <path d="M-20 374C230 250 417 430 660 348C861 280 979 162 1185 210C1426 266 1524 402 1820 318" stroke="#3F7F71" stroke-opacity="0.12" stroke-width="2"/>
+  <path d="M-20 587C228 459 438 630 676 560C908 491 1016 347 1255 396C1490 444 1583 604 1820 515" stroke="#FFFFFF" stroke-opacity="0.56" stroke-width="1.8"/>
+</svg>

@@ -2,44 +2,59 @@
 
 :root {
   color-scheme: light;
+
   /* Layout */
   --container: 1280px;
   --pad-x: 2rem;
   --section-y: 2.5rem;
   --scroll-offset: 88px;
+
   /* Fonts */
   --font-display: "Playfair Display", "Noto Sans Thai", "Prompt", sans-serif;
   --font-body: "Noto Sans Thai", "Prompt", sans-serif;
+
   /* Theme: fresh green + mint + clean white glass */
   --bg: #eef8f3;
   --bg-2: #dfeee8;
+
   --surface: rgba(255, 255, 255, 0.66);
   --surface-strong: rgba(255, 255, 255, 0.92);
   --card: rgba(255, 255, 255, 0.82);
+
   /* Compatibility alias for older section CSS */
   --con-bg: var(--surface);
+
   --text: #203633;
   --muted: #617772;
+
   --accent: #6fb99f;
   --accent-strong: #34766a;
   --accent-soft: #e4f5ef;
+
   --green: #79b99f;
   --green-strong: #3f7f71;
   --green-deep: #285f58;
   --green-soft: #e6f5ef;
+
   --mint: #a8d8ca;
   --mint-soft: #f1faf6;
+
   --border: rgba(72, 124, 112, 0.2);
   --border-soft: rgba(72, 124, 112, 0.12);
+
   --shadow-sm: 0 0.45rem 1.2rem rgba(36, 91, 79, 0.08);
   --shadow-md: 0 1rem 2.6rem rgba(36, 91, 79, 0.12);
   --shadow-lg: 0 1.4rem 4rem rgba(36, 91, 79, 0.16);
+
   --r-lg: 1.5rem;
   --r-md: 1rem;
   --r-sm: 0.7rem;
+
   --t-fast: 140ms ease;
   --t-med: 220ms ease;
+
   --focus: 0 0 0 3px rgba(121, 185, 159, 0.28);
+
   --ok: #3f8b63;
   --warn: #4f8a76;
   --bad: #b45d5d;
@@ -63,42 +78,22 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   background-color: var(--bg);
   background-image:
-    url("/bg/phataree-glass-waves-top.svg"),
-    url("/bg/phataree-glass-waves-bottom.svg"),
-    url("/bg/phataree-hero-aurora.svg"),
-    url("/bg/phataree-soft-grid.svg"),
+    radial-gradient(circle at 12% 8%, rgba(168, 216, 202, 0.72) 0%, transparent 28%),
+    radial-gradient(circle at 86% 4%, rgba(221, 242, 235, 0.76) 0%, transparent 26%),
+    radial-gradient(circle at 50% 16%, rgba(255, 255, 255, 0.84) 0%, transparent 34%),
+    radial-gradient(circle at 8% 72%, rgba(121, 185, 159, 0.26) 0%, transparent 30%),
+    radial-gradient(circle at 92% 82%, rgba(168, 216, 202, 0.28) 0%, transparent 32%),
     linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.88) 0%,
-      rgba(239, 249, 245, 0.96) 42%,
+      rgba(255, 255, 255, 0.86) 0%,
+      rgba(239, 249, 245, 0.95) 38%,
       rgba(226, 240, 234, 0.98) 100%
     );
-  background-repeat:
-    no-repeat,
-    no-repeat,
-    no-repeat,
-    repeat,
-    no-repeat;
-  background-size:
-    100% auto,
-    100% auto,
-    100% auto,
-    640px 640px,
-    cover;
-  background-position:
-    center top,
-    center bottom,
-    center top,
-    center top,
-    center center;
-  background-attachment:
-    scroll,
-    scroll,
-    scroll,
-    fixed,
-    fixed;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 body.menu-open {
@@ -234,8 +229,8 @@ select:focus,
 button:focus-visible,
 a:focus-visible {
   outline: none;
-  border-color: rgba(63, 127, 113, 0.42);
   box-shadow: var(--focus);
+  border-color: rgba(63, 127, 113, 0.42);
 }
 
 textarea {
@@ -268,38 +263,24 @@ ol {
 }
 
 .card {
-  background-image:
-    url("/bg/phataree-card-noise.svg"),
+  background:
     linear-gradient(
       145deg,
       rgba(255, 255, 255, 0.94),
       rgba(247, 253, 250, 0.74)
     );
-  background-repeat:
-    repeat,
-    no-repeat;
-  background-size:
-    320px 320px,
-    cover;
   border: 1px solid var(--border-soft);
   border-radius: var(--r-md);
   box-shadow: var(--shadow-sm);
 }
 
 .glass {
-  background-image:
-    url("/bg/phataree-card-noise.svg"),
+  background:
     linear-gradient(
       145deg,
       rgba(255, 255, 255, 0.74),
       rgba(232, 247, 241, 0.5)
     );
-  background-repeat:
-    repeat,
-    no-repeat;
-  background-size:
-    320px 320px,
-    cover;
   border: 1px solid rgba(255, 255, 255, 0.62);
   border-radius: var(--r-md);
   box-shadow:
@@ -413,6 +394,7 @@ ol {
   html {
     font-size: 18px;
   }
+
   :root {
     --container: 1180px;
   }
@@ -422,6 +404,7 @@ ol {
   html {
     font-size: 17px;
   }
+
   :root {
     --scroll-offset: 78px;
   }
@@ -431,22 +414,17 @@ ol {
   html {
     font-size: 16px;
   }
+
   :root {
     --pad-x: 1rem;
     --section-y: 2rem;
     --scroll-offset: 72px;
   }
-  body {
-    background-attachment:
-      scroll,
-      scroll,
-      scroll,
-      scroll,
-      scroll;
-  }
+
   p {
     font-size: 1rem;
   }
+
   .btn {
     min-height: 2.75rem;
     padding-inline: 1.1rem;
@@ -463,6 +441,7 @@ ol {
   html {
     scroll-behavior: auto;
   }
+
   *,
   *::before,
   *::after {

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900" fill="none">
+  <defs>
+    <filter id="blurA" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <radialGradient id="white" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.76"/>
+      <stop offset="0.72" stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mint" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#A8D8CA" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#A8D8CA" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="112" cy="108" r="72" fill="url(#white)"/>
+  <circle cx="312" cy="86" r="32" fill="url(#mint)"/>
+  <circle cx="674" cy="126" r="92" fill="url(#white)"/>
+  <circle cx="810" cy="302" r="42" fill="url(#mint)"/>
+  <circle cx="135" cy="432" r="118" fill="url(#mint)" filter="url(#blurA)"/>
+  <circle cx="448" cy="392" r="52" fill="url(#white)"/>
+  <circle cx="702" cy="518" r="138" fill="url(#mint)" filter="url(#blurA)"/>
+  <circle cx="302" cy="732" r="86" fill="url(#white)"/>
+  <circle cx="560" cy="788" r="42" fill="url(#mint)"/>
+  <circle cx="790" cy="770" r="74" fill="url(#white)"/>
+</svg>

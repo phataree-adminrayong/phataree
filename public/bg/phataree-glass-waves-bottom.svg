@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="620" viewBox="0 0 1600 620" fill="none">
+  <defs>
+    <linearGradient id="wash" x1="0" y1="620" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DFF2EC" stop-opacity="0.86"/>
+      <stop offset="0.55" stop-color="#FFFFFF" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="#79B99F" stop-opacity="0.18"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <path d="M0 620H1600V286C1386 221 1220 356 996 320C742 279 659 125 411 169C236 200 122 324 0 284V620Z" fill="url(#wash)"/>
+  <path d="M0 420C196 350 321 455 536 431C742 408 874 278 1076 305C1269 331 1389 447 1600 389" stroke="#FFFFFF" stroke-opacity="0.66" stroke-width="2"/>
+  <path d="M0 510C193 443 333 535 541 509C753 482 878 361 1077 385C1269 408 1388 519 1600 467" stroke="#3F7F71" stroke-opacity="0.11" stroke-width="2"/>
+  <circle cx="260" cy="430" r="160" fill="url(#glow)"/>
+  <circle cx="1330" cy="392" r="190" fill="url(#glow)"/>
+</svg>

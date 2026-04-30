@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" fill="none">
+  <defs>
+    <pattern id="leafPattern" width="240" height="240" patternUnits="userSpaceOnUse">
+      <path d="M45 157C58 103 96 76 152 80C146 134 108 164 45 157Z" stroke="#3F7F71" stroke-opacity="0.11" stroke-width="2" fill="none"/>
+      <path d="M55 151C83 130 112 111 146 86" stroke="#3F7F71" stroke-opacity="0.09" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M170 184C185 151 213 135 248 139C243 174 218 191 170 184Z" stroke="#79B99F" stroke-opacity="0.11" stroke-width="2" fill="none"/>
+      <path d="M176 181C196 168 217 154 243 143" stroke="#79B99F" stroke-opacity="0.09" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="40" cy="44" r="2" fill="#3F7F71" fill-opacity="0.1"/>
+      <circle cx="206" cy="58" r="2.4" fill="#79B99F" fill-opacity="0.12"/>
+      <circle cx="126" cy="212" r="1.8" fill="#3F7F71" fill-opacity="0.11"/>
+    </pattern>
+  </defs>
+  <rect width="720" height="720" fill="url(#leafPattern)"/>
+</svg>
