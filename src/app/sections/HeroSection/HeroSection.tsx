@@ -4,7 +4,7 @@ import styles from './HeroSection.module.css'
 
 const heroImages = [
   {
-    src: '/images/hero/hero-1.jpg',
+    src: '/images/hero/hero-1.png',
     alt: 'สินค้าอุปโภคบริโภคสำหรับร้านค้า สำนักงาน โรงแรม และองค์กร',
   },
   {
