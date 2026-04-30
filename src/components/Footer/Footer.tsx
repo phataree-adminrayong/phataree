@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ContactsBox from '@/components/ContactsBox/ContactsBox'
 import styles from './Footer.module.css'
+import FAB from './FAB'
 
 const currentYear = new Date().getFullYear()
 
@@ -78,6 +79,9 @@ export default function Footer() {
           </p>
         </div>
       </div>
+
+      <FAB />
+      
     </footer>
   )
 }
