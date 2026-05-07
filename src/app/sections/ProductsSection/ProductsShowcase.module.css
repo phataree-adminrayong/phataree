@@ -251,8 +251,7 @@
   overflow-wrap: anywhere;
 }
 
-.priceBox,
-.useBox {
+.priceBox {
   padding: 0.72rem;
   border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--border));
   border-radius: var(--r-sm);
@@ -300,28 +299,6 @@
   color: var(--text);
   font-size: 1rem;
   font-weight: 950;
-  line-height: 1.25;
-}
-
-.useList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.38rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.useList li {
-  display: inline-flex;
-  align-items: center;
-  min-height: 1.9rem;
-  padding: 0.32rem 0.6rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
-  color: var(--muted);
-  font-size: 1rem;
-  font-weight: 800;
   line-height: 1.25;
 }
 

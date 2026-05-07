@@ -97,16 +97,10 @@ function ProductCard({ item }: { item: ProductItem }) {
   const specRows = getSpecRows(item.specs)
   const badges = getCardBadges(item.specs)
   const certifications = item.specs?.certifications ?? []
-  const usage = item.specs?.usage ?? []
   const priceTier = item.specs?.priceTier
-  const note = item.specs?.note
 
   const hasSpecs =
-    specRows.length > 0 ||
-    certifications.length > 0 ||
-    usage.length > 0 ||
-    Boolean(priceTier) ||
-    Boolean(note)
+    specRows.length > 0 || certifications.length > 0 || Boolean(priceTier)
 
   return (
     <li className={styles.item}>
@@ -166,18 +160,6 @@ function ProductCard({ item }: { item: ProductItem }) {
         </div>
       ) : null}
 
-      {usage.length > 0 ? (
-        <div className={styles.useBox}>
-          <p className={styles.boxTitle}>เหมาะสำหรับ</p>
-
-          <ul className={styles.useList}>
-            {usage.map((text) => (
-              <li key={`${item.id}-${text}`}>{text}</li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
-
       {certifications.length > 0 ? (
         <div className={styles.certRow} aria-label="เอกสารรับรองสินค้า">
           {certifications.map((cert) => (
@@ -185,8 +167,6 @@ function ProductCard({ item }: { item: ProductItem }) {
           ))}
         </div>
       ) : null}
-
-      {note ? <p className={styles.note}>{note}</p> : null}
 
       {!hasSpecs ? (
         <p className={styles.note}>
@@ -213,7 +193,6 @@ export default function ProductsShowcase() {
 
   const itemCount = activeGroup.items.length
   const specCount = activeGroup.items.filter((item) => item.specs).length
-  const hasSaltPrice = activeGroup.items.some((item) => item.specs?.priceTier)
 
   return (
     <div className={styles.showcase}>
@@ -250,7 +229,6 @@ export default function ProductsShowcase() {
               {specCount > 0 ? (
                 <span>มีข้อมูลสเปก {specCount} รายการ</span>
               ) : null}
-              {hasSaltPrice ? <span>ราคาขายไม่รวม VAT</span> : null}
             </div>
           </div>
 
