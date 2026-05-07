@@ -481,10 +481,14 @@ export const productGroups: ProductGroup[] = [
     title: 'ถุงขยะ',
     eyebrow: 'Garbage Bag',
     description:
-      'ถุงขยะหลายขนาด รองรับการใช้งานตั้งแต่บ้าน ร้านค้า ไปจนถึงระดับองค์กร',
+      'ถุงขยะรักษ์โลก ผลิตจากพลาสติกรีไซเคิล 100% เนื้อถุงแน่นหนา เหนียว คุ้มราคา มีหลายขนาด รองรับการใช้งานตั้งแต่บ้าน ร้านค้า ไปจนถึงระดับองค์กร',
     images: [
       {
         src: '/images/product/garbage-bags/garbage-bags-1.png',
+        alt: 'ถุงขยะ',
+      },
+      {
+        src: '/images/product/garbage-bags/garbage-bags-2.png',
         alt: 'ถุงขยะ',
       },
     ],
