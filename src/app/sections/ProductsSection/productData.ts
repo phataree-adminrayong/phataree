@@ -18,17 +18,6 @@ export type ProductGroup = {
   items: ProductItem[]
 }
 
-const fallbackImages: ProductImage[] = [
-  {
-    src: '/images/hero/hero-1.png',
-    alt: 'สินค้าอุปโภคบริโภค PHATAREE สำหรับบ้าน ร้านค้า สำนักงาน และองค์กร',
-  },
-  {
-    src: '/images/hero/hero-1.png',
-    alt: 'สินค้าใช้ประจำสำหรับธุรกิจและองค์กร PHATAREE',
-  },
-]
-
 export const productGroups: ProductGroup[] = [
   {
     id: 'toilet-tissue',
@@ -54,13 +43,13 @@ export const productGroups: ProductGroup[] = [
       {
         id: 'toilet-tissue-roll-14m',
         name: 'กระดาษทิชชู่ม้วนเล็ก ขนาด 14 เมตร',
-        shortDescription: 'เหมาะ - การใช้งานทั่วไปในบ้าน ร้านค้า และสำนักงาน',
+        shortDescription: 'เหมาะกับการใช้งานทั่วไปในบ้าน ร้านค้า และสำนักงาน',
       },
       {
         id: 'toilet-tissue-roll-17m',
         name: 'กระดาษทิชชู่ม้วนเล็ก ขนาด 17 เมตร',
         shortDescription:
-          'ขนาดยาวขึ้น เหมาะ - การใช้งานต่อเนื่องและช่วยเพิ่มความคุ้มค่า',
+          'ขนาดยาวขึ้น เหมาะกับการใช้งานต่อเนื่องและช่วยเพิ่มความคุ้มค่า',
       },
       {
         id: 'toilet-tissue-jumbo-roll-280m',
@@ -74,7 +63,7 @@ export const productGroups: ProductGroup[] = [
     id: 'napkin-tissue',
     title: 'กระดาษทิชชู่ - เช็ดปาก',
     eyebrow: 'Napkin Tissue',
-    description: 'เหมาะ - ร้านอาหาร คาเฟ่ งานบริการ และการใช้งานบนโต๊ะอาหาร',
+    description: 'เหมาะกับร้านอาหาร คาเฟ่ งานบริการ และการใช้งานบนโต๊ะอาหาร',
     images: [
       {
         src: '/images/product/napkin/napkin-1.jpg',
@@ -93,7 +82,7 @@ export const productGroups: ProductGroup[] = [
       {
         id: 'napkin-tissue',
         name: 'กระดาษทิชชู่เช็ดปาก',
-        shortDescription: 'เหมาะ - ร้านอาหาร คาเฟ่ และการใช้งานทั่วไป',
+        shortDescription: 'เหมาะกับร้านอาหาร คาเฟ่ และการใช้งานทั่วไป',
       },
     ],
   },
@@ -102,7 +91,7 @@ export const productGroups: ProductGroup[] = [
     title: 'กระดาษทิชชู่ - เช็ดมือ',
     eyebrow: 'Hand Towel',
     description:
-      'สินค้า - ห้องน้ำ จุดล้างมือ และพื้นที่ส่วนกลางที่ต้องการความสะอาด',
+      'สินค้าสำหรับห้องน้ำ จุดล้างมือ และพื้นที่ส่วนกลางที่ต้องการความสะอาด',
     images: [
       {
         src: '/images/product/hand-tissue/hand-tissue-1.jpg',
@@ -121,7 +110,7 @@ export const productGroups: ProductGroup[] = [
       {
         id: 'hand-towel-tissue',
         name: 'กระดาษทิชชู่เช็ดมือ',
-        shortDescription: 'เหมาะ - ห้องน้ำ จุดล้างมือ และพื้นที่ส่วนกลาง',
+        shortDescription: 'เหมาะกับห้องน้ำ จุดล้างมือ และพื้นที่ส่วนกลาง',
       },
     ],
   },
@@ -173,7 +162,7 @@ export const productGroups: ProductGroup[] = [
     title: 'น้ำยาทำความสะอาด',
     eyebrow: 'Cleaning Liquid',
     description:
-      'สินค้าในกลุ่มทำความสะอาด - ครัวเรือน ร้านค้า และสถานประกอบการ',
+      'สินค้าในกลุ่มทำความสะอาดสำหรับครัวเรือน ร้านค้า และสถานประกอบการ',
     images: [
       {
         src: '/images/product/cleaning-solution/cleaning-solution-1.png',
@@ -185,7 +174,7 @@ export const productGroups: ProductGroup[] = [
         id: 'dishwashing-liquid',
         name: 'น้ำยาล้างจาน',
         shortDescription:
-          'เหมาะ - งานล้างทำความสะอาดในครัวเรือนและสถานประกอบการ',
+          'เหมาะกับงานล้างทำความสะอาดในครัวเรือนและสถานประกอบการ',
       },
     ],
   },
@@ -210,12 +199,12 @@ export const productGroups: ProductGroup[] = [
       {
         id: 'garbage-bag-22x30',
         name: 'ถุงขยะ ขนาด 22 × 30',
-        shortDescription: 'เหมาะ - บ้าน ร้านค้า และสำนักงาน',
+        shortDescription: 'เหมาะกับบ้าน ร้านค้า และสำนักงาน',
       },
       {
         id: 'garbage-bag-24x28',
         name: 'ถุงขยะ ขนาด 24 × 28',
-        shortDescription: 'เหมาะ - การจัดเก็บขยะประจำวัน',
+        shortDescription: 'เหมาะกับการจัดเก็บขยะประจำวัน',
       },
       {
         id: 'garbage-bag-28x36',
@@ -230,7 +219,7 @@ export const productGroups: ProductGroup[] = [
       {
         id: 'garbage-bag-36x45',
         name: 'ถุงขยะ ขนาด 36 × 45',
-        shortDescription: 'เหมาะ - องค์กร โรงงาน และพื้นที่ใช้งานหนัก',
+        shortDescription: 'เหมาะกับองค์กร โรงงาน และพื้นที่ใช้งานหนัก',
       },
     ],
   },
@@ -238,7 +227,7 @@ export const productGroups: ProductGroup[] = [
     id: '3m-floor-care',
     title: 'ผลิตภัณฑ์ 3M ทำความสะอาดและดูแลพื้น',
     eyebrow: '3M Floor Care',
-    description: 'กลุ่มผลิตภัณฑ์ - งานทำความสะอาด ดูแลพื้น และดูแลอาคาร',
+    description: 'กลุ่มผลิตภัณฑ์สำหรับงานทำความสะอาด ดูแลพื้น และดูแลอาคาร',
     images: [
       {
         src: '/images/product/3M-products/3M-products-1.png',
@@ -249,22 +238,22 @@ export const productGroups: ProductGroup[] = [
       {
         id: '3m-liquid-hand-soap',
         name: 'สบู่เหลวล้างมือ',
-        shortDescription: 'เหมาะ - การใช้งานในบ้าน ร้านค้า และองค์กร',
+        shortDescription: 'เหมาะกับการใช้งานในบ้าน ร้านค้า และองค์กร',
       },
       {
         id: '3m-dishwashing-liquid',
         name: 'น้ำยาล้างจาน',
-        shortDescription: 'ผลิตภัณฑ์ในกลุ่ม 3M  - งานทำความสะอาดทั่วไป',
+        shortDescription: 'ผลิตภัณฑ์ในกลุ่ม 3M สำหรับงานทำความสะอาดทั่วไป',
       },
       {
         id: '3m-bathroom-cleaner',
         name: 'น้ำยาล้างห้องน้ำ',
-        shortDescription: 'เหมาะ - การดูแลความสะอาดในห้องน้ำและอาคาร',
+        shortDescription: 'เหมาะกับการดูแลความสะอาดในห้องน้ำและอาคาร',
       },
       {
         id: '3m-detergent',
         name: 'ผงซักฟอก',
-        shortDescription: ' - งานซักและทำความสะอาดทั่วไป',
+        shortDescription: 'เหมาะกับงานซักและทำความสะอาดทั่วไป',
       },
       {
         id: '3m-green-label-products',
@@ -277,43 +266,43 @@ export const productGroups: ProductGroup[] = [
     id: 'salt',
     title: 'เกลือ TRS',
     eyebrow: 'TRS Salt',
-    description: 'เกลือ TRS - มีให้เลือกตามการใช้งาน',
+    description: 'เกลือ TRS มีให้เลือกตามลักษณะการใช้งาน',
     images: [
       {
         src: '/images/product/salt/salt-1.jpg',
-        alt: 'เกลือ',
+        alt: 'TRS Refined Salt แบบแห้ง ขนาด 25 กิโลกรัม',
       },
       {
-        src: '/images/product/salt/salt-2.jpg',
-        alt: 'เกลือ',
+        src: '/images/product/salt/salt-2.png',
+        alt: 'TRS Refined Salt แบบชื้น ขนาด 25 กิโลกรัม',
       },
       {
-        src: '/images/product/salt/salt-3.png',
-        alt: 'เกลือ',
+        src: '/images/product/salt/salt-3.jpg',
+        alt: 'TRS Refined Salt เสริมไอโอดีน ขนาด 50 กิโลกรัม',
       },
       {
         src: '/images/product/salt/salt-4.jpg',
-        alt: 'เกลือ',
+        alt: 'TRS Pool Salt เกลือสำหรับสระว่ายน้ำ ขนาด 25 กิโลกรัม',
       },
     ],
     items: [
       {
-        id: 'salt',
+        id: 'salt-dry-refined',
         name: 'TRS REFINED SALT แบบแห้ง',
-        shortDescription: 'เกลือบริสิทธิ์ ชั้นคุณภาพพิเศษแบบแห้ง',
+        shortDescription: 'เกลือบริสุทธิ์ ชั้นคุณภาพพิเศษแบบแห้ง',
       },
       {
-        id: 'salt',
+        id: 'salt-wet-refined',
         name: 'TRS REFINED SALT แบบชื้น',
-        shortDescription: 'เกลือบริสิทธิ์ ชั้นคุณภาพพิเศษแบบชื้น',
+        shortDescription: 'เกลือบริสุทธิ์ ชั้นคุณภาพพิเศษแบบชื้น',
       },
       {
-        id: 'salt',
+        id: 'salt-iodized-refined',
         name: 'TRS REFINED SALT เสริมไอโอดีน',
         shortDescription: 'เกลือบริโภค เสริมไอโอดีน',
       },
       {
-        id: 'salt',
+        id: 'salt-pool',
         name: 'TRS POOL SALT',
         shortDescription: 'เกลือสำหรับสระว่ายน้ำ',
       },
