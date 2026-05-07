@@ -1,7 +1,22 @@
+export type ProductPriceTier = {
+  rate500Kg: number
+  rate250Kg: number
+  rateBelow250Kg: number
+}
+
+export type ProductItemSpec = {
+  purity?: string
+  size?: string
+  priceTier?: ProductPriceTier
+  usage?: string[]
+  note?: string
+}
+
 export type ProductItem = {
   id: string
   name: string
   shortDescription: string
+  specs?: ProductItemSpec
 }
 
 export type ProductImage = {
@@ -264,9 +279,10 @@ export const productGroups: ProductGroup[] = [
   },
   {
     id: 'salt',
-    title: 'เกลือ TRS',
-    eyebrow: 'TRS Salt',
-    description: 'เกลือ TRS มีให้เลือกตามลักษณะการใช้งาน',
+    title: 'เกลือบริสุทธิ์ TRS',
+    eyebrow: 'TRS Refined Salt',
+    description:
+      'เกลือบริสุทธิ์ TRS สำหรับโรงงาน อุตสาหกรรมอาหาร ระบบกรองน้ำ สระว่ายน้ำ งานบำบัดน้ำเสีย และการใช้งานทั่วไป',
     images: [
       {
         src: '/images/product/salt/salt-1.jpg',
@@ -287,24 +303,177 @@ export const productGroups: ProductGroup[] = [
     ],
     items: [
       {
-        id: 'salt-dry-refined',
-        name: 'TRS REFINED SALT แบบแห้ง',
-        shortDescription: 'เกลือบริสุทธิ์ ชั้นคุณภาพพิเศษแบบแห้ง',
+        id: 'salt-factory-9990-25kg',
+        name: 'เกลือบริสุทธิ์ / โรงงาน 99.90%',
+        shortDescription:
+          'ขนาด 25 กก. เหมาะกับอุตสาหกรรมน้ำมันปาล์ม ล้างเรซิน ล้างตะกรันในระบบบอยเลอร์ และอุตสาหกรรมอาหาร',
+        specs: {
+          purity: '99.90%',
+          size: '25 กก.',
+          priceTier: {
+            rate500Kg: 250,
+            rate250Kg: 270,
+            rateBelow250Kg: 300,
+          },
+          usage: [
+            'อุตสาหกรรมน้ำมันปาล์ม',
+            'ล้างเรซิน',
+            'ล้างตะกรันในระบบบอยเลอร์',
+            'อุตสาหกรรมอาหาร',
+            'ปรุงรสและถนอมอาหาร',
+          ],
+          note: 'ราคาขายไม่รวม VAT',
+        },
       },
       {
-        id: 'salt-wet-refined',
-        name: 'TRS REFINED SALT แบบชื้น',
-        shortDescription: 'เกลือบริสุทธิ์ ชั้นคุณภาพพิเศษแบบชื้น',
+        id: 'salt-general-9750-25kg',
+        name: 'เกลือบริสุทธิ์ / ทั่วไป 97.50%',
+        shortDescription:
+          'ขนาด 25 กก. เหมาะกับงานทั่วไป อุตสาหกรรมน้ำมันปาล์ม ล้างเรซิน ระบบบอยเลอร์ และอุตสาหกรรมอาหาร',
+        specs: {
+          purity: '97.50%',
+          size: '25 กก.',
+          priceTier: {
+            rate500Kg: 170,
+            rate250Kg: 200,
+            rateBelow250Kg: 220,
+          },
+          usage: [
+            'งานทั่วไป',
+            'อุตสาหกรรมน้ำมันปาล์ม',
+            'ล้างเรซิน',
+            'ล้างตะกรันในระบบบอยเลอร์',
+            'อุตสาหกรรมอาหาร',
+            'ปรุงรสและถนอมอาหาร',
+          ],
+          note: 'ราคาขายไม่รวม VAT',
+        },
       },
       {
-        id: 'salt-iodized-refined',
-        name: 'TRS REFINED SALT เสริมไอโอดีน',
-        shortDescription: 'เกลือบริโภค เสริมไอโอดีน',
+        id: 'salt-textile-water-filter-9750-50kg',
+        name: 'เกลือบริสุทธิ์ 97.50%',
+        shortDescription:
+          'ขนาด 50 กก. เหมาะกับอุตสาหกรรมสิ่งทอ ย้อมผ้า ระบบกรองน้ำ อุตสาหกรรมอาหาร เคมี และอาหารสัตว์',
+        specs: {
+          purity: '97.50%',
+          size: '50 กก.',
+          priceTier: {
+            rate500Kg: 330,
+            rate250Kg: 350,
+            rateBelow250Kg: 380,
+          },
+          usage: [
+            'อุตสาหกรรมสิ่งทอและย้อมผ้า',
+            'ช่วยให้สีจับเส้นใยผ้าได้ดี',
+            'ระบบกรองน้ำ',
+            'ล้างกรองเรซิน',
+            'อุตสาหกรรมอาหารและเคมี',
+            'ผสมในอาหารสัตว์',
+          ],
+          note: 'ราคาขายไม่รวม VAT',
+        },
       },
       {
-        id: 'salt-pool',
-        name: 'TRS POOL SALT',
-        shortDescription: 'เกลือสำหรับสระว่ายน้ำ',
+        id: 'salt-pool-chemical-9999-25kg',
+        name: 'เกลือบริสุทธิ์ 99.99%',
+        shortDescription:
+          'ขนาด 25 กก. เหมาะกับสระว่ายน้ำ ย้อมผ้า ฟอกหนัง อุตสาหกรรมเคมี และเครื่องปรุงรส',
+        specs: {
+          purity: '99.99%',
+          size: '25 กก.',
+          priceTier: {
+            rate500Kg: 220,
+            rate250Kg: 240,
+            rateBelow250Kg: 270,
+          },
+          usage: [
+            'สระว่ายน้ำ',
+            'ช่วยให้น้ำใส',
+            'อ่อนโยนต่อผิวและดวงตา',
+            'ย้อมผ้า',
+            'ฟอกหนัง',
+            'อุตสาหกรรมเคมี',
+            'เครื่องปรุงรส',
+          ],
+          note: 'ราคาขายไม่รวม VAT',
+        },
+      },
+      {
+        id: 'salt-pool-system-9999-50kg',
+        name: 'เกลือบริสุทธิ์ 99.99%',
+        shortDescription:
+          'ขนาด 50 กก. เหมาะกับสระว่ายน้ำระบบเกลือ ช่วยให้น้ำใส ไม่ทิ้งคราบตะกอน และใช้ในงานอุตสาหกรรม',
+        specs: {
+          purity: '99.99%',
+          size: '50 กก.',
+          priceTier: {
+            rate500Kg: 420,
+            rate250Kg: 440,
+            rateBelow250Kg: 470,
+          },
+          usage: [
+            'สระว่ายน้ำระบบเกลือ',
+            'ช่วยให้น้ำใส',
+            'อ่อนโยนต่อผิว ดวงตา และเส้นผม',
+            'ไม่ทิ้งคราบตะกอน',
+            'ย้อมผ้า',
+            'ฟอกหนัง',
+            'อุตสาหกรรมเคมี',
+            'เครื่องปรุงรส',
+          ],
+          note: 'ราคาขายไม่รวม VAT',
+        },
+      },
+      {
+        id: 'salt-wastewater-food-9750-50kg',
+        name: 'เกลือบริสุทธิ์ 97.50%',
+        shortDescription:
+          'ขนาด 50 กก. เหมาะกับงานบำบัดน้ำเสีย อุตสาหกรรมอาหาร สระว่ายน้ำระบบเกลือ ระบบกรองน้ำ สิ่งทอ และอาหารสัตว์',
+        specs: {
+          purity: '97.50%',
+          size: '50 กก.',
+          priceTier: {
+            rate500Kg: 320,
+            rate250Kg: 340,
+            rateBelow250Kg: 370,
+          },
+          usage: [
+            'อุตสาหกรรมบำบัดน้ำเสีย',
+            'อุตสาหกรรมอาหาร',
+            'บริโภคและถนอมอาหาร',
+            'สระว่ายน้ำระบบเกลือ',
+            'ระบบกรองน้ำ',
+            'ย้อมสิ่งทอ',
+            'อาหารสัตว์',
+          ],
+          note: 'ราคาขายไม่รวม VAT',
+        },
+      },
+      {
+        id: 'salt-iodized-dry-9999-50kg',
+        name: 'เกลือบริสุทธิ์ 99.99% เสริมไอโอดีน / ไม่ชื้น',
+        shortDescription:
+          'ขนาด 50 กก. เหมาะกับร้านอาหาร ภัตตาคาร ครัวเรือน อุตสาหกรรมอาหาร ถนอมอาหาร และงานระบบสระว่ายน้ำ',
+        specs: {
+          purity: '99.99%',
+          size: '50 กก.',
+          priceTier: {
+            rate500Kg: 450,
+            rate250Kg: 470,
+            rateBelow250Kg: 500,
+          },
+          usage: [
+            'ปรุงอาหาร',
+            'ร้านอาหาร',
+            'ภัตตาคาร',
+            'ครัวเรือน',
+            'อุตสาหกรรมอาหาร',
+            'ถนอมอาหาร',
+            'สระว่ายน้ำระบบเกลือ',
+            'ล้างสาร',
+          ],
+          note: 'เสริมไอโอดีน / ไม่ชื้น / ราคาขายไม่รวม VAT',
+        },
       },
     ],
   },
