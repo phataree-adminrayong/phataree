@@ -157,7 +157,7 @@ export const productGroups: ProductGroup[] = [
       },
       {
         id: 'livi-cocktail-napkin-brown-500sheets',
-        name: 'LIVI กระดาษเช็ดปาก Cocktail Napkin สีน้ำตาล 500 แผ่น',
+        name: 'LIVI กระดาษเช็ดปาก Napkin สีน้ำตาล 500 แผ่น',
         shortDescription: 'กระดาษเช็ดปากโทนธรรมชาติ เหมาะกับร้านอาหารและคาเฟ่',
         specs: {
           brand: 'LIVI',
