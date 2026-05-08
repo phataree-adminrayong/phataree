@@ -6,8 +6,7 @@ import Footer from '@/components/Footer/Footer'
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.phataree.com'),
   title: {
-    default:
-      'PHATAREE | ภัทรอารีย์ ร้านขายสินค้าอุปโภคบริโภค จังหวัดระยอง',
+    default: 'PHATAREE | ภัทรอารีย์ ร้านขายสินค้าอุปโภคบริโภค จังหวัดระยอง',
     template: '%s | PHATAREE',
   },
   description:
@@ -52,7 +51,7 @@ export const metadata: Metadata = {
       'รวมสินค้าอุปโภคบริโภค กระดาษทิชชู ถุงขยะ น้ำยาทำความสะอาด ผลิตภัณฑ์ 3M และสินค้าใช้ประจำวันสำหรับบ้าน ร้านค้า สำนักงาน และองค์กร',
     images: [
       {
-        url: '/images/og/og-home.jpg',
+        url: '/images/hero/hero-1.png',
         width: 1200,
         height: 630,
         alt: 'PHATAREE ร้านขายสินค้าอุปโภคบริโภค',
@@ -64,7 +63,7 @@ export const metadata: Metadata = {
     title: 'PHATAREE | ภัทรอารีย์ ร้านขายสินค้าอุปโภคบริโภค',
     description:
       'รวมสินค้าอุปโภคบริโภค กระดาษทิชชู ถุงขยะ น้ำยาทำความสะอาด ผลิตภัณฑ์ 3M และสินค้าใช้ประจำวันสำหรับบ้าน ร้านค้า สำนักงาน และองค์กร',
-    images: ['/images/og/og-home.jpg'],
+    images: ['/images/hero/hero-1.png'],
   },
   robots: {
     index: true,
