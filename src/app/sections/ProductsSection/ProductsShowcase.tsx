@@ -97,10 +97,8 @@ function ProductCard({ item }: { item: ProductItem }) {
   const specRows = getSpecRows(item.specs)
   const badges = getCardBadges(item.specs)
   const certifications = item.specs?.certifications ?? []
-  const priceTier = item.specs?.priceTier
 
-  const hasSpecs =
-    specRows.length > 0 || certifications.length > 0 || Boolean(priceTier)
+  const hasSpecs = specRows.length > 0 || certifications.length > 0
 
   return (
     <li className={styles.item}>
@@ -135,29 +133,6 @@ function ProductCard({ item }: { item: ProductItem }) {
             </div>
           ))}
         </dl>
-      ) : null}
-
-      {priceTier ? (
-        <div className={styles.priceBox}>
-          <p className={styles.boxTitle}>ราคาขายตามเรทน้ำหนัก</p>
-
-          <div className={styles.priceGrid}>
-            <div>
-              <span>500 กก.</span>
-              <strong>{formatNumber(priceTier.rate500Kg)}</strong>
-            </div>
-
-            <div>
-              <span>250 กก.</span>
-              <strong>{formatNumber(priceTier.rate250Kg)}</strong>
-            </div>
-
-            <div>
-              <span>ต่ำกว่า 250 กก.</span>
-              <strong>{formatNumber(priceTier.rateBelow250Kg)}</strong>
-            </div>
-          </div>
-        </div>
       ) : null}
 
       {certifications.length > 0 ? (

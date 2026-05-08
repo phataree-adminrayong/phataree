@@ -251,57 +251,6 @@
   overflow-wrap: anywhere;
 }
 
-.priceBox {
-  padding: 0.72rem;
-  border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--border));
-  border-radius: var(--r-sm);
-  background:
-    linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--accent-soft) 38%, white 62%),
-      rgba(255, 255, 255, 0.72)
-    );
-}
-
-.boxTitle {
-  margin: 0 0 0.5rem;
-  color: var(--accent-strong);
-  font-size: 1rem;
-  font-weight: 900;
-  line-height: 1.35;
-}
-
-.priceGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.45rem;
-}
-
-.priceGrid div {
-  min-width: 0;
-  padding: 0.6rem;
-  border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent);
-  border-radius: calc(var(--r-sm) - 0.2rem);
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.priceGrid span {
-  display: block;
-  color: var(--muted);
-  font-size: 1rem;
-  font-weight: 800;
-  line-height: 1.3;
-}
-
-.priceGrid strong {
-  display: block;
-  margin-top: 0.18rem;
-  color: var(--text);
-  font-size: 1rem;
-  font-weight: 950;
-  line-height: 1.25;
-}
-
 .certRow {
   display: flex;
   flex-wrap: wrap;
@@ -393,10 +342,6 @@
   }
 
   .specGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .priceGrid {
     grid-template-columns: 1fr;
   }
 }
