@@ -1,14 +1,18 @@
-import Slider from './Slider'
+import Image from 'next/image'
 import styles from './AboutSection.module.css'
 
-const aboutImages = [
+const highlights = [
   {
-    src: '/images/hero/hero-1.png',
-    alt: 'สินค้าอุปโภคบริโภคของ PHATAREE สำหรับบ้าน ร้านค้า สำนักงาน และองค์กร',
+    title: 'กลุ่มสินค้า',
+    text: 'กระดาษทิชชู ถุงขยะ และผลิตภัณฑ์ทำความสะอาดสำหรับการใช้งานประจำวัน',
   },
   {
-    src: '/images/hero/hero-2.png',
-    alt: 'กลุ่มสินค้ากระดาษทิชชู ถุงขยะ น้ำยาทำความสะอาด และสินค้าใช้ประจำ',
+    title: 'กลุ่มลูกค้า',
+    text: 'โรงแรม ร้านอาหาร บริษัท หน่วยงานราชการ และโรงงานอุตสาหกรรม',
+  },
+  {
+    title: 'การบริการ',
+    text: 'จัดส่งรวดเร็ว ตรงเวลา ประสานงานง่าย และดูแลคำสั่งซื้ออย่างเป็นระบบ',
   },
 ]
 
@@ -16,29 +20,49 @@ export default function AboutSection() {
   return (
     <section id="about" className={styles.section}>
       <div className={`container ${styles.container}`}>
-        <div className={styles.left}>
-          <p className={styles.kicker}>ABOUT US</p>
-          <h2 className={styles.title}>เกี่ยวกับ ภัทรอารีย์</h2>
-        </div>
+        <div className={styles.heading}>
+          <p className={styles.kicker}>ABOUT PHATAREE</p>
 
-        <div className={styles.right}>
-          <p>
-            ภัทรอารีย์
-            มุ่งเน้นการจัดจำหน่ายสินค้าอุปโภคบริโภคที่ตอบโจทย์การใช้งานจริง
-            ทั้งในบ้าน ร้านค้า สำนักงาน โรงงาน และองค์กร
-            โดยคัดเลือกสินค้าที่มีคุณภาพ ใช้งานสะดวก
-            และเหมาะกับการสั่งซื้ออย่างต่อเนื่อง
-          </p>
+          <h2 className={styles.title}>
+            ผู้จัดจำหน่ายสินค้าอุปโภคบริโภคสำหรับลูกค้าธุรกิจ
+          </h2>
 
-          <p>
-            เราให้ความสำคัญกับความน่าเชื่อถือ ความคุ้มค่า
-            และการให้ข้อมูลสินค้าที่ชัดเจน เพื่อช่วยให้ลูกค้าตัดสินใจได้ง่ายขึ้น
-            พร้อมรองรับการขอใบเสนอราคา
-            และการติดต่อเพื่อสั่งซื้อในรูปแบบที่เหมาะกับแต่ละธุรกิจ
+          <p className={styles.lead}>
+            บริษัท ภัทรอารีย์ (ไทยแลนด์) จำกัด จัดจำหน่ายสินค้าอุปโภคบริโภค
+            สำหรับองค์กร โดยเน้นสินค้าที่มีคุณภาพ เชื่อถือได้
+            และเหมาะกับการใช้งานต่อเนื่องในธุรกิจ
           </p>
         </div>
 
-        {/* <Slider images={aboutImages} /> */}
+        <div className={styles.imageCard}>
+          <Image
+            src="/images/about/about-1.png"
+            alt="ภาพรวมสินค้าอุปโภคบริโภคของบริษัท ภัทรอารีย์ ไทยแลนด์"
+            fill
+            sizes="(max-width: 900px) 100vw, 900px"
+            className={styles.image}
+          />
+        </div>
+
+        <div className={styles.contentCard}>
+          <div className={styles.statement}>
+            <h3>วิสัยทัศน์</h3>
+            <p>
+              มุ่งเป็นผู้นำด้านการจัดจำหน่ายผลิตภัณฑ์ทำความสะอาด
+              สำหรับกลุ่มอุตสาหกรรม โรงแรม และร้านอาหาร
+              ในพื้นที่ภาคตะวันออกของประเทศไทย
+            </p>
+          </div>
+
+          <div className={styles.highlightGrid}>
+            {highlights.map((item) => (
+              <article className={styles.highlightCard} key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )

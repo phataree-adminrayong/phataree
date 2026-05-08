@@ -22,7 +22,6 @@ type SliderProps = {
   images: HeroSlide[]
 }
 
-const AUTO_PLAY_MS = 5200
 const DRAG_THRESHOLD_RATIO = 0.18
 const DRAG_THRESHOLD_MAX = 110
 const DRAG_LIMIT_RATIO = 0.9
@@ -60,7 +59,6 @@ export default function Slider({ images }: SliderProps) {
   const [trackIndex, setTrackIndex] = useState(hasMultipleImages ? 1 : 0)
   const [dragOffset, setDragOffset] = useState(0)
   const [isDragging, setIsDragging] = useState(false)
-  const [isPaused, setIsPaused] = useState(false)
   const [transitionEnabled, setTransitionEnabled] = useState(true)
 
   const visibleIndex =
@@ -77,7 +75,6 @@ export default function Slider({ images }: SliderProps) {
     setTrackIndex(hasMultipleImages ? 1 : 0)
     setDragOffset(0)
     setIsDragging(false)
-    setIsPaused(false)
     setTransitionEnabled(true)
 
     dragRef.current = {
@@ -119,16 +116,6 @@ export default function Slider({ images }: SliderProps) {
     setTrackIndex(index + 1)
   }
 
-  useEffect(() => {
-    if (!hasMultipleImages || isPaused || isDragging) return
-
-    const timer = window.setInterval(() => {
-      goToNext()
-    }, AUTO_PLAY_MS)
-
-    return () => window.clearInterval(timer)
-  }, [goToNext, hasMultipleImages, isDragging, isPaused])
-
   if (safeImages.length === 0) {
     return null
   }
@@ -156,7 +143,6 @@ export default function Slider({ images }: SliderProps) {
     }
 
     setIsDragging(true)
-    setIsPaused(true)
     setTransitionEnabled(false)
     setDragOffset(0)
 
@@ -196,7 +182,6 @@ export default function Slider({ images }: SliderProps) {
     }
 
     setIsDragging(false)
-    setIsPaused(false)
 
     try {
       event.currentTarget.releasePointerCapture(pointerId)
@@ -231,7 +216,6 @@ export default function Slider({ images }: SliderProps) {
     }
 
     setIsDragging(false)
-    setIsPaused(false)
     setTransitionEnabled(true)
     setDragOffset(0)
 
@@ -260,14 +244,7 @@ export default function Slider({ images }: SliderProps) {
   } as CSSProperties
 
   return (
-    <div
-      className={styles.slider}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => {
-        if (!isDragging) setIsPaused(false)
-      }}
-      aria-label="ภาพแนะนำสินค้า"
-    >
+    <div className={styles.slider} aria-label="ภาพแนะนำสินค้า">
       <div
         ref={viewportRef}
         className={`${styles.viewport} ${

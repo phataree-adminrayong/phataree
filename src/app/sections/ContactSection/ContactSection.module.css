@@ -165,7 +165,7 @@
   background: rgba(255, 255, 255, 0.66);
   color: var(--muted);
   font: inherit;
-  font-size: 0.68rem;
+  font-size: 1rem;
   font-weight: 800;
   cursor: pointer;
   transition:
@@ -208,7 +208,7 @@ a.value:hover {
 .note {
   margin: 0.42rem 0 0;
   color: var(--muted);
-  font-size: 0.84rem;
+  font-size: 1rem;
   line-height: 1.58;
 }
 
