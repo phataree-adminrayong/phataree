@@ -45,7 +45,7 @@ export const productGroups: ProductGroup[] = [
     title: 'กระดาษทิชชู่ - ชำระ',
     eyebrow: 'Toilet Tissue',
     description:
-      'กระดาษชำระม้วนเล็ก กระดาษชำระแบบแผ่น และกระดาษชำระม้วนใหญ่ สำหรับบ้าน ร้านค้า สำนักงาน อาคาร และองค์กร',
+      'กระดาษชำระสำหรับบ้าน ร้านค้า สำนักงาน อาคาร และพื้นที่ใช้งานประจำ',
     images: [
       {
         src: '/images/product/toilet-tissue/toilet-tissue-1.jpg',
@@ -65,131 +65,81 @@ export const productGroups: ProductGroup[] = [
         id: 'livi-standard-roll-3ply-6rolls-17-7m',
         name: 'LIVI กระดาษชำระแพค 6 ม้วน หนา 3 ชั้น',
         shortDescription:
-          'ขนาดแผ่น 10 × 13.5 ซม. จำนวน 132 แผ่น ยาว 17.7 เมตร บรรจุ 6 ม้วนต่อแพค และ 8 แพคต่อลัง',
+          'กระดาษชำระม้วนเล็ก เนื้อนุ่ม เหมาะกับการใช้งานทั่วไป',
         specs: {
-          codeGut: '69700388',
           brand: 'LIVI',
-          format: 'Standard Roll Tissue',
-          sheetSize: '10 × 13.5 ซม.',
           ply: 3,
-          sheetsPerRoll: 132,
           lengthMeter: 17.7,
-          rollsPerPack: 6,
-          packsPerCarton: 8,
         },
       },
       {
         id: 'cleancare-standard-roll-2ply-24rolls-14m',
         name: 'CLEANCARE กระดาษชำระแพค 24 ม้วน หนา 2 ชั้น',
-        shortDescription:
-          'ขนาดแผ่น 9.0 × 10.7 ซม. จำนวน 138 แผ่น ยาว 14 เมตร บรรจุ 24 ม้วนต่อแพค และ 6 แพคต่อลัง',
+        shortDescription: 'กระดาษชำระม้วนเล็ก สำหรับบ้าน ร้านค้า และสำนักงาน',
         specs: {
-          codeGut: '69700071',
           brand: 'CLEANCARE',
-          format: 'Standard Roll Tissue',
-          sheetSize: '9.0 × 10.7 ซม.',
           ply: 2,
-          sheetsPerRoll: 138,
           lengthMeter: 14,
-          rollsPerPack: 24,
-          packsPerCarton: 6,
-          certifications: ['Made in Thailand', 'ฉลากเขียว TGL-8/2-19'],
         },
       },
       {
         id: 'livi-standard-roll-2ply-24rolls-17m',
         name: 'LIVI กระดาษชำระแพค 24 ม้วน หนา 2 ชั้น',
-        shortDescription:
-          'ขนาดแผ่น 10.0 × 10.8 ซม. จำนวน 139 แผ่น ยาว 17 เมตร บรรจุ 24 ม้วนต่อแพค และ 6 แพคต่อลัง',
+        shortDescription: 'กระดาษชำระม้วนเล็ก เหมาะกับพื้นที่ใช้งานประจำ',
         specs: {
-          codeGut: '69700063',
           brand: 'LIVI',
-          format: 'Standard Roll Tissue',
-          sheetSize: '10.0 × 10.8 ซม.',
           ply: 2,
-          sheetsPerRoll: 139,
           lengthMeter: 17,
-          rollsPerPack: 24,
-          packsPerCarton: 6,
-          certifications: ['Made in Thailand', 'ฉลากเขียว TGL-8/2-19'],
         },
       },
       {
         id: 'livi-hbt-2ply-250sheets',
         name: 'LIVI กระดาษชำระ HBT หนา 2 ชั้น 250 แผ่น',
-        shortDescription:
-          'กระดาษชำระแบบแผ่น ขนาด 10.0 × 21.0 ซม. ฉีกลาย จำนวน 250 แผ่น บรรจุ 60 แพคต่อลัง',
+        shortDescription: 'กระดาษชำระแบบแผ่น เหมาะกับห้องน้ำและพื้นที่บริการ',
         specs: {
-          codeGut: '69920451',
           brand: 'LIVI',
-          format: 'Hygienic Bathroom Tissue',
-          sheetSize: '10.0 × 21.0 ซม. ฉีกลาย',
           ply: 2,
           sheetsPerPack: 250,
-          packsPerCarton: 60,
         },
       },
       {
         id: 'livi-jrt-2ply-300m-85',
         name: 'LIVI กระดาษชำระ JRT ม้วนใหญ่ หนา 2 ชั้น ยาว 300 เมตร',
-        shortDescription:
-          'จัมโบ้โรลหน้ากว้าง 8.5 ซม. ยาว 300 เมตร บรรจุ 12 ม้วนต่อลัง เหมาะกับพื้นที่ใช้งานสูง',
+        shortDescription: 'จัมโบ้โรลสำหรับพื้นที่ใช้งานสูงและใช้งานต่อเนื่อง',
         specs: {
-          codeGut: '69700129',
           brand: 'LIVI',
-          format: 'Jumbo Roll Toilet Tissue',
-          rollSize: '8.5 × 300 ม.',
           ply: 2,
           lengthMeter: 300,
-          rollsPerCarton: 12,
-          certifications: ['Made in Thailand', 'ฉลากเขียว TGL-8/2-19'],
         },
       },
       {
         id: 'livi-jrt-1ply-600m',
         name: 'LIVI กระดาษชำระ JRT ม้วนใหญ่ หนา 1 ชั้น ยาว 600 เมตร',
-        shortDescription:
-          'จัมโบ้โรลหน้ากว้าง 8.5 ซม. ยาว 600 เมตร บรรจุ 12 ม้วนต่อลัง สำหรับการใช้งานต่อเนื่อง',
+        shortDescription: 'จัมโบ้โรลความยาวสูง เหมาะกับอาคารและองค์กร',
         specs: {
-          codeGut: '69700128',
           brand: 'LIVI',
-          format: 'Jumbo Roll Toilet Tissue',
-          rollSize: '8.5 × 600 ม.',
           ply: 1,
           lengthMeter: 600,
-          rollsPerCarton: 12,
-          certifications: ['Made in Thailand', 'ฉลากเขียว TGL-8/2-19'],
         },
       },
       {
         id: 'livi-jrt-2ply-300m-80',
         name: 'LIVI กระดาษชำระ JRT ม้วนใหญ่ หนา 2 ชั้น ยาว 300 เมตร',
-        shortDescription:
-          'จัมโบ้โรลหน้ากว้าง 8.0 ซม. ยาว 300 เมตร บรรจุ 12 ม้วนต่อลัง',
+        shortDescription: 'จัมโบ้โรลสำหรับห้องน้ำสาธารณะและพื้นที่ใช้งานหนัก',
         specs: {
-          codeGut: '69700301',
           brand: 'LIVI',
-          format: 'Jumbo Roll Toilet Tissue',
-          rollSize: '8.0 × 300 ม.',
           ply: 2,
           lengthMeter: 300,
-          rollsPerCarton: 12,
-          certifications: ['Made in Thailand', 'ฉลากเขียว TGL-8/2-19'],
         },
       },
       {
         id: 'livi-jrt-2ply-280m',
         name: 'LIVI กระดาษชำระม้วนใหญ่ หนา 2 ชั้น ยาว 280 เมตร',
-        shortDescription:
-          'จัมโบ้โรลหน้ากว้าง 8.0 ซม. ยาว 280 เมตร บรรจุ 4 แพคต่อลัง',
+        shortDescription: 'กระดาษชำระม้วนใหญ่ เหมาะกับสำนักงานและอาคารบริการ',
         specs: {
-          codeGut: '69700372',
           brand: 'LIVI',
-          format: 'Jumbo Roll Toilet Tissue',
-          rollSize: '8.0 × 280 ม.',
           ply: 2,
           lengthMeter: 280,
-          packsPerCarton: 4,
         },
       },
     ],
@@ -199,7 +149,7 @@ export const productGroups: ProductGroup[] = [
     title: 'กระดาษทิชชู่ - เช็ดปาก',
     eyebrow: 'Napkin Tissue',
     description:
-      'กระดาษเช็ดปากแบบป๊อปอัพ ค็อกเทลแนพกิ้น และแนพกิ้น สำหรับร้านอาหาร คาเฟ่ โรงแรม งานจัดเลี้ยง และพื้นที่บริการ',
+      'กระดาษเช็ดปากสำหรับร้านอาหาร คาเฟ่ โรงแรม งานจัดเลี้ยง และพื้นที่บริการ',
     images: [
       {
         src: '/images/product/napkin/napkin-1.jpg',
@@ -218,77 +168,51 @@ export const productGroups: ProductGroup[] = [
       {
         id: 'livi-pop-up-tissue-1ply-200sheets',
         name: 'LIVI กระดาษเช็ดปาก Pop Up หนา 1 ชั้น 200 แผ่น',
-        shortDescription:
-          'ขนาด 10.0 × 20.0 ซม. แบบป๊อปอัพ บรรจุ 60 แพคต่อลัง เหมาะสำหรับร้านอาหารและพื้นที่บริการ',
+        shortDescription: 'กระดาษเช็ดปากแบบป๊อปอัพ หยิบใช้งานง่าย',
         specs: {
-          codeGut: '69700140',
           brand: 'LIVI',
-          format: 'Pop Up Tissue',
-          sheetSize: '10.0 × 20.0 ซม. ป๊อปอัพ',
           ply: 1,
           sheetsPerPack: 200,
-          packsPerCarton: 60,
-          certifications: ['Made in Thailand', 'ฉลากเขียว TGL-8/2-19'],
         },
       },
       {
         id: 'livi-cocktail-napkin-brown-500sheets',
         name: 'LIVI กระดาษเช็ดปาก Cocktail Napkin สีน้ำตาล 500 แผ่น',
-        shortDescription:
-          'ขนาด 30 × 32.5 ซม. หนา 1 ชั้น จำนวน 500 แผ่น บรรจุ 12 แพคต่อลัง',
+        shortDescription: 'กระดาษเช็ดปากโทนธรรมชาติ เหมาะกับร้านอาหารและคาเฟ่',
         specs: {
-          codeGut: '69920066',
           brand: 'LIVI',
-          format: 'Cocktail Napkin',
-          sheetSize: '30 × 32.5 ซม.',
           ply: 1,
           sheetsPerPack: 500,
-          packsPerCarton: 12,
         },
       },
       {
         id: 'livi-cocktail-napkin-white-500sheets',
         name: 'LIVI กระดาษเช็ดปาก Cocktail Napkin สีขาว 500 แผ่น',
-        shortDescription:
-          'ขนาด 30 × 32.5 ซม. หนา 1 ชั้น จำนวน 500 แผ่น บรรจุ 12 แพคต่อลัง',
+        shortDescription: 'กระดาษเช็ดปากสีขาว ใช้งานง่ายในพื้นที่บริการ',
         specs: {
-          codeGut: '69920132',
           brand: 'LIVI',
-          format: 'Cocktail Napkin',
-          sheetSize: '30 × 32.5 ซม.',
           ply: 1,
           sheetsPerPack: 500,
-          packsPerCarton: 12,
         },
       },
       {
         id: 'livi-napkin-brown-200sheets',
         name: 'LIVI กระดาษเช็ดปาก Napkin สีน้ำตาล 200 แผ่น',
-        shortDescription:
-          'ขนาด 33 × 33 ซม. หนา 1 ชั้น จำนวน 200 แผ่น บรรจุ 20 แพคต่อลัง',
+        shortDescription: 'กระดาษแนพกิ้นสีน้ำตาล สำหรับร้านอาหารและงานบริการ',
         specs: {
-          codeGut: '69700330',
           brand: 'LIVI',
-          format: 'Napkin Tissue',
-          sheetSize: '33 × 33 ซม.',
           ply: 1,
           sheetsPerPack: 200,
-          packsPerCarton: 20,
         },
       },
       {
         id: 'livi-napkin-white-200sheets',
         name: 'LIVI กระดาษเช็ดปาก Napkin สีขาว 200 แผ่น',
-        shortDescription:
-          'ขนาด 33 × 33 ซม. หนา 1 ชั้น จำนวน 200 แผ่น บรรจุ 20 แพคต่อลัง',
+        shortDescription: 'กระดาษแนพกิ้นสีขาว สำหรับร้านอาหารและงานจัดเลี้ยง',
         specs: {
-          codeGut: '69700340',
           brand: 'LIVI',
-          format: 'Napkin Tissue',
-          sheetSize: '33 × 33 ซม.',
           ply: 1,
           sheetsPerPack: 200,
-          packsPerCarton: 20,
         },
       },
     ],
@@ -298,7 +222,7 @@ export const productGroups: ProductGroup[] = [
     title: 'กระดาษทิชชู่ - เช็ดมือ',
     eyebrow: 'Hand Towel',
     description:
-      'กระดาษเช็ดมือแบบม้วนและแบบแผ่นต่อเนื่อง สำหรับห้องน้ำ จุดล้างมือ สำนักงาน โรงงาน และพื้นที่ส่วนกลาง',
+      'กระดาษเช็ดมือสำหรับห้องน้ำ จุดล้างมือ สำนักงาน โรงงาน และพื้นที่ส่วนกลาง',
     images: [
       {
         src: '/images/product/hand-tissue/hand-tissue-1.jpg',
@@ -317,63 +241,43 @@ export const productGroups: ProductGroup[] = [
       {
         id: 'livi-hand-roll-towel-1ply-200m',
         name: 'LIVI กระดาษเช็ดมือแบบม้วน หนา 1 ชั้น ยาว 200 เมตร',
-        shortDescription:
-          'กระดาษเช็ดมือแบบม้วน ยาว 200 เมตร บรรจุ 6 ม้วนต่อลัง เหมาะสำหรับจุดล้างมือและพื้นที่ใช้งานต่อเนื่อง',
+        shortDescription: 'กระดาษเช็ดมือแบบม้วน เหมาะกับพื้นที่ใช้งานต่อเนื่อง',
         specs: {
-          codeGut: '69700105',
           brand: 'LIVI',
-          format: 'Hand Roll Towel Tissue',
           ply: 1,
           lengthMeter: 200,
-          rollsPerCarton: 6,
-          certifications: ['Made in Thailand'],
         },
       },
       {
         id: 'livi-interfold-mfold-1ply-250sheets',
         name: 'LIVI กระดาษเช็ดมือพับต่อเนื่อง M-Fold หนา 1 ชั้น 250 แผ่น',
-        shortDescription:
-          'ขนาด 23.0 × 24.0 ซม. จำนวน 250 แผ่น บรรจุ 16 แพคต่อลัง',
+        shortDescription: 'กระดาษเช็ดมือพับต่อเนื่อง สำหรับจุดล้างมือทั่วไป',
         specs: {
-          codeGut: '69910496',
           brand: 'LIVI',
-          format: 'Interfold Hand Towel Tissue M-Fold',
-          sheetSize: '23.0 × 24.0 ซม.',
           ply: 1,
           sheetsPerPack: 250,
-          packsPerCarton: 16,
         },
       },
       {
         id: 'livi-interfold-lfold-2ply-250sheets',
         name: 'LIVI กระดาษเช็ดมือพับต่อเนื่อง L-Fold หนา 2 ชั้น 250 แผ่น',
         shortDescription:
-          'ขนาด 24.0 × 21.0 ซม. จำนวน 250 แผ่น บรรจุ 24 แพคต่อลัง',
+          'กระดาษเช็ดมือพับต่อเนื่อง เนื้อหนาขึ้นสำหรับงานบริการ',
         specs: {
-          codeGut: '69700117',
           brand: 'LIVI',
-          format: 'Interfold Hand Towel Tissue L-Fold',
-          sheetSize: '24.0 × 21.0 ซม.',
           ply: 2,
           sheetsPerPack: 250,
-          packsPerCarton: 24,
-          certifications: ['Made in Thailand', 'ฉลากเขียว TGL-8/2-19'],
         },
       },
       {
         id: 'livi-interfold-lfold-1ply-300sheets',
         name: 'LIVI กระดาษเช็ดมือพับต่อเนื่อง L-Fold หนา 1 ชั้น 300 แผ่น',
         shortDescription:
-          'ขนาด 22.0 × 21.0 ซม. จำนวน 300 แผ่น บรรจุ 24 แพคต่อลัง',
+          'กระดาษเช็ดมือพับต่อเนื่อง จำนวนแผ่นมาก ใช้งานคุ้มค่า',
         specs: {
-          codeGut: '69700116',
           brand: 'LIVI',
-          format: 'Interfold Hand Towel Tissue L-Fold',
-          sheetSize: '22.0 × 21.0 ซม.',
           ply: 1,
           sheetsPerPack: 300,
-          packsPerCarton: 24,
-          certifications: ['Made in Thailand', 'ฉลากเขียว TGL-8/2-19'],
         },
       },
     ],
@@ -383,7 +287,7 @@ export const productGroups: ProductGroup[] = [
     title: 'กระดาษทิชชู่ - เช็ดหน้า',
     eyebrow: 'Facial Tissue',
     description:
-      'กระดาษเช็ดหน้าชนิดเติม สำหรับบ้าน สำนักงาน โรงแรม ห้องพัก และพื้นที่รับรองลูกค้า',
+      'กระดาษเช็ดหน้าสำหรับบ้าน สำนักงาน โรงแรม ห้องพัก และพื้นที่รับรองลูกค้า',
     images: [
       {
         src: '/images/product/facial-tissue/facial-tissue-1.png',
@@ -394,31 +298,21 @@ export const productGroups: ProductGroup[] = [
       {
         id: 'livi-facial-tissue-refill-200sheets',
         name: 'LIVI กระดาษเช็ดหน้า 200 แผ่น หนา 2 ชั้น ชนิดเติม',
-        shortDescription:
-          'ขนาด 20.0 × 20.75 ซม. จำนวน 200 แผ่น บรรจุ 50 แพคต่อลัง',
+        shortDescription: 'กระดาษเช็ดหน้าชนิดเติม เหมาะกับบ้านและสำนักงาน',
         specs: {
-          codeGut: '69920441',
           brand: 'LIVI',
-          format: 'Facial Tissue Refill',
-          sheetSize: '20.0 × 20.75 ซม.',
           ply: 2,
           sheetsPerPack: 200,
-          packsPerCarton: 50,
         },
       },
       {
         id: 'livi-facial-tissue-box-60sheets',
         name: 'LIVI กระดาษเช็ดหน้า 60 แผ่น หนา 2 ชั้น แบบกล่อง',
-        shortDescription:
-          'ขนาด 19.75 × 21 ซม. จำนวน 60 แผ่น บรรจุ 48 กล่องต่อลัง',
+        shortDescription: 'กระดาษเช็ดหน้าแบบกล่อง เหมาะกับห้องพักและจุดรับรอง',
         specs: {
-          codeGut: '69920452',
           brand: 'LIVI',
-          format: 'Facial Tissue Box',
-          sheetSize: '19.75 × 21 ซม.',
           ply: 2,
           sheetsPerPack: 60,
-          packsPerCarton: 48,
         },
       },
     ],
