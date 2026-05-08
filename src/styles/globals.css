@@ -181,17 +181,17 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(2.25rem, 3.8vw, 4.35rem);
+  font-size: 1.8rem;
   font-weight: 700;
 }
 
 h2 {
-  font-size: clamp(1.8rem, 3vw, 3.05rem);
+  font-size: 1.6rem;
   font-weight: 700;
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2.35vw, 1.85rem);
+  font-size: 1.4rem;
   font-weight: 600;
 }
 
@@ -420,16 +420,13 @@ ol {
 
 @media (max-width: 1024px) {
   html {
-    font-size: 17px;
-  }
-  :root {
-    --scroll-offset: 78px;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 17px;
   }
   :root {
     --pad-x: 1rem;
@@ -455,7 +452,7 @@ ol {
 
 @media (max-width: 480px) {
   html {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
