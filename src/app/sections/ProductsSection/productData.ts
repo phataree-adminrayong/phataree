@@ -62,17 +62,6 @@ export const productGroups: ProductGroup[] = [
     ],
     items: [
       {
-        id: 'livi-standard-roll-3ply-6rolls-17-7m',
-        name: 'LIVI กระดาษชำระแพค 6 ม้วน หนา 3 ชั้น',
-        shortDescription:
-          'กระดาษชำระม้วนเล็ก เนื้อนุ่ม เหมาะกับการใช้งานทั่วไป',
-        specs: {
-          brand: 'LIVI',
-          ply: 3,
-          lengthMeter: 17.7,
-        },
-      },
-      {
         id: 'cleancare-standard-roll-2ply-24rolls-14m',
         name: 'CLEANCARE กระดาษชำระแพค 24 ม้วน หนา 2 ชั้น',
         shortDescription: 'กระดาษชำระม้วนเล็ก สำหรับบ้าน ร้านค้า และสำนักงาน',
