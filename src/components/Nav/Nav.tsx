@@ -4,7 +4,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useMemo, useState } from 'react'
+import { type MouseEvent, useEffect, useMemo, useState } from 'react'
 import styles from './Nav.module.css'
 
 type NavItem = {
@@ -28,10 +28,11 @@ export default function Nav() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   const [activeHash, setActiveHash] = useState('')
 
-  const homeHref = useMemo(() => '/', [])
+  const homeHref = useMemo(() => '/#top', [])
   const quoteHref = useMemo(() => '/#contact', [])
 
-  const isHomeActive = pathname === '/' && activeHash === ''
+  const isHomeActive =
+    pathname === '/' && (activeHash === '' || activeHash === '#top')
 
   const closeDrawer = () => {
     setIsDrawerOpen(false)
@@ -39,6 +40,42 @@ export default function Nav() {
 
   const toggleDrawer = () => {
     setIsDrawerOpen((prev) => !prev)
+  }
+
+  const handleSectionClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    hash: string,
+  ) => {
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return
+    }
+
+    if (pathname !== '/') return
+
+    const targetSection = document.getElementById(hash.slice(1))
+    if (!targetSection) return
+
+    event.preventDefault()
+    setActiveHash(hash)
+    closeDrawer()
+
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches
+
+    targetSection.scrollIntoView({
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      block: 'start',
+    })
+
+    window.history.replaceState(null, '', '/')
   }
 
   useEffect(() => {
@@ -93,10 +130,7 @@ export default function Nav() {
             href={homeHref}
             className={styles.brand}
             aria-label="ภัทรอารีย์ PHATAREE หน้าแรก"
-            onClick={() => {
-              setActiveHash('')
-              closeDrawer()
-            }}
+            onClick={(event) => handleSectionClick(event, '#top')}
           >
             <span className={styles.logoWrap} aria-hidden="true">
               <Image
@@ -118,7 +152,7 @@ export default function Nav() {
               className={`${styles.navLink} ${
                 isHomeActive ? styles.navLinkActive : ''
               }`}
-              onClick={() => setActiveHash('')}
+              onClick={(event) => handleSectionClick(event, '#top')}
             >
               หน้าแรก
             </Link>
@@ -133,7 +167,7 @@ export default function Nav() {
                   className={`${styles.navLink} ${
                     isActive ? styles.navLinkActive : ''
                   }`}
-                  onClick={() => setActiveHash(item.hash)}
+                  onClick={(event) => handleSectionClick(event, item.hash)}
                 >
                   {item.label}
                 </Link>
@@ -142,13 +176,13 @@ export default function Nav() {
           </nav>
 
           <div className={styles.actions}>
-            <Link
+            <a
               href={quoteHref}
               className={styles.quoteButton}
-              onClick={() => setActiveHash('#contact')}
+              onClick={(event) => handleSectionClick(event, '#contact')}
             >
               ขอใบเสนอราคา
-            </Link>
+            </a>
 
             <button
               type="button"
@@ -179,16 +213,14 @@ export default function Nav() {
         className={`${styles.drawer} ${isDrawerOpen ? styles.drawerOpen : ''}`}
         aria-label="เมนูมือถือ"
         aria-hidden={!isDrawerOpen}
+        inert={!isDrawerOpen}
       >
         <div className={styles.drawerHeader}>
           <Link
             href={homeHref}
             className={styles.drawerBrand}
             aria-label="ภัทรอารีย์ PHATAREE หน้าแรก"
-            onClick={() => {
-              setActiveHash('')
-              closeDrawer()
-            }}
+            onClick={(event) => handleSectionClick(event, '#top')}
           >
             <span className={styles.drawerLogoWrap} aria-hidden="true">
               <Image
@@ -221,10 +253,7 @@ export default function Nav() {
             className={`${styles.drawerLink} ${
               isHomeActive ? styles.drawerLinkActive : ''
             }`}
-            onClick={() => {
-              setActiveHash('')
-              closeDrawer()
-            }}
+            onClick={(event) => handleSectionClick(event, '#top')}
           >
             หน้าแรก
           </Link>
@@ -239,10 +268,7 @@ export default function Nav() {
                 className={`${styles.drawerLink} ${
                   isActive ? styles.drawerLinkActive : ''
                 }`}
-                onClick={() => {
-                  setActiveHash(item.hash)
-                  closeDrawer()
-                }}
+                onClick={(event) => handleSectionClick(event, item.hash)}
               >
                 {item.label}
               </Link>
@@ -251,16 +277,13 @@ export default function Nav() {
         </nav>
 
         <div className={styles.drawerFooter}>
-          <Link
+          <a
             href={quoteHref}
             className={styles.drawerQuoteButton}
-            onClick={() => {
-              setActiveHash('#contact')
-              closeDrawer()
-            }}
+            onClick={(event) => handleSectionClick(event, '#contact')}
           >
             ขอใบเสนอราคา
-          </Link>
+          </a>
         </div>
       </aside>
     </>

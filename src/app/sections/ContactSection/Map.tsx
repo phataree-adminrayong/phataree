@@ -1,5 +1,4 @@
 // src/app/sections/ContactSection/Map.tsx
-import Link from 'next/link'
 import styles from './Map.module.css'
 
 const mapInfo = {
@@ -14,7 +13,7 @@ const mapInfo = {
 
 export default function Map() {
   return (
-    <section className={styles.mapSection} aria-labelledby="map-title">
+    <section className={styles.mapSection} aria-label={mapInfo.mapLabel}>
       <div className={styles.content}>
         <div className={styles.mapCard}>
           <iframe

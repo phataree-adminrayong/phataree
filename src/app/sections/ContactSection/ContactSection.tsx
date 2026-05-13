@@ -66,6 +66,33 @@ const contactItems: ContactItem[] = [
   },
 ]
 
+const salesEmail = 'phataree.thailand@gmail.com'
+
+function buildSalesMailHref() {
+  const subject = 'สอบถามสินค้า / ขอใบเสนอราคา - PHATAREE'
+  const body = [
+    'เรียน PHATAREE',
+    '',
+    'สนใจสอบถามสินค้า / ขอใบเสนอราคา',
+    '',
+    'ชื่อ-นามสกุล:',
+    'ชื่อบริษัท / ร้านค้า:',
+    'เบอร์โทรศัพท์:',
+    'อีเมล:',
+    'ประเภทลูกค้า (ร้านอาหาร / โรงแรม / โรงงาน / สำนักงาน / อื่น ๆ):',
+    'สินค้าที่สนใจ:',
+    'จำนวนที่ต้องการ:',
+    'พื้นที่จัดส่ง:',
+    'รายละเอียดเพิ่มเติม:',
+    '',
+    'ขอบคุณค่ะ/ครับ',
+  ].join('\n')
+
+  return `mailto:${salesEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+    body,
+  )}`
+}
+
 export default function ContactSection() {
   const [copiedId, setCopiedId] = useState<string>('')
 
@@ -115,9 +142,12 @@ export default function ContactSection() {
                 โทรหาเรา
               </Link>
 
-              <Link href="mailto:phataree.thailand@gmail.com" className="btn">
+              <a
+                href={buildSalesMailHref()}
+                className="btn btnPrimary"
+              >
                 ส่งอีเมล
-              </Link>
+              </a>
             </div>
           </div>
 

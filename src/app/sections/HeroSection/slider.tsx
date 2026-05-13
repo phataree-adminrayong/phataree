@@ -25,6 +25,7 @@ type SliderProps = {
 const DRAG_THRESHOLD_RATIO = 0.18
 const DRAG_THRESHOLD_MAX = 110
 const DRAG_LIMIT_RATIO = 0.9
+const AUTOPLAY_INTERVAL_MS = 3000
 
 export default function Slider({ images }: SliderProps) {
   const viewportRef = useRef<HTMLDivElement | null>(null)
@@ -106,6 +107,18 @@ export default function Slider({ images }: SliderProps) {
     setTrackIndex((current) => current + 1)
     setActiveIndex((current) => (current + 1) % safeImages.length)
   }, [hasMultipleImages, safeImages.length])
+
+  useEffect(() => {
+    if (!hasMultipleImages || isDragging) return
+
+    const timer = window.setInterval(() => {
+      goToNext()
+    }, AUTOPLAY_INTERVAL_MS)
+
+    return () => {
+      window.clearInterval(timer)
+    }
+  }, [goToNext, hasMultipleImages, isDragging])
 
   const goToSlide = (index: number) => {
     if (!hasMultipleImages) return
@@ -275,6 +288,8 @@ export default function Slider({ images }: SliderProps) {
                 : index === sliderImages.length - 1
                   ? 0
                   : index - 1
+            const isLcpImage =
+              realIndex === 0 && index === (hasMultipleImages ? 1 : 0)
 
             return (
               <div
@@ -286,7 +301,9 @@ export default function Slider({ images }: SliderProps) {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  priority={hasMultipleImages ? index === 1 : index === 0}
+                  priority={isLcpImage}
+                  loading="eager"
+                  fetchPriority={isLcpImage ? 'high' : 'auto'}
                   sizes="100vw"
                   className={styles.image}
                   draggable={false}

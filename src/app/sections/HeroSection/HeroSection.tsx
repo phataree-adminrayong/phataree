@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import CleanHashLink from '@/components/CleanHashLink/CleanHashLink'
 import Slider from './slider'
 import styles from './HeroSection.module.css'
 
@@ -27,7 +27,7 @@ const heroImages = [
 
 export default function HeroSection() {
   return (
-    <section id="hero" className={styles.section}>
+    <section id="top" className={styles.section}>
       <Slider images={heroImages} />
 
       <div className={`container ${styles.content}`}>
@@ -47,13 +47,13 @@ export default function HeroSection() {
           </p>
 
           <div className={styles.actions}>
-            <Link href="#products" className="btn btnPrimary">
+            <CleanHashLink href="/#products" className="btn btnPrimary">
               ดูรายการสินค้า
-            </Link>
+            </CleanHashLink>
 
-            <Link href="#contact" className="btn">
+            <CleanHashLink href="/#contact" className="btn">
               ขอใบเสนอราคา
-            </Link>
+            </CleanHashLink>
           </div>
         </div>
       </div>

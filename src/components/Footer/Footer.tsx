@@ -1,6 +1,6 @@
 // src/components/Footer/Footer.tsx
 import Image from 'next/image'
-import Link from 'next/link'
+import CleanHashLink from '@/components/CleanHashLink/CleanHashLink'
 import ContactsBox from '@/components/ContactsBox/ContactsBox'
 import styles from './Footer.module.css'
 import FAB from './FAB'
@@ -12,7 +12,11 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.container}`}>
         <div className={styles.main}>
-          <Link href="/" className={styles.brand} aria-label="PHATAREE หน้าแรก">
+          <CleanHashLink
+            href="/#top"
+            className={styles.brand}
+            aria-label="PHATAREE หน้าแรก"
+          >
             <Image
               src="/PATAREE_LOGO.svg"
               alt="PHATAREE"
@@ -20,7 +24,7 @@ export default function Footer() {
               height={64}
               className={styles.logo}
             />
-          </Link>
+          </CleanHashLink>
 
           <p className={styles.desc}>
             ผู้จัดจำหน่ายสินค้าอุปโภคบริโภคสำหรับร้านอาหาร ร้านค้า สำนักงาน

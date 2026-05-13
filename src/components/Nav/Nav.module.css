@@ -42,12 +42,12 @@
   display: inline-flex;
   align-items: center;
   flex: 0 0 auto;
-  height: 3.25rem;
+  width: 3.25rem;
 }
 
 .logo {
-  width: auto;
-  height: 100%;
+  width: 100%;
+  height: auto;
   object-fit: contain;
 }
 
@@ -203,13 +203,22 @@
   border-left: 1px solid var(--border-soft);
   background: rgba(255, 255, 255, 0.96);
   box-shadow: -24px 0 60px rgba(69, 86, 65, 0.12);
+  visibility: hidden;
+  pointer-events: none;
   transform: translateX(100%);
-  transition: transform var(--t-med);
+  transition:
+    transform var(--t-med),
+    visibility 0s linear var(--t-med);
   will-change: transform;
 }
 
 .drawerOpen {
+  visibility: visible;
+  pointer-events: auto;
   transform: translateX(0);
+  transition:
+    transform var(--t-med),
+    visibility 0s;
 }
 
 .drawerHeader {
@@ -234,8 +243,7 @@
   display: inline-flex;
   align-items: center;
   flex: 0 0 auto;
-  width: 8.5rem;
-  height: 3rem;
+  width: 3rem;
 }
 
 .drawerBrandText {
@@ -415,12 +423,6 @@
 }
 
 @media (max-width: 420px) {
-
-
-  .drawerLogoWrap {
-    width: 7.5rem;
-  }
-
   .drawer {
     width: min(92vw, 20rem);
   }
