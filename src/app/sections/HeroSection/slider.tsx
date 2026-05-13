@@ -26,9 +26,12 @@ const DRAG_THRESHOLD_RATIO = 0.18
 const DRAG_THRESHOLD_MAX = 110
 const DRAG_LIMIT_RATIO = 0.9
 const AUTOPLAY_INTERVAL_MS = 3000
+const SLIDE_TRANSITION_MS = 620
+const LOOP_RESET_BUFFER_MS = 80
 
 export default function Slider({ images }: SliderProps) {
   const viewportRef = useRef<HTMLDivElement | null>(null)
+  const loopResetTimeoutRef = useRef<number | null>(null)
 
   const dragRef = useRef({
     isActive: false,
@@ -46,6 +49,14 @@ export default function Slider({ images }: SliderProps) {
   }, [safeImages])
 
   const hasMultipleImages = safeImages.length > 1
+  const loopCloneIndex = safeImages.length
+
+  const sliderImages = useMemo(() => {
+    if (!hasMultipleImages) return safeImages
+
+    const firstImage = safeImages[0]
+    return firstImage ? [...safeImages, firstImage] : safeImages
+  }, [hasMultipleImages, safeImages])
 
   const [activeIndex, setActiveIndex] = useState(0)
   const [trackIndex, setTrackIndex] = useState(0)
@@ -56,11 +67,35 @@ export default function Slider({ images }: SliderProps) {
   const visibleIndex =
     safeImages.length > 0 ? Math.min(activeIndex, safeImages.length - 1) : 0
 
-  const maxTrackIndex = Math.max(safeImages.length - 1, 0)
+  const maxTrackIndex = Math.max(sliderImages.length - 1, 0)
 
   const safeTrackIndex = Math.min(Math.max(trackIndex, 0), maxTrackIndex)
+  const isLoopResetting = hasMultipleImages && trackIndex === loopCloneIndex
+
+  const clearLoopResetTimeout = useCallback(() => {
+    if (loopResetTimeoutRef.current === null) return
+
+    window.clearTimeout(loopResetTimeoutRef.current)
+    loopResetTimeoutRef.current = null
+  }, [])
+
+  const restoreTransitionAfterJump = useCallback(() => {
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        setTransitionEnabled(true)
+      })
+    })
+  }, [])
+
+  const resetToRealFirstSlide = useCallback(() => {
+    clearLoopResetTimeout()
+    setTransitionEnabled(false)
+    setTrackIndex(0)
+    restoreTransitionAfterJump()
+  }, [clearLoopResetTimeout, restoreTransitionAfterJump])
 
   useEffect(() => {
+    clearLoopResetTimeout()
     setActiveIndex(0)
     setTrackIndex(0)
     setDragOffset(0)
@@ -73,18 +108,13 @@ export default function Slider({ images }: SliderProps) {
       lastOffset: 0,
       pointerId: -1,
     }
-  }, [hasMultipleImages, safeImageKey])
 
-  const restoreTransitionAfterJump = () => {
-    window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(() => {
-        setTransitionEnabled(true)
-      })
-    })
-  }
+    return clearLoopResetTimeout
+  }, [clearLoopResetTimeout, hasMultipleImages, safeImageKey])
 
   const goToPrevious = useCallback(() => {
-    if (!hasMultipleImages) return
+    if (!hasMultipleImages || isLoopResetting) return
+    clearLoopResetTimeout()
 
     const nextIndex =
       activeIndex === 0 ? safeImages.length - 1 : activeIndex - 1
@@ -98,24 +128,42 @@ export default function Slider({ images }: SliderProps) {
     if (isLoopJump) {
       restoreTransitionAfterJump()
     }
-  }, [activeIndex, hasMultipleImages, safeImages.length])
+  }, [
+    activeIndex,
+    clearLoopResetTimeout,
+    hasMultipleImages,
+    isLoopResetting,
+    restoreTransitionAfterJump,
+    safeImages.length,
+  ])
 
   const goToNext = useCallback(() => {
-    if (!hasMultipleImages) return
+    if (!hasMultipleImages || isLoopResetting) return
+    clearLoopResetTimeout()
 
-    const nextIndex =
-      activeIndex === safeImages.length - 1 ? 0 : activeIndex + 1
-    const isLoopJump = activeIndex === safeImages.length - 1
+    const isForwardLoop = activeIndex === safeImages.length - 1
+    const nextIndex = isForwardLoop ? 0 : activeIndex + 1
 
-    setTransitionEnabled(!isLoopJump)
+    setTransitionEnabled(true)
     setDragOffset(0)
     setActiveIndex(nextIndex)
-    setTrackIndex(nextIndex)
+    setTrackIndex(isForwardLoop ? loopCloneIndex : nextIndex)
 
-    if (isLoopJump) {
-      restoreTransitionAfterJump()
+    if (isForwardLoop) {
+      loopResetTimeoutRef.current = window.setTimeout(
+        resetToRealFirstSlide,
+        SLIDE_TRANSITION_MS + LOOP_RESET_BUFFER_MS,
+      )
     }
-  }, [activeIndex, hasMultipleImages, safeImages.length])
+  }, [
+    activeIndex,
+    clearLoopResetTimeout,
+    hasMultipleImages,
+    isLoopResetting,
+    loopCloneIndex,
+    resetToRealFirstSlide,
+    safeImages.length,
+  ])
 
   useEffect(() => {
     if (!hasMultipleImages || isDragging) return
@@ -130,7 +178,8 @@ export default function Slider({ images }: SliderProps) {
   }, [goToNext, hasMultipleImages, isDragging])
 
   const goToSlide = (index: number) => {
-    if (!hasMultipleImages) return
+    if (!hasMultipleImages || isLoopResetting) return
+    clearLoopResetTimeout()
 
     setTransitionEnabled(true)
     setDragOffset(0)
@@ -143,8 +192,9 @@ export default function Slider({ images }: SliderProps) {
   }
 
   const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
-    if (!hasMultipleImages) return
+    if (!hasMultipleImages || isLoopResetting) return
     if (event.pointerType === 'mouse' && event.button !== 0) return
+    clearLoopResetTimeout()
 
     dragRef.current = {
       isActive: true,
@@ -237,6 +287,12 @@ export default function Slider({ images }: SliderProps) {
     }
   }
 
+  const handleTransitionEnd = () => {
+    if (!hasMultipleImages || trackIndex !== loopCloneIndex) return
+
+    resetToRealFirstSlide()
+  }
+
   const trackStyle = {
     transform: `translate3d(calc(${-safeTrackIndex * 100}% + ${dragOffset}px), 0, 0)`,
   } as CSSProperties
@@ -263,15 +319,16 @@ export default function Slider({ images }: SliderProps) {
             transitionEnabled && !isDragging ? styles.trackAnimated : ''
           }`}
           style={trackStyle}
+          onTransitionEnd={handleTransitionEnd}
         >
-          {safeImages.map((image, index) => {
+          {sliderImages.map((image, index) => {
             const isLcpImage = index === 0
 
             return (
               <div
                 key={`${image.src}-${index}`}
                 className={styles.slide}
-                aria-hidden={index !== visibleIndex}
+                aria-hidden={index !== safeTrackIndex}
               >
                 <Image
                   src={image.src}
@@ -297,6 +354,7 @@ export default function Slider({ images }: SliderProps) {
             type="button"
             className={`${styles.arrow} ${styles.prev}`}
             onClick={goToPrevious}
+            disabled={isLoopResetting}
             aria-label="ดูภาพก่อนหน้า"
           >
             <span aria-hidden="true">‹</span>
@@ -306,6 +364,7 @@ export default function Slider({ images }: SliderProps) {
             type="button"
             className={`${styles.arrow} ${styles.next}`}
             onClick={goToNext}
+            disabled={isLoopResetting}
             aria-label="ดูภาพถัดไป"
           >
             <span aria-hidden="true">›</span>
@@ -320,6 +379,7 @@ export default function Slider({ images }: SliderProps) {
                   index === visibleIndex ? styles.dotActive : ''
                 }`}
                 onClick={() => goToSlide(index)}
+                disabled={isLoopResetting}
                 aria-label={`ดูภาพที่ ${index + 1}`}
                 aria-current={index === visibleIndex}
               />

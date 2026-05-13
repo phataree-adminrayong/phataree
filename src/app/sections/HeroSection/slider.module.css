@@ -80,6 +80,10 @@
   box-shadow: var(--shadow-md);
 }
 
+.arrow:disabled {
+  cursor: default;
+}
+
 .arrow:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
@@ -131,6 +135,10 @@
 .dotActive {
   width: 1.45rem;
   background: var(--accent-strong);
+}
+
+.dot:disabled {
+  cursor: default;
 }
 
 .dot:focus-visible {
