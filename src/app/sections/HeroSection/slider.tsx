@@ -47,17 +47,8 @@ export default function Slider({ images }: SliderProps) {
 
   const hasMultipleImages = safeImages.length > 1
 
-  const sliderImages = useMemo(() => {
-    if (!hasMultipleImages) return safeImages
-
-    const firstImage = safeImages[0]
-    const lastImage = safeImages[safeImages.length - 1]
-
-    return [lastImage, ...safeImages, firstImage]
-  }, [hasMultipleImages, safeImages])
-
   const [activeIndex, setActiveIndex] = useState(0)
-  const [trackIndex, setTrackIndex] = useState(hasMultipleImages ? 1 : 0)
+  const [trackIndex, setTrackIndex] = useState(0)
   const [dragOffset, setDragOffset] = useState(0)
   const [isDragging, setIsDragging] = useState(false)
   const [transitionEnabled, setTransitionEnabled] = useState(true)
@@ -65,15 +56,13 @@ export default function Slider({ images }: SliderProps) {
   const visibleIndex =
     safeImages.length > 0 ? Math.min(activeIndex, safeImages.length - 1) : 0
 
-  const maxTrackIndex = Math.max(sliderImages.length - 1, 0)
+  const maxTrackIndex = Math.max(safeImages.length - 1, 0)
 
-  const safeTrackIndex = hasMultipleImages
-    ? Math.min(Math.max(trackIndex, 0), maxTrackIndex)
-    : 0
+  const safeTrackIndex = Math.min(Math.max(trackIndex, 0), maxTrackIndex)
 
   useEffect(() => {
     setActiveIndex(0)
-    setTrackIndex(hasMultipleImages ? 1 : 0)
+    setTrackIndex(0)
     setDragOffset(0)
     setIsDragging(false)
     setTransitionEnabled(true)
@@ -86,27 +75,47 @@ export default function Slider({ images }: SliderProps) {
     }
   }, [hasMultipleImages, safeImageKey])
 
+  const restoreTransitionAfterJump = () => {
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        setTransitionEnabled(true)
+      })
+    })
+  }
+
   const goToPrevious = useCallback(() => {
     if (!hasMultipleImages) return
 
-    setTransitionEnabled(true)
-    setDragOffset(0)
+    const nextIndex =
+      activeIndex === 0 ? safeImages.length - 1 : activeIndex - 1
+    const isLoopJump = activeIndex === 0
 
-    setTrackIndex((current) => current - 1)
-    setActiveIndex((current) =>
-      current === 0 ? safeImages.length - 1 : current - 1,
-    )
-  }, [hasMultipleImages, safeImages.length])
+    setTransitionEnabled(!isLoopJump)
+    setDragOffset(0)
+    setActiveIndex(nextIndex)
+    setTrackIndex(nextIndex)
+
+    if (isLoopJump) {
+      restoreTransitionAfterJump()
+    }
+  }, [activeIndex, hasMultipleImages, safeImages.length])
 
   const goToNext = useCallback(() => {
     if (!hasMultipleImages) return
 
-    setTransitionEnabled(true)
-    setDragOffset(0)
+    const nextIndex =
+      activeIndex === safeImages.length - 1 ? 0 : activeIndex + 1
+    const isLoopJump = activeIndex === safeImages.length - 1
 
-    setTrackIndex((current) => current + 1)
-    setActiveIndex((current) => (current + 1) % safeImages.length)
-  }, [hasMultipleImages, safeImages.length])
+    setTransitionEnabled(!isLoopJump)
+    setDragOffset(0)
+    setActiveIndex(nextIndex)
+    setTrackIndex(nextIndex)
+
+    if (isLoopJump) {
+      restoreTransitionAfterJump()
+    }
+  }, [activeIndex, hasMultipleImages, safeImages.length])
 
   useEffect(() => {
     if (!hasMultipleImages || isDragging) return
@@ -126,22 +135,11 @@ export default function Slider({ images }: SliderProps) {
     setTransitionEnabled(true)
     setDragOffset(0)
     setActiveIndex(index)
-    setTrackIndex(index + 1)
+    setTrackIndex(index)
   }
 
   if (safeImages.length === 0) {
     return null
-  }
-
-  const resetClonePosition = (nextTrackIndex: number) => {
-    setTransitionEnabled(false)
-    setTrackIndex(nextTrackIndex)
-
-    window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(() => {
-        setTransitionEnabled(true)
-      })
-    })
   }
 
   const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
@@ -239,19 +237,6 @@ export default function Slider({ images }: SliderProps) {
     }
   }
 
-  const handleTransitionEnd = () => {
-    if (!hasMultipleImages) return
-
-    if (trackIndex === 0) {
-      resetClonePosition(safeImages.length)
-      return
-    }
-
-    if (trackIndex === safeImages.length + 1) {
-      resetClonePosition(1)
-    }
-  }
-
   const trackStyle = {
     transform: `translate3d(calc(${-safeTrackIndex * 100}% + ${dragOffset}px), 0, 0)`,
   } as CSSProperties
@@ -278,24 +263,15 @@ export default function Slider({ images }: SliderProps) {
             transitionEnabled && !isDragging ? styles.trackAnimated : ''
           }`}
           style={trackStyle}
-          onTransitionEnd={handleTransitionEnd}
         >
-          {sliderImages.map((image, index) => {
-            const realIndex = !hasMultipleImages
-              ? index
-              : index === 0
-                ? safeImages.length - 1
-                : index === sliderImages.length - 1
-                  ? 0
-                  : index - 1
-            const isLcpImage =
-              realIndex === 0 && index === (hasMultipleImages ? 1 : 0)
+          {safeImages.map((image, index) => {
+            const isLcpImage = index === 0
 
             return (
               <div
                 key={`${image.src}-${index}`}
                 className={styles.slide}
-                aria-hidden={realIndex !== visibleIndex}
+                aria-hidden={index !== visibleIndex}
               >
                 <Image
                   src={image.src}
