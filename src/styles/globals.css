@@ -431,7 +431,6 @@ ol {
   :root {
     --pad-x: 1rem;
     --section-y: 2rem;
-    --scroll-offset: 72px;
   }
   body {
     background-attachment:

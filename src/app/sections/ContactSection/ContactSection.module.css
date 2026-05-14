@@ -113,6 +113,10 @@
   margin-top: 1.4rem;
 }
 
+.quickActions .gmailAction {
+  width: 5.75rem;
+}
+
 .infoGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -196,6 +200,22 @@
   overflow-wrap: anywhere;
 }
 
+.valueLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.46rem;
+  min-width: 0;
+}
+
+.valueLine .value {
+  min-width: 0;
+}
+
+.gmailCompact {
+  margin-top: -0.02rem;
+}
+
 a.value {
   text-decoration: none;
   transition: color var(--t-fast);
@@ -246,6 +266,12 @@ a.value:hover {
 
   .quickActions a {
     width: 100%;
+  }
+
+  .quickActions .gmailAction {
+    justify-self: center;
+    align-self: center;
+    width: 5.75rem;
   }
 }
 

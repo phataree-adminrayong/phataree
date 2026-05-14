@@ -1,4 +1,7 @@
 import Link from 'next/link'
+import GmailButton, {
+  buildGmailComposeHref,
+} from '@/components/GmailButton/GmailButton'
 import styles from './WorkWithUs.module.css'
 
 type JobItem = {
@@ -56,7 +59,7 @@ const phoneNumber = '0864565165'
 const displayPhoneNumber = '086-456-5165'
 const email = 'phataree.thailand@gmail.com'
 
-function buildMailHref(jobTitle: string) {
+function getJobMailContent(jobTitle: string) {
   const subject = `สมัครงานตำแหน่ง ${jobTitle} - PHATAREE`
   const body = [
     `เรียน PHATAREE`,
@@ -71,9 +74,19 @@ function buildMailHref(jobTitle: string) {
     'ขอบคุณค่ะ/ครับ',
   ].join('\n')
 
+  return { body, subject, to: email }
+}
+
+function buildMailHref(jobTitle: string) {
+  const { body, subject } = getJobMailContent(jobTitle)
+
   return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
     body,
   )}`
+}
+
+function buildGmailHref(jobTitle: string) {
+  return buildGmailComposeHref(getJobMailContent(jobTitle))
 }
 
 export default function WorkWithUs() {
@@ -128,6 +141,12 @@ export default function WorkWithUs() {
                   ส่งอีเมลสมัครงาน
                   <span aria-hidden="true">→</span>
                 </Link>
+
+                <GmailButton
+                  href={buildGmailHref(`${job.title} (${job.englishTitle})`)}
+                  ariaLabel={`Open Gmail to apply for ${job.englishTitle}`}
+                  className={styles.gmailAction}
+                />
 
                 <Link
                   href={`tel:${phoneNumber}`}

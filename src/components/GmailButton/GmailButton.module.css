@@ -1,0 +1,62 @@
+.button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(242, 250, 246, 0.9));
+  box-shadow: 0 0.35rem 1rem rgba(36, 91, 79, 0.06);
+  text-decoration: none;
+  transition:
+    transform var(--t-fast),
+    border-color var(--t-fast),
+    box-shadow var(--t-fast),
+    background var(--t-fast);
+}
+
+.default {
+  width: 5.75rem;
+  height: 2.9rem;
+  padding: 0 0.76rem;
+}
+
+.compact {
+  width: 3.75rem;
+  height: 2.05rem;
+  padding: 0 0.42rem;
+}
+
+.icon {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 72%;
+  object-fit: contain;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--accent) 38%, var(--border));
+    box-shadow: var(--shadow-sm);
+    background: #ffffff;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+
+  .button:hover {
+    transform: none;
+  }
+}

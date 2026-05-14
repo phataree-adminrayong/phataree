@@ -190,6 +190,10 @@
   margin-top: 1.15rem;
 }
 
+.actions .gmailAction {
+  width: 5.75rem;
+}
+
 .primaryAction,
 .secondaryAction {
   display: inline-flex;
@@ -282,6 +286,12 @@
   .primaryAction,
   .secondaryAction {
     width: 100%;
+  }
+
+  .actions .gmailAction {
+    justify-self: center;
+    align-self: center;
+    width: 5.75rem;
   }
 
   .footerNote {

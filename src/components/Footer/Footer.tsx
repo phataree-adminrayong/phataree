@@ -2,10 +2,14 @@
 import Image from 'next/image'
 import CleanHashLink from '@/components/CleanHashLink/CleanHashLink'
 import ContactsBox from '@/components/ContactsBox/ContactsBox'
+import GmailButton, {
+  buildGmailComposeHref,
+} from '@/components/GmailButton/GmailButton'
 import styles from './Footer.module.css'
 import FAB from './FAB'
 
 const currentYear = new Date().getFullYear()
+const contactEmail = 'phataree.thailand@gmail.com'
 
 export default function Footer() {
   return (
@@ -36,9 +40,15 @@ export default function Footer() {
             <span aria-hidden="true">/</span>
             <a href="tel:0926394754">092-639-4754</a>
             <span aria-hidden="true">/</span>
-            <a href="mailto:phataree.thailand@gmail.com">
-              phataree.thailand@gmail.com
-            </a>
+            <span className={styles.emailContact}>
+              <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+
+              <GmailButton
+                href={buildGmailComposeHref({ to: contactEmail })}
+                ariaLabel="Open Gmail to email PHATAREE"
+                size="compact"
+              />
+            </span>
           </div>
 
           <a

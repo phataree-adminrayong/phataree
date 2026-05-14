@@ -48,6 +48,7 @@
 .contactInfo {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   gap: 0.35rem 0.55rem;
   max-width: 48rem;
@@ -58,6 +59,9 @@
 }
 
 .contactInfo a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--text);
   font-weight: 700;
   text-decoration: none;
@@ -65,7 +69,18 @@
 }
 
 .contactInfo span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: color-mix(in srgb, var(--muted) 52%, transparent);
+}
+
+.emailContact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.42rem;
+  min-width: 0;
 }
 
 .qrCard {

@@ -3,6 +3,9 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import GmailButton, {
+  buildGmailComposeHref,
+} from '@/components/GmailButton/GmailButton'
 import Map from './Map'
 import WorkWithUs from './WorkWithUs'
 import styles from './ContactSection.module.css'
@@ -68,7 +71,7 @@ const contactItems: ContactItem[] = [
 
 const salesEmail = 'phataree.thailand@gmail.com'
 
-function buildSalesMailHref() {
+function getSalesMailContent() {
   const subject = 'สอบถามสินค้า / ขอใบเสนอราคา - PHATAREE'
   const body = [
     'เรียน PHATAREE',
@@ -88,9 +91,25 @@ function buildSalesMailHref() {
     'ขอบคุณค่ะ/ครับ',
   ].join('\n')
 
+  return { body, subject, to: salesEmail }
+}
+
+function buildSalesMailHref() {
+  const { body, subject } = getSalesMailContent()
+
   return `mailto:${salesEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
     body,
   )}`
+}
+
+function buildSalesGmailHref() {
+  return buildGmailComposeHref(getSalesMailContent())
+}
+
+function getMailRecipient(href?: string) {
+  if (!href?.startsWith('mailto:')) return null
+
+  return href.slice('mailto:'.length).split('?')[0]
 }
 
 export default function ContactSection() {
@@ -108,6 +127,9 @@ export default function ContactSection() {
       setCopiedId('')
     }
   }
+
+  const salesMailHref = buildSalesMailHref()
+  const salesGmailHref = buildSalesGmailHref()
 
   return (
     <section id="contact" className={styles.section}>
@@ -143,16 +165,25 @@ export default function ContactSection() {
               </Link>
 
               <a
-                href={buildSalesMailHref()}
+                href={salesMailHref}
                 className="btn btnPrimary"
               >
                 ส่งอีเมล
               </a>
+
+              <GmailButton
+                href={salesGmailHref}
+                ariaLabel="Open Gmail to email PHATAREE"
+                className={styles.gmailAction}
+              />
             </div>
           </div>
 
           <div className={styles.infoGrid} aria-label="ช่องทางติดต่อ">
-            {contactItems.map((item) => (
+            {contactItems.map((item) => {
+              const mailRecipient = getMailRecipient(item.href)
+
+              return (
               <article key={item.id} className={styles.infoCard}>
                 <div className={styles.infoTop}>
                   <span className={styles.label}>{item.label}</span>
@@ -170,21 +201,33 @@ export default function ContactSection() {
                 </div>
 
                 {item.href ? (
-                  <Link
-                    href={item.href}
-                    className={styles.value}
-                    target={item.external ? '_blank' : undefined}
-                    rel={item.external ? 'noopener noreferrer' : undefined}
-                  >
-                    {item.value}
-                  </Link>
+                  <div className={styles.valueLine}>
+                    <Link
+                      href={item.href}
+                      className={styles.value}
+                      target={item.external ? '_blank' : undefined}
+                      rel={item.external ? 'noopener noreferrer' : undefined}
+                    >
+                      {item.value}
+                    </Link>
+
+                    {mailRecipient ? (
+                      <GmailButton
+                        href={buildGmailComposeHref({ to: mailRecipient })}
+                        ariaLabel={`Open Gmail to email ${item.value}`}
+                        size="compact"
+                        className={styles.gmailCompact}
+                      />
+                    ) : null}
+                  </div>
                 ) : (
                   <strong className={styles.value}>{item.value}</strong>
                 )}
 
                 {item.note ? <p className={styles.note}>{item.note}</p> : null}
               </article>
-            ))}
+              )
+            })}
           </div>
         </div>
 
