@@ -67,8 +67,10 @@ export const productGroups: ProductGroup[] = [
         shortDescription: 'กระดาษชำระม้วนเล็ก สำหรับบ้าน ร้านค้า และสำนักงาน',
         specs: {
           brand: 'CLEANCARE',
+          sheetSize: '9.0 × 10.7 ซม.',
           ply: 2,
           lengthMeter: 14,
+          packsPerCarton: 6,
         },
       },
       {
@@ -77,8 +79,10 @@ export const productGroups: ProductGroup[] = [
         shortDescription: 'กระดาษชำระม้วนเล็ก เหมาะกับพื้นที่ใช้งานประจำ',
         specs: {
           brand: 'LIVI',
+          sheetSize: '10.0 × 10.8 ซม.',
           ply: 2,
           lengthMeter: 17,
+          packsPerCarton: 6,
         },
       },
       {
@@ -87,8 +91,10 @@ export const productGroups: ProductGroup[] = [
         shortDescription: 'กระดาษชำระแบบแผ่น เหมาะกับห้องน้ำและพื้นที่บริการ',
         specs: {
           brand: 'LIVI',
+          sheetSize: '10.0 × 21.0 ซม.',
           ply: 2,
           sheetsPerPack: 250,
+          packsPerCarton: 60,
         },
       },
       {
@@ -97,8 +103,10 @@ export const productGroups: ProductGroup[] = [
         shortDescription: 'จัมโบ้โรลความยาวสูง เหมาะกับอาคารและองค์กร',
         specs: {
           brand: 'LIVI',
+          rollSize: '8.5 × 600 ม.',
           ply: 1,
           lengthMeter: 600,
+          rollsPerCarton: 12,
         },
       },
       {
@@ -107,8 +115,10 @@ export const productGroups: ProductGroup[] = [
         shortDescription: 'กระดาษชำระม้วนใหญ่ เหมาะกับสำนักงานและอาคารบริการ',
         specs: {
           brand: 'LIVI',
+          rollSize: '8.0 × 280 ม.',
           ply: 2,
           lengthMeter: 280,
+          packsPerCarton: 4,
         },
       },
     ],
@@ -140,18 +150,10 @@ export const productGroups: ProductGroup[] = [
         shortDescription: 'กระดาษเช็ดปากแบบป๊อปอัพ หยิบใช้งานง่าย',
         specs: {
           brand: 'LIVI',
+          sheetSize: '10.0 × 20.0 ซม.',
           ply: 1,
           sheetsPerPack: 200,
-        },
-      },
-      {
-        id: 'livi-cocktail-napkin-brown-500sheets',
-        name: 'LIVI กระดาษเช็ดปาก Cocktail Napkin สีน้ำตาล 500 แผ่น',
-        shortDescription: 'กระดาษเช็ดปากโทนธรรมชาติ เหมาะกับร้านอาหารและคาเฟ่',
-        specs: {
-          brand: 'LIVI',
-          ply: 1,
-          sheetsPerPack: 500,
+          packsPerCarton: 60,
         },
       },
       {
@@ -160,8 +162,10 @@ export const productGroups: ProductGroup[] = [
         shortDescription: 'กระดาษเช็ดปากสีขาว ใช้งานง่ายในพื้นที่บริการ',
         specs: {
           brand: 'LIVI',
+          sheetSize: '30 × 32.5 ซม.',
           ply: 1,
           sheetsPerPack: 500,
+          packsPerCarton: 12,
         },
       },
       {
@@ -170,8 +174,10 @@ export const productGroups: ProductGroup[] = [
         shortDescription: 'กระดาษแนพกิ้นสีน้ำตาล สำหรับร้านอาหารและงานบริการ',
         specs: {
           brand: 'LIVI',
+          sheetSize: '33 × 33 ซม.',
           ply: 1,
           sheetsPerPack: 200,
+          packsPerCarton: 20,
         },
       },
       {
@@ -180,8 +186,10 @@ export const productGroups: ProductGroup[] = [
         shortDescription: 'กระดาษแนพกิ้นสีขาว สำหรับร้านอาหารและงานจัดเลี้ยง',
         specs: {
           brand: 'LIVI',
+          sheetSize: '33 × 33 ซม.',
           ply: 1,
           sheetsPerPack: 200,
+          packsPerCarton: 20,
         },
       },
     ],
@@ -213,18 +221,10 @@ export const productGroups: ProductGroup[] = [
         shortDescription: 'กระดาษเช็ดมือแบบม้วน เหมาะกับพื้นที่ใช้งานต่อเนื่อง',
         specs: {
           brand: 'LIVI',
+          sheetSize: '20.3 × 22.5 ซม.',
           ply: 1,
           lengthMeter: 200,
-        },
-      },
-      {
-        id: 'livi-interfold-mfold-1ply-250sheets',
-        name: 'LIVI กระดาษเช็ดมือพับต่อเนื่อง M-Fold หนา 1 ชั้น 250 แผ่น',
-        shortDescription: 'กระดาษเช็ดมือพับต่อเนื่อง สำหรับจุดล้างมือทั่วไป',
-        specs: {
-          brand: 'LIVI',
-          ply: 1,
-          sheetsPerPack: 250,
+          rollsPerCarton: 6,
         },
       },
       {
@@ -234,8 +234,10 @@ export const productGroups: ProductGroup[] = [
           'กระดาษเช็ดมือพับต่อเนื่อง เนื้อหนาขึ้นสำหรับงานบริการ',
         specs: {
           brand: 'LIVI',
+          sheetSize: '24.0 × 21.0 ซม.',
           ply: 2,
           sheetsPerPack: 250,
+          packsPerCarton: 24,
         },
       },
       {
@@ -245,8 +247,10 @@ export const productGroups: ProductGroup[] = [
           'กระดาษเช็ดมือพับต่อเนื่อง จำนวนแผ่นมาก ใช้งานคุ้มค่า',
         specs: {
           brand: 'LIVI',
+          sheetSize: '22.0 × 21.0 ซม.',
           ply: 1,
           sheetsPerPack: 300,
+          packsPerCarton: 24,
         },
       },
     ],
@@ -270,8 +274,10 @@ export const productGroups: ProductGroup[] = [
         shortDescription: 'กระดาษเช็ดหน้าชนิดเติม เหมาะกับบ้านและสำนักงาน',
         specs: {
           brand: 'LIVI',
+          sheetSize: '20.0 × 20.75 ซม.',
           ply: 2,
           sheetsPerPack: 200,
+          packsPerCarton: 50,
         },
       },
       {
@@ -280,34 +286,46 @@ export const productGroups: ProductGroup[] = [
         shortDescription: 'กระดาษเช็ดหน้าแบบกล่อง เหมาะกับห้องพักและจุดรับรอง',
         specs: {
           brand: 'LIVI',
+          sheetSize: '19.75 × 21 ซม.',
           ply: 2,
           sheetsPerPack: 60,
+          packsPerCarton: 48,
         },
       },
     ],
   },
   {
     id: 'multipurpose-tissue',
-    title: 'กระดาษทิชชู่เอนกประสงค์',
+    title: 'กระดาษทิชชู่อเนกประสงค์',
     eyebrow: 'Multipurpose',
     description:
-      'กลุ่มกระดาษสำหรับงานเช็ด ทำความสะอาด และการใช้งานหลากหลายประเภท',
+      'กระดาษอเนกประสงค์ซึมซับดีเยี่ยม เหมาะกับใช้กับอาหาร งานเช็ด และทำความสะอาดทั่วไป',
     images: [
       {
         src: '/images/product/multipurpose-tissue/multipurpose-tissue-1.jpg',
-        alt: 'กระดาษทิชชู่เอนกประสงค์ PHATAREE',
+        alt: 'กระดาษทิชชู่อเนกประสงค์ PHATAREE',
       },
       {
         src: '/images/hero/hero-1.png',
-        alt: 'กระดาษทิชชู่เอนกประสงค์สำหรับบ้าน ร้านค้า และองค์กร',
+        alt: 'กระดาษทิชชู่อเนกประสงค์สำหรับบ้าน ร้านค้า และองค์กร',
       },
     ],
     items: [
       {
         id: 'multipurpose-tissue',
-        name: 'กระดาษทิชชู่เอนกประสงค์',
+        name: 'Nice Multi-Purpose กระดาษอเนกประสงค์',
         shortDescription:
-          'รองรับงานเช็ด ทำความสะอาด และการใช้งานทั่วไปในบ้าน ร้านค้า และองค์กร',
+          'กระดาษอเนกประสงค์ซึมซับดีเยี่ยม เหมาะกับใช้กับอาหาร ร้านค้า และการใช้งานทั่วไป',
+        specs: {
+          brand: 'Nice',
+          format: 'Multi-Purpose',
+          sheetSize: '23 × 23 ซม.',
+          ply: 1,
+          sheetsPerRoll: 60,
+          rollsPerPack: 2,
+          packsPerCarton: 24,
+          rollsPerCarton: 48,
+        },
       },
     ],
   },

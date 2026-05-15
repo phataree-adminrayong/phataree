@@ -61,7 +61,7 @@ const contactItems: ContactItem[] = [
   {
     id: 'facebook',
     label: 'Facebook',
-    value: 'บริษัทภัทรอารีย์ ไทยแลนด์ จำกัด',
+    value: 'บริษัท ภัทรอารีย์ (ไทยแลนด์) จำกัด',
     href: 'https://www.facebook.com/share/1EWyyJqqkH/?mibextid=wwXIfr',
     external: true,
     copyValue: 'https://www.facebook.com/share/1EWyyJqqkH/?mibextid=wwXIfr',

@@ -2,10 +2,10 @@
 import styles from './Map.module.css'
 
 const mapInfo = {
-  name: 'บริษัท ภัทรอารีย์(ไทยแลนด์) จำกัด - PHATAREE',
+  name: 'บริษัท ภัทรอารีย์ (ไทยแลนด์) จำกัด - PHATAREE',
   address: '12.6825638, 101.2484319',
   note: 'ติดต่อสอบถามพื้นที่จัดส่ง ยอดขั้นต่ำ และเงื่อนไขบริการก่อนสั่งซื้อ',
-  mapLabel: 'แผนที่ บริษัท ภัทรอารีย์(ไทยแลนด์) จำกัด - PHATAREE',
+  mapLabel: 'แผนที่ บริษัท ภัทรอารีย์ (ไทยแลนด์) จำกัด - PHATAREE',
   mapSrc:
     'https://www.google.com/maps?q=12.6825638,101.2484319&z=17&output=embed',
   mapLink: 'https://maps.app.goo.gl/FsChG1XwbQFoPeMr6',

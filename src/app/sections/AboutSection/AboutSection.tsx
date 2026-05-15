@@ -37,7 +37,7 @@ export default function AboutSection() {
         <div className={styles.imageCard}>
           <Image
             src="/images/about/about-1.png"
-            alt="ภาพรวมสินค้าอุปโภคบริโภคของบริษัท ภัทรอารีย์ ไทยแลนด์"
+            alt="ภาพรวมสินค้าอุปโภคบริโภคของบริษัท ภัทรอารีย์ (ไทยแลนด์)"
             fill
             sizes="(max-width: 900px) 100vw, 900px"
             className={styles.image}
