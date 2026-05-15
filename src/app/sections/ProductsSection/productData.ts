@@ -99,12 +99,12 @@ export const productGroups: ProductGroup[] = [
       },
       {
         id: 'livi-jrt-1ply-600m',
-        name: 'LIVI กระดาษชำระ JRT ม้วนใหญ่ หนา 1 ชั้น ยาว 600 เมตร',
+        name: 'LIVI กระดาษชำระ JRT ม้วนใหญ่ หนา 2 ชั้น ยาว 300 เมตร',
         shortDescription: 'จัมโบ้โรลความยาวสูง เหมาะกับอาคารและองค์กร',
         specs: {
           brand: 'LIVI',
           rollSize: '8.5 × 300 ม.',
-          ply: 1,
+          ply: 2,
           lengthMeter: 300,
           rollsPerCarton: 12,
         },
