@@ -103,9 +103,9 @@ export const productGroups: ProductGroup[] = [
         shortDescription: 'จัมโบ้โรลความยาวสูง เหมาะกับอาคารและองค์กร',
         specs: {
           brand: 'LIVI',
-          rollSize: '8.5 × 600 ม.',
+          rollSize: '8.5 × 300 ม.',
           ply: 1,
-          lengthMeter: 600,
+          lengthMeter: 300,
           rollsPerCarton: 12,
         },
       },
@@ -118,6 +118,7 @@ export const productGroups: ProductGroup[] = [
           rollSize: '8.0 × 280 ม.',
           ply: 2,
           lengthMeter: 280,
+          rollsPerCarton: 12,
           packsPerCarton: 4,
         },
       },
@@ -157,33 +158,9 @@ export const productGroups: ProductGroup[] = [
         },
       },
       {
-        id: 'livi-cocktail-napkin-white-500sheets',
-        name: 'LIVI กระดาษเช็ดปาก Cocktail Napkin สีขาว 500 แผ่น',
-        shortDescription: 'กระดาษเช็ดปากสีขาว ใช้งานง่ายในพื้นที่บริการ',
-        specs: {
-          brand: 'LIVI',
-          sheetSize: '30 × 32.5 ซม.',
-          ply: 1,
-          sheetsPerPack: 500,
-          packsPerCarton: 12,
-        },
-      },
-      {
         id: 'livi-napkin-brown-200sheets',
         name: 'LIVI กระดาษเช็ดปาก Napkin สีน้ำตาล 200 แผ่น',
         shortDescription: 'กระดาษแนพกิ้นสีน้ำตาล สำหรับร้านอาหารและงานบริการ',
-        specs: {
-          brand: 'LIVI',
-          sheetSize: '33 × 33 ซม.',
-          ply: 1,
-          sheetsPerPack: 200,
-          packsPerCarton: 20,
-        },
-      },
-      {
-        id: 'livi-napkin-white-200sheets',
-        name: 'LIVI กระดาษเช็ดปาก Napkin สีขาว 200 แผ่น',
-        shortDescription: 'กระดาษแนพกิ้นสีขาว สำหรับร้านอาหารและงานจัดเลี้ยง',
         specs: {
           brand: 'LIVI',
           sheetSize: '33 × 33 ซม.',
